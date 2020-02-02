@@ -9,6 +9,7 @@ module.exports = {
     github: `chajinjoo`, // Your GitHub account
     medium: ``, // Your Medium account
     facebook: ``, // Your Facebook account
+    // instagram: `yolo__joo`,
   },
   icon: `content/assets/jlogo.png`, // Add your favicon
   keywords: [`blog`],
