@@ -28,11 +28,7 @@ export default ({ data, pageContext, location }) => {
   const { disqusShortName, utterances } = comment
 
   return (
-    <Layout
-    showToc={post.frontmatter.showToc}
-    location={location}
-    title={title}
-  >
+    <Layout location={location} title={title}>
       <Head title={post.frontmatter.title} description={post.excerpt} />
       <PostTitle title={post.frontmatter.title} date={post.frontmatter.date} />
       <PostContainer html={post.html} />
@@ -79,7 +75,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        showToc
       }
     }
   }

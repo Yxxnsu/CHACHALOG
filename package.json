@@ -28,8 +28,6 @@
     "gatsby-remark-prismjs": "^3.2.6",
     "gatsby-remark-responsive-iframe": "^2.1.1",
     "gatsby-remark-smartypants": "^2.0.9",
-    "gatsby-remark-table-of-contents": "0.0.9",
-    "gatsby-remark-toc": "^1.2.0",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-sharp": "^2.1.17",
@@ -44,15 +42,12 @@
     "react-switch": "^5.0.0",
     "react-typography": "^0.16.13",
     "smooth-scroll": "^16.0.0",
-    "styled-components": "^4.4.1",
-    "styled-icons": "^9.1.0",
     "typeface-catamaran": "0.0.54",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.54",
     "typeface-noto-sans-kr": "0.0.63",
     "typography": "^0.16.17",
-    "typography-theme-github": "^0.16.18",
-    "webpack-dev-server": "^3.1.11"
+    "typography-theme-github": "^0.16.18"
   },
   "devDependencies": {
     "date-fns": "^1.30.1",
