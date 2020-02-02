@@ -1,6 +1,6 @@
 ---
 title: '📝 [Dart] 기초 문법'
-date: 2020-02-03 18:00:00
+date: 2020-02-03 10:00:00
 category: 'Dart'
 draft: false 
 ---

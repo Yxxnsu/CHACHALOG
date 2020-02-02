@@ -1,6 +1,6 @@
 ---
 title: '📝 [Dart] Class'
-date: 2020-02-03 20:00:00
+date: 2020-02-03 12:00:00
 category: 'Dart'
 draft: false 
 ---
