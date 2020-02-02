@@ -1,7 +1,7 @@
 ---
 title: 'Draft'
 date: 2020-12-25 24:00:00
-category: 'diart'
+category: 'diary'
 draft: true
 ---
 

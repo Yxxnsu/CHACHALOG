@@ -4,10 +4,14 @@
   font-weight: 900;
   font-size: 48px;
   letter-spacing: -2px;
+  :hover {
+    color: #D64E75;
+  }
 }
 
 .link {
   box-shadow: none;
   text-decoration: none;
   color: inherit;
+
 }
