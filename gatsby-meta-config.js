@@ -2,14 +2,13 @@ module.exports = {
   title: `JINJOO_BLOG`,
   description: `Blog posted about ...`,
   author: `[JinJoo]`,
-  introduction: `Front-end Developer. 월루 꿈나무 개발자 😎`,
+  introduction: `Front-end Developer. 대박 프로그램은 1%의 영감과 99%의 노가다로 이루어진다. 😎`,
   siteUrl: `https://jinjoo.netlify.com`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account
     github: `https://github.com/chajinjoo`, // Your GitHub account
     medium: ``, // Your Medium account
     facebook: ``, // Your Facebook account
-    instagram: `https://www.instagram.com/yolo__joo`,
   },
   icon: `content/assets/felog.png`, // Add your favicon
   keywords: [`blog`],
