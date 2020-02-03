@@ -1,7 +1,14 @@
 const metaConfig = require('./gatsby-meta-config')
 
 module.exports = {
-  siteMetadata: metaConfig,
+  siteMetadata: {
+    title: `JINJOO_BLOG`,
+    description: `JINJOO_BLOG`,
+    author: `@JinJoo`,
+    siteUrl: `https://jinjoo.netlify.com/`,
+  },
+
+  
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -90,6 +97,13 @@ module.exports = {
     `gatsby-plugin-feed`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-lodash`,
     `gatsby-plugin-sitemap`,
