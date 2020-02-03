@@ -85,14 +85,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    {
-      resolve: `gatsby-plugin-robots-txt`,
-      options: {
-        host: 'https://jinjoo.netlify.com',
-        sitemap: 'https://jinjoo.netlify.com/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }],
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-feed`,
