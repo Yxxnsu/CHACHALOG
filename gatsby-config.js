@@ -2,8 +2,8 @@ const metaConfig = require('./gatsby-meta-config')
 
 module.exports = {
   siteMetadata: {
-    title: 'delivan.dev',
-    author: 'Jeonghyeok Yoo',
+    title: 'JINJOO_BLOGg',
+    author: 'Jinjoo Cha',
     description: 'This blog is powered by gatsby',
     siteUrl: 'https://jinjoo.netlify.com/',
   },
