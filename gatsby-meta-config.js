@@ -12,7 +12,15 @@ module.exports = {
     // instagram: `yolo__joo`,
   },
   icon: `content/assets/jlogo.png`, // Add your favicon
-  keywords: [`blog`],
+  keywords: [`blog`,
+`dart`,
+`flutter`,
+`프론트엔드`,
+`개발`,
+`dev`,
+`javascript`,
+`react`,
+],
   comment: {
     disqusShortName: '', // Your disqus-short-name. check disqus.com.
     utterances: 'chajinjoo/CHACHALOG', // Your repository for archive comment
