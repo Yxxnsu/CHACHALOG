@@ -88,8 +88,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
-        host: 'https://flowkater.io',
-        sitemap: 'https://flowkater.io/sitemap.xml',
+        host: 'https://jinjoo.netlify.com',
+        sitemap: 'https://jinjoo.netlify.com/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
