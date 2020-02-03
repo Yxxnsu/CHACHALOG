@@ -1,7 +1,12 @@
 const metaConfig = require('./gatsby-meta-config')
 
 module.exports = {
-  siteMetadata: metaConfig,
+  siteMetadata: {
+    title: 'JINJOO_BLOG',
+    author: 'Jinjoo Cha',
+    description: 'This blog is powered by gatsby',
+    siteUrl: 'https://jinjoo.netlify.com/',
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -93,5 +98,13 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-lodash`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://jinjoo.netlify.com',
+        sitemap: 'https://jinjoo.netlify.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    }
   ],
 }
