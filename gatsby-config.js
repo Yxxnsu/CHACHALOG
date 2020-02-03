@@ -2,8 +2,8 @@ const metaConfig = require('./gatsby-meta-config')
 
 module.exports = {
   siteMetadata: {
-    title: 'JINJOO_BLOG',
-    author: 'Jinjoo Cha',
+    title: 'delivan.dev',
+    author: 'Jeonghyeok Yoo',
     description: 'This blog is powered by gatsby',
     siteUrl: 'https://jinjoo.netlify.com/',
   },
@@ -98,13 +98,5 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-lodash`,
     `gatsby-plugin-sitemap`,
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        host: 'https://jinjoo.netlify.com',
-        sitemap: 'https://jinjoo.netlify.com/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
-      }
-    }
   ],
 }
