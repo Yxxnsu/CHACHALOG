@@ -1,12 +1,7 @@
 const metaConfig = require('./gatsby-meta-config')
 
 module.exports = {
-  siteMetadata: {
-    title: 'JINJOO_BLOGg',
-    author: 'Jinjoo Cha',
-    description: 'This blog is powered by gatsby',
-    siteUrl: 'https://jinjoo.netlify.com/',
-  },
+  siteMetadata: metaConfig,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
