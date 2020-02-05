@@ -36,6 +36,8 @@ showToc: true
 
 **https://dartpad.dartlang.org/**  
 **링크를 통해 심플 어플리케이션을 만들어 보자!**  
+
+## ```Dart 언어는 run 하면 무조건 main() 부터 찾는다```  
   
 
 ```go
@@ -74,9 +76,7 @@ void main() { //Dart 언어는 run 하면 무조건 main() 부터 찾는다
 저 메서드는 받는 것도 없고 주는 것도 없이, 단지 처리만 하는겨.   
 뭔 소린가 싶지?  
 그냥 "화면에 헬로 월드만 보여줘" 이거야.  
-  
-```Dart 언어는 run 하면 무조건 main() 부터 찾는다```  
-밑줄 쫙 별표 땡땡!!
+
     
 
 ![스크린샷 2020-01-31 오후 3.17.34.png](https://images.velog.io/post-images/chajanee/7c483df0-43f1-11ea-b36c-cbc9a8866a8e/-2020-01-31-3.17.34.png)  
@@ -243,8 +243,108 @@ _무한루프 돌다 다운되면 내 잘못이니까..._ 🥺
 ---  
   
 
+# bool
 
+```go
+bool isEven(int x) { //정수 x가 짝수야? (isOdd 홀수야?)
+  // An if-else statement.
+  if (x % 2 == 0) { //만약에 x를 2로 나눈 나머지 값이 0과 값으면 (나머지가 0이면 짝수)
+    return true;
+  } else { //그게 아니면 (나머지가 0이 아니면 홀수겠지?!)
+    return false;
+  }
+}
+
+List<int> getEvenNumbers(Iterable<int> numbers) {
+  var evenNumbers = <int>[];
+
+  // A for-in loop.
+  for (var i in numbers) { //numbers에 있는 데이터를 한개씩 떤져줌
+    // A single-line if statement.
+    if (isEven(i)) evenNumbers.add(i); //만약에 (isEven(i))가 짝수, true면 evenNumbers 리스트에 add(i) 데이터를 넣어줘라.
+  }
+
+  return evenNumbers;
+}
+
+main() {
+  var numbers = List.generate(10, (i) => i); // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] 랑 같은말
+  print(getEvenNumbers(numbers));
+}
+  
+```
+
+
+![스크린샷 2020-02-05 오후 9.46.51.png](https://images.velog.io/post-images/chajanee/9b034fa0-4815-11ea-808a-fd2499a972e2/-2020-02-05-9.46.51.png)
+
+
+
+---
+
+# Strings
+
+```go
+main() {
+  print('a single quoted string');
+  print("a double quoted string"); //작은따옴표, 큰따옴표 상관없어!
+
+  // 문자열 끼리는 + 연산자와 결합해서 사용해.
+  print("cat" + "dog");
+
+  // 삼중 따옴표는 여러 줄 띄어쓰기 할때 사용해.
+  print('''triple quoted strings
+are for multiple lines''');
+
+  // Dart supports string interpolation.
+  var pi = 3.14;
+  print('pi is $pi'); //스트링에 변수 값만 포함하고 싶을때! $변수명
+  print('tau is ${2 * pi}'); //변수 값 이외에도 계산이나 오브젝트 안에 있는 변수 값을 들여다 보고싶을 때 중괄호 같이써! ${}
+}
+  
+```
+
+
+![스크린샷 2020-02-05 오후 9.55.17.png](https://images.velog.io/post-images/chajanee/c7524740-4816-11ea-b996-31c898d07854/-2020-02-05-9.55.17.png)
+
+
+---
  
+# collection literals
+
+```go
+// A list literal.
+var lostNumbers = [4, 8, 15, 16, 23, 42];
+
+// A map literal.
+var nobleGases = {
+  'He': 'Helium',
+  'Ne': 'Neon',
+  'Ar': 'Argon',
+};
+
+// A set literal.
+var frogs = {
+  'Tree',
+  'Poison dart',
+  'Glass',
+};
+
+main() {
+  print(lostNumbers[3]);
+  print(lostNumbers.first);
+  print(lostNumbers.last);
+  print(nobleGases['Ne']);
+  print(frogs.difference({'Poison dart'}));
+}
+  
+```
+
+
+![스크린샷 2020-02-05 오후 10.07.04.png](https://images.velog.io/post-images/chajanee/6bf6e8e0-4818-11ea-8d96-e977c864a12a/-2020-02-05-10.07.04.png)
+
+
+---
+
 # 함수  
   
 
@@ -363,4 +463,5 @@ String makeStoryShort(String name) => 'I have eat dinner with $name';
 
 # Reference  
  - [더코딩파파 유튜브](http://bit.ly/TheCodingPapa)  
+ - [Dart 공식문서](https://dart.dev/)
 

@@ -298,8 +298,239 @@ class Chasla implements Tesla{
 
 ![스크린샷 2020-02-01 오전 12.27.55.png](https://images.velog.io/post-images/chajanee/127223c0-443f-11ea-8c94-a7c3ab319c42/-2020-02-01-12.27.55.png)  
 
+---
+
+# 🔥 다시 한 번 개념 훑기!
+
+```go
+class Car{
+  int seats;
+  String color;
+  
+  Car(int sts, String clr){ //construntor(주문서)
+    this.seats = sts;
+    this.color = clr;
+  } //주문서의 기본은 function이야. Car(){}
+  
+} //첫줄에서 여기까지가 Car 라는 class 인거지!
+
+main(){
+  Car newCar = new Car(4, 'black'); //newCar = object or instance 라 부름
+      //새 차 = 고객이 접수
+             //이 때, new 키워드는 안써도 동일하게 출력은 되지만 쓰는게 좋아!
+  print('seat: ${newCar.seats}, color: ${newCar.color}');
+             //object = instance 두개를 같은 말이라고 보면되고, 여기선 "생성된 차 = newCar" 를 가르켜.
+}
+
+
+```
+
+![스크린샷 2020-02-05 오후 10.55.51.png](https://images.velog.io/post-images/chajanee/4479cb00-481f-11ea-8221-4da73859da2d/-2020-02-05-10.55.51.png)
+
+_( ```this``` 는 해당 object = instance 를 가리키는 건 알겠지?!_  
+_ex:  ```this.seats``` =  주문서 작성함에 있어서 현재 내가 만들고 싶은 차의 좌석 )_
+
+여기서,
+```go
+print('seat: ${newCar.seats}, color: ${newCar.color}');
+```
+
+요 부분을 다르게 바꿔서 출력해 줄 수도 있어!
+예를 들면..
+
+```go
+class Car{
+  int seats;
+  String color;
+  
+  Car(int sts, String clr){ //construntor(주문서)
+    this.seats = sts;
+    this.color = clr;
+  } //주문서의 기본은 function이야. Car(){}
+  
+  printVars(){
+    print('seat: $seats. color: $color');
+  }
+  
+} //첫줄에서 여기까지가 Car 라는 class 인거지!
+
+main(){
+  Car newCar = new Car(4, 'black'); //newCar = object or instance 라 부름
+      //새 차 = 고객이 접수
+             //이 때, new 키워드는 안써도 동일하게 출력은 되지만 쓰는게 좋아!
+  newCar.printVars();
+}
+
+```
+
+![스크린샷 2020-02-05 오후 10.56.03.png](https://images.velog.io/post-images/chajanee/47eecd80-481f-11ea-8221-4da73859da2d/-2020-02-05-10.56.03.png)
+
+결과는 동일해!
+
+따로 지정 없이, 옵션값으로 지정하고 싶을 때는,  
+
+```go
+class Car{
+  int seats;
+  String color;
+  
+  Car(int sts, [String clr]){ //기본 옵션값 []
+    this.seats = sts;
+    this.color = clr;
+  }
+  
+  printVars(){
+    print('seat: $seats. color: $color');
+  }
+  
+}
+
+main(){
+  Car newCar = new Car(4); //black 을 빼버리면 결과는? 👉🏻
+  newCar.printVars();
+}
+
+
+```
+
+![스크린샷 2020-02-05 오후 11.00.16.png](https://images.velog.io/post-images/chajanee/04befc00-4820-11ea-8221-4da73859da2d/-2020-02-05-11.00.16.png)
+
+대괄호로 옵션값을 지정해주고, 밑에서 black을 빼버리니까  
+값이 ```color: null``` 이라고 뜨지?  
+
+변수, 그니까 저장소에 아무 값이 없다는겨!  
+우린 color에 아무 값도 던져주질 않아서 null 이 뜨는거지~
+
+값을 다시 떤져주면?!
+
+
+![2020-02-05 23-05-16.2020-02-05 23_06_26.gif](https://images.velog.io/post-images/chajanee/b8b08170-4820-11ea-8221-4da73859da2d/2020-02-05-23-05-16.2020-02-05-230626.gif)
+
+**쫜!!!**  
+
+이번에는 옵션에 기본값으로 다른 색을 줘볼까?
+
+```go
+class Car{
+  int seats;
+  String color;
+  
+  Car(int sts, [String clr = 'gray']){ //기본값 []
+    this.seats = sts;
+    this.color = clr;
+  }
+  
+  printVars(){
+    print('seat: $seats. color: $color');
+  }
+  
+}
+
+main(){
+  Car newCar = new Car(4);
+  newCar.printVars();
+}
+
+
+```
+
+
+![스크린샷 2020-02-05 오후 11.12.53.png](https://images.velog.io/post-images/chajanee/9e024150-4821-11ea-8221-4da73859da2d/-2020-02-05-11.12.53.png)
+
+**짜란 🤗**  
+
+이 때,
+기본 ```gray``` 값을 무시하고 따로 지정을 해주면 내가 지정해 준 색이 출력되는거지!
+
+
+![2020-02-05 23-17-18.2020-02-05 23_18_16.gif](https://images.velog.io/post-images/chajanee/5fd31b60-4822-11ea-a6f2-cff7049c3a58/2020-02-05-23-17-18.2020-02-05-231816.gif)
+
+**chachaCustom!!!**
+
+만약에,  
+
+```go
+class Car{
+  int seats;
+  String color;
+  
+...
+```
+
+이 class 안에 변수들이 seats, color 이외에 더 많이 생긴다면?  
+```new Car(clr:'chachaCustom', sts:6);``` 이 부분 인자값을 순서대로 일일이 넣어주기 힘들겠지?
+
+그 번거로움을 해소하기 위해선 요 방법을 써주면 됨!
+
+```go
+class Car{
+  int seats;
+  String color;
+  
+  Car({int sts, String clr = 'gray'}){ //{} 로 묶어!
+    this.seats = sts;
+    this.color = clr;
+  }
+  
+  printVars(){
+    print('seat: $seats. color: $color');
+  }
+  
+}
+
+main(){
+  Car newCar = new Car(clr:'chachaCustom', sts:6); //그럼 순서가 달라져도 에러가 안나!
+  newCar.printVars();
+}
+
+
+```
+
+
+![스크린샷 2020-02-05 오후 11.30.02.png](https://images.velog.io/post-images/chajanee/03321da0-4824-11ea-841e-717d6f58d90d/-2020-02-05-11.30.02.png)
+
+
+**뿅!**  
+{} 로 묶어주니까 인자값 순서가 바뀌어도 상관없지?!
+
+흠.. 이 경우에서도 기본값을 세팅해주고 싶으면 ```@required``` 라는게 있는데  
+이건 flutter 에서 쓸 수 있고 Dart 언어에서는 안되나봐!  
+나중에 다시 알아보자!! 🤔  
+
+마지막 방법은,
+
+```go
+class Car{
+  int seats;
+  String color;
+  
+  Car({this.seats, this.color = 'gray'}); //한줄짜리는 ; 세미콜론 필수! {} body가 있으면 생략가능!
+  
+  printVars(){
+    print('seat: $seats. color: $color');
+  }
+  
+}
+
+main(){
+  Car newCar = new Car(color:'chachaCustom', seats:6); 
+  newCar.printVars();
+}
+
+
+
+```
+
+![스크린샷 2020-02-05 오후 11.42.27.png](https://images.velog.io/post-images/chajanee/bf4b89d0-4825-11ea-8a2a-ddd8c4b60d47/-2020-02-05-11.42.27.png)
+
+요고야! 코드를 잘 살펴봐!  
+
+**class는 중요한 부분이니까 익숙해질 때까지 복습은 필수야!!!  
+버닝버닝!! 🔥**  
+
 ---  
 ---  
 
 # Reference  
 - [더코딩파파 유튜브](http://bit.ly/TheCodingPapa)
+- [Dart 공식문서](https://dart.dev/)
