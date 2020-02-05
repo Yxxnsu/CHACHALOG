@@ -2,6 +2,7 @@
 title: 'about'
 date: 2020-02-05 03:06:00
 lang: 'en'
+showToc: true
 ---
 
 # JIN-JOO.CHA

@@ -37,9 +37,9 @@ exports.createPages = ({ graphql, actions }) => {
     // Create blog posts pages.
     const posts = result.data.allMarkdownRemark.edges.filter(
       ({ node }) =>
-      !node.frontmatter.draft &&
-      !!node.frontmatter.category &&
-      !!node.frontmatter.showToc
+        !node.frontmatter.draft &&
+        !!node.frontmatter.category &&
+        !!node.frontmatter.showToc
     )
 
     posts.forEach((post, index) => {
