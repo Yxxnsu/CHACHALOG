@@ -39,7 +39,7 @@ showToc: true
   
 
 ```go
-void main() {
+void main() { //Dart 언어는 run 하면 무조건 main() 부터 찾는다
   print('Hello World');
 }
 ```  
@@ -75,6 +75,8 @@ void main() {
 뭔 소린가 싶지?  
 그냥 "화면에 헬로 월드만 보여줘" 이거야.  
   
+```Dart 언어는 run 하면 무조건 main() 부터 찾는다```  
+밑줄 쫙 별표 땡땡!!
     
 
 ![스크린샷 2020-01-31 오후 3.17.34.png](https://images.velog.io/post-images/chajanee/7c483df0-43f1-11ea-b36c-cbc9a8866a8e/-2020-01-31-3.17.34.png)  
