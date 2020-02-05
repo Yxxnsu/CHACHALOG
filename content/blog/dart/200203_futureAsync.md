@@ -70,7 +70,7 @@ Dart 언어에는 Async 프로그램을 사용하는 2가지 방법이 있어.
 
 ---  
 
-## futures & async-await  
+# futures & async-await  
   
 **아래 코드를 실행시 프로그램이 중간에 멈추는 것을 볼 수 있어!**  
 
@@ -167,7 +167,7 @@ Future<String> gatherNewsReports() => //3️⃣
 ---  
   
 
-## async 함수에서 try-catch를 사용해서 에러 잡기  
+# async 함수에서 try-catch를 사용해서 에러 잡기  
   
 만약에 에러 발생 확률이 있다면?!  
 try-catch 블럭을 사용해서 에러를 잡는거지.  
@@ -187,7 +187,7 @@ Future<void> printDailyNewsDigest() async {
 ...
 ```  
 
-## async-await 키워드 말고 future API 자체 사용하기  
+# async-await 키워드 말고 future API 자체 사용하기  
 
 async-await 를 사용했을 때,  
 오른쪽 하단 Documentation 부분 보면 ```newsDigest``` 가 String 으로 확인.  
@@ -252,7 +252,7 @@ async-await 는 콜백없이 차례차례 기다렸다 가지만,
 ---
 ---  
 
-## Reference  
+# Reference  
 - [더코딩파파 유튜브](http://bit.ly/TheCodingPapa)
 - [getinthere님의 블로그](https://blog.naver.com/getinthere)
 

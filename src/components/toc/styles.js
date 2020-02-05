@@ -10,6 +10,7 @@ const openTocDiv = css`
 `
 
 export const TocDiv = styled.div`
+  margin-right: 5em;
   height: max-content;
   max-height: 80vh;
   z-index: 5;
