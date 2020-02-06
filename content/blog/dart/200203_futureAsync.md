@@ -1,5 +1,5 @@
 ---
-title: '📝 [Dart] future & async-await'
+title: '📖 [Dart] future & async-await'
 date: 2020-02-03 13:00:00
 category: 'Dart'
 draft: false 
