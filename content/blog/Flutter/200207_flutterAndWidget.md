@@ -164,9 +164,6 @@ showToc: true
 
 <br/>
 
----
-
-# Stateful Widgets
 
 
 ![state_basic_context_tree.png](https://images.velog.io/post-images/chajanee/371d1c60-48fa-11ea-8746-755cded7f5a1/statebasiccontexttree.png)
