@@ -1,6 +1,6 @@
 ---
 title: '💎 [Flutter] 캐릭터 페이지 디자인'
-date: 2020-02-10 01:30:00
+date: 2020-02-10 02:30:00
 category: 'Flutter'
 draft: false 
 showToc: true
