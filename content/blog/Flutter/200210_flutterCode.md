@@ -266,6 +266,10 @@ class MyHomePage extends StatelessWidget {
 
 ![최종코드.gif](../../assets/code11.gif)
 
+
+![스크린샷 2020-02-10 오전 1.44.36.png](https://images.velog.io/post-images/chajanee/7bed0720-4b5b-11ea-acc3-3913ccf53804/-2020-02-10-1.44.36.png)
+
+
 <br/>
 
 ---
