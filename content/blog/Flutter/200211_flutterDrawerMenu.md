@@ -7,18 +7,25 @@ showToc: true
 ---
 
 
+
 # Drawer menu 1
 
 리스트의 한줄한줄을 플러터에서는 ``ListTile`` 이라고 부른다.  
 각각의 ListTile 내에서는 각 요소들의 배치가 필요하다.  
 
+<br/>
+
 ![](https://images.velog.io/images/chajanee/post/572fd336-59f6-4e35-bc8c-82875927ce0a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-11%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%203.17.01.png)
+
+<br/>
 
 플러터는 이런 요소들을 패딩이나 마진 값 등에 전혀 신경쓰지 않고 편하게 배치하도록  
 ListTile 이란 위젯을 제공한다.
 
 각 메뉴를 클릭하면 스플래시(splash : 프로그램이 처음에 실행될 때 사진이나 그림이 화면 중앙에 멋있게 나타났다가 점점 천천히 사라지는 효과를 가져오는 것) 효과가 나타나는데,  
 기본적으로 ListTile에 빌드인 되어있는 애니메이션이다.
+
+
 
 ```go
 ...
@@ -137,6 +144,8 @@ class MyPage extends StatelessWidget {
 
 # Drawer menu 2
 
+
+
 ```go
 ...
 
@@ -168,10 +177,7 @@ class MyPage extends StatelessWidget {
 
 ``otherAccountsPictures`` 사용하면 요로코롬 여러 사용자 계정을 구현 가능하다.
 
-
-
-
-
+![](https://images.velog.io/images/chajanee/post/dcd4263d-657a-40c5-8136-95767e3a9cd1/%E1%84%8C%E1%85%A6%E1%84%86%E1%85%A9%E1%86%A8_%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%82%E1%85%B3%E1%86%AB_%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%E1%84%8B%E1%85%AF%E1%84%8F%E1%85%B3.jpg)
 
 
 ``onTap``
