@@ -101,8 +101,228 @@ Center 위젯이 Column 위젯을 감싸게!!
 Column 위젯을 가로축 상으로 정중앙에 위치시키려면 Center 위젯을 사용하고  
 세로축으로 정중앙에 위치시키려면 Column 위젯 내에서 MainAxisAlignment 속성을 사용하면 된다!**
 
+---
+
+# 실전코딩 1
+
+```go
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'JinJoo',
+      home: Grade(),
+    );
+  }
+}
+
+class Grade extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.amber[500],
+      appBar: AppBar(
+        title: Text('JinJoo'),
+        backgroundColor: Colors.amber[700],
+        centerTitle: true,
+        elevation: 0.0,
+      ),
+      body: Padding(
+          padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start, //시작점 정렬
+            children: <Widget>[
+              Text('NAME',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0, //철자간의 간격
+              ),
+              ),
+              SizedBox( //빈 box를 넣어줌으로 글자 세로 간격을 넓혀줌
+                height: 10.0,
+              ),
+              Text('JinJoo',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold
+              ),),
+            ],
+          ),
+      ),
+
+    );
+  }
+}
+
+```
+![](https://images.velog.io/images/chajanee/post/f625cce3-aa98-4148-a602-7a6dd977b1d6/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-10%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.45.10.png)
+
+---
+
+# 실전코딩 2 (최종코드)
+
+**pubspec.yaml 파일에서 assets 부분에 내가 넣은 이미지 코드로 수정.  
+assets -> duck.png, moana.gif 추가.**
+
+
+```go
+  assets:
+   - assets/duck.png
+   - assets/moana.gif
+```
+
+```go
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false, //우측상당 디버그 빨간띠 제거
+      title: 'JinJoo',
+      home: Grade(),
+    );
+  }
+}
+
+class Grade extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.amber[800],
+      appBar: AppBar(
+        title: Text('JinJoo'),
+        backgroundColor: Colors.amber[700],
+        centerTitle: true,
+        elevation: 0.0,
+      ),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start, //시작점 정렬
+          children: <Widget>[
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/moana.gif'),
+                radius: 60.0,
+              ),
+            ),
+            Divider(
+              //분리선 위젯
+              height:
+                  60.0, //자체높이가 아니라 위 30.0 + 아래 30.0 으로 사이 간격이 합쳐져서 60.0이란 것.
+              color: Colors.grey[850],
+              thickness: 0.5, //선의 두께
+              endIndent: 30.0, //선이 끝에서부터 어느정도 떨어져야 할지 지정해줌
+            ),
+            Text(
+              'NAME',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0, //철자간의 간격
+              ),
+            ),
+            SizedBox(
+              //빈 box를 넣어줌으로 글자 세로 간격을 넓혀줌
+              height: 10.0,
+            ),
+            Text(
+              'JINJOO',
+              style: TextStyle(
+                  color: Colors.white,
+                  letterSpacing: 2.0,
+                  fontSize: 28.0,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Text(
+              'JINJOO POWER LEVEL',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0, //철자간의 간격
+              ),
+            ),
+            SizedBox(
+              //빈 box를 넣어줌으로 글자 세로 간격을 넓혀줌
+              height: 10.0,
+            ),
+            Text(
+              '14',
+              style: TextStyle(
+                  color: Colors.white,
+                  letterSpacing: 2.0,
+                  fontSize: 28.0,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Row(
+              children: <Widget>[
+                Icon(Icons.check_circle_outline),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Text(
+                  'using lightsaber',
+                  style: TextStyle(fontSize: 16.0, letterSpacing: 1.0),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Icon(Icons.check_circle_outline),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Text(
+                  'face hero tattoo',
+                  style: TextStyle(fontSize: 16.0, letterSpacing: 1.0),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Icon(Icons.check_circle_outline),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Text(
+                  'fire flames',
+                  style: TextStyle(fontSize: 16.0, letterSpacing: 1.0),
+                ),
+              ],
+            ),
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/duck.png'),
+                radius: 60.0,
+                backgroundColor: Colors.amber[800],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+```
+
+![](https://images.velog.io/images/chajanee/post/5926a886-06c6-43b2-baf6-9ebc80263232/2020-02-11%2000-36-02.2020-02-11%2000_36_45.gif)
 
 <br/>
+
 
 ---
 ---
