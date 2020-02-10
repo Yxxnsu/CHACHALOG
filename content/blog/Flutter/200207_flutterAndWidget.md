@@ -126,17 +126,16 @@ showToc: true
  
  # Stateless와 Stateful의 의미
 
-
 ![스크린샷 2020-02-07 오전 12.46.28.png](https://images.velog.io/post-images/chajanee/dc0134d0-48f7-11ea-ad20-23bdaac8ac0f/-2020-02-07-12.46.28.png)
 
 
- 1. **Stateful : Value 값을 지속적으로 추적 보존**
+ 1. **Stateless : 이전 상호작용의 어떠한 값도 저장하지 않음**
     - 상태가 없는 정적인 위젯 (어떤 움직임이나 변화가 없음)
     - 갱얼쥐가 안움직이네?!
   
-  ![갱얼쥐.gif](https://media.giphy.com/media/100QWMdxQJzQC4/giphy.gif)
+![스크린샷 2020-02-07 오전 12.46.28.png](https://images.velog.io/post-images/chajanee/dc0134d0-48f7-11ea-ad20-23bdaac8ac0f/-2020-02-07-12.46.28.png)
 
- 2. **Stateless : 이전 상호작용의 어떠한 값도 저장하지 않음**
+ 2. **Stateful : Value 값을 지속적으로 추적 보존**
     - 계속 움직임이나 변화가 있는 위젯
     - 갱얼쥐가 움직이네?!
 
