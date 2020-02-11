@@ -267,11 +267,11 @@ class Grade extends StatelessWidget {
             SizedBox(
               height: 30.0,
             ),
-            Row(
+            Row( //복수의 위젯들을 가로로 같이 나열해야할 때 쓰는 위젯
               children: <Widget>[
-                Icon(Icons.check_circle_outline),
+                Icon(Icons.check_circle_outline), //아이콘 위젯
                 SizedBox(
-                  width: 10.0,
+                  width: 10.0, //아이콘과 텍스트 사이 가로 간격 조정
                 ),
                 Text(
                   'using lightsaber',
@@ -320,6 +320,14 @@ class Grade extends StatelessWidget {
 ```
 
 ![](https://images.velog.io/images/chajanee/post/5926a886-06c6-43b2-baf6-9ebc80263232/2020-02-11%2000-36-02.2020-02-11%2000_36_45.gif)
+
+
+``backgroundColor: Colors.amber[800]``
+``Icon(Icons.check_circle_outline)``
+
+이 때,
+``.`` 은 항상 위젯이 갖고있는 여러 속성이나 기능, 관련 아이템들 중에서 하나를 선택하고 싶을 때 사용한다고 이해하자!
+
 
 <br/>
 
