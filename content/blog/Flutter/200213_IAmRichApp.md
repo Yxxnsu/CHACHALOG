@@ -1,6 +1,6 @@
 ---
 title: '💎 [Flutter] 앱의 기초 틀 (I Am Rich App)'
-date: 2020-02-13 12:57:00
+date: 2020-02-13 00:57:00
 category: 'Flutter'
 draft: false 
 showToc: true
