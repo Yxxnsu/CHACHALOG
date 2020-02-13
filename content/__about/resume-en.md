@@ -47,8 +47,9 @@ lang: 'en'
 - React-Redux
 - Git
 - AWS
-<!-- - Dart -->
-<!-- - Flutter -->
+- Dart
+- Flutter
+
 
 </div>
 <br/>
