@@ -16,7 +16,7 @@ showToc: true
 ![](https://images.velog.io/images/chajanee/post/84756420-f6e7-4da5-9905-deaad7821738/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%203.22.57.png)
 
 # 3. import로 불러오기
-- 현 코드는 오디오재생을 위한 AudioCache 를 import 했다.
+- 4번에서는 오디오재생을 위한 AudioCache 를 import 했다.
 
 ![](https://images.velog.io/images/chajanee/post/b815a0e4-2bc5-49db-ab4a-3563f27ae11c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%203.24.13.png)
 
