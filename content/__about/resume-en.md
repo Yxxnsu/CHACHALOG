@@ -82,7 +82,7 @@ _(1개월차 프로젝트를 토대로 새로운 기능을 구현하려 노력�
 <br/>
 
 #### 👇🏻 CASETIFY PROJECT DEMO (Click!) 👇🏻
-[![CASETIFY PROJECT DEMO](https://images.velog.io/post-images/chajanee/aa5dda30-4773-11ea-9cd2-a5150e26317a/-2020-02-05-2.27.35.png)](https://www.youtube.com/watch?v=aCONu7EJwqc&feature=youtu.be)
+[![CASETIFY PROJECT DEMO](https://user-images.githubusercontent.com/55340876/74590068-66c3ca80-504e-11ea-9f59-b69b10e5050f.png)](https://www.youtube.com/watch?v=aCONu7EJwqc&feature=youtu.be)
 
 <br/>
 
@@ -114,7 +114,7 @@ _(1개월차 프로젝트를 토대로 새로운 기능을 구현하려 노력�
 <br/>
 
 #### 👇🏻 오늘의 집 PROJECT DEMO (Click!) 👇🏻
-[![오늘의 집 PROJECT DEMO](https://images.velog.io/post-images/chajanee/51e15d00-476e-11ea-8bb5-c13badd1492f/-2020-01-05-5.54.20.png)](https://www.youtube.com/watch?v=_wOrX7pm26Q)
+[![오늘의 집 PROJECT DEMO](https://user-images.githubusercontent.com/55340876/74590070-6f1c0580-504e-11ea-8886-40e4e3c33715.png)](https://www.youtube.com/watch?v=_wOrX7pm26Q)
 </div>
 <br/>
 
