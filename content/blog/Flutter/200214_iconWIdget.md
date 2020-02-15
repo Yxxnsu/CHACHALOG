@@ -94,12 +94,12 @@ Icon 위젯은
 ...
 ```
 
-![](https://images.velog.io/images/chajanee/post/6313f746-8bb0-4880-a6b7-2d0687885368/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-14%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.40.48.png)
+<img width="1387" alt="1" src="https://user-images.githubusercontent.com/55340876/74589235-dd5cca00-5046-11ea-985c-57b936bfd00c.png">
+
 
 
 # Card Widget & Padding Widget
 
-![](https://images.velog.io/images/chajanee/post/a0c11054-e209-458b-9d67-433a0282df10/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-14%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.24.28.png)
 
 Card 위젯은  
 카드의 모서리가 약간 둥글고 그림자가 있으며,  
@@ -120,7 +120,7 @@ Card 위젯의 자식으로 Padding 위젯을 써주자.
 
 공식문서를 요긴하게 써먹자. 다 나와있다.
 
-![](https://images.velog.io/images/chajanee/post/32149bc4-ddf4-4507-891b-8fd39f329280/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-14%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.01.22.png)
+
 
 ```go
 ...
@@ -175,7 +175,11 @@ Card 위젯의 자식으로 Padding 위젯을 써주자.
 ...
 ```
 
-![](https://images.velog.io/images/chajanee/post/e5be1b51-bff4-49eb-a24d-03976af9de0f/2020-02-14%2017-16-18.2020-02-14%2017_21_18.gif)
+
+
+![2](https://user-images.githubusercontent.com/55340876/74589240-e5b50500-5046-11ea-976c-c4702ab44dfd.gif)
+
+
 
 # ListTile Widget
 
@@ -183,7 +187,11 @@ Card 위젯의 자식으로 Padding 위젯을 써주자.
 일반적으로 리스트 박스의 앞부분이나 뒷부분에 아이콘 뿐만 아니라 일부 텍스트를 포함하는  
 단일 고정 높이의 행이다. 
 
-![](https://images.velog.io/images/chajanee/post/a412c892-0f42-4c03-bf0b-4a09bf6f330f/list-tile2.png)
+
+
+![3](https://user-images.githubusercontent.com/55340876/74589242-efd70380-5046-11ea-976c-9dc76f474870.png)
+
+
 
 # Divider Widget
 
@@ -283,9 +291,15 @@ class MyApp extends StatelessWidget {
 
 ```
 
-![](https://images.velog.io/images/chajanee/post/0263e6cb-3be0-462f-ba36-caff40341c45/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-14%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.53.14.png)
 
-![](https://images.velog.io/images/chajanee/post/5d41a0e1-e82a-4740-918c-5852b14e09fd/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-14%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.55.05.png)
+
+<img width="1388" alt="4" src="https://user-images.githubusercontent.com/55340876/74589243-f06f9a00-5046-11ea-8515-51c9ac212b52.png">
+
+
+
+<img width="378" alt="5" src="https://user-images.githubusercontent.com/55340876/74589245-f1a0c700-5046-11ea-83d6-1b9d2525185c.png">
+
+
 
 <br/>
 

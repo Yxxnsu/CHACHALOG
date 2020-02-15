@@ -14,7 +14,6 @@ showToc: true
 <br/>
 
 
-![](https://images.velog.io/images/chajanee/post/b722fefa-6e6b-4c78-af40-11a1550a8734/1.png)
 
 ## 2. Stateful Widget 생성
 - StatefulWidget 위젯으로 화면구현
@@ -23,7 +22,6 @@ showToc: true
 <br/>
 
 
-![](https://images.velog.io/images/chajanee/post/c3c2c720-47d8-470b-9dba-f29e9f9f5c47/2.png)
 
 ## 3. 콘솔 찍어보기
 - FlatButton 위젯으로 화면구현
@@ -32,7 +30,6 @@ showToc: true
 <br/>
 
 
-![](https://images.velog.io/images/chajanee/post/34d03df6-5825-4831-9c93-c5d38a106b4b/3.gif)
 
 ## 4. 랜덤화
 - dart:math 라이브러리의 메소드를 사용해 버튼 클릭시, 
@@ -42,11 +39,7 @@ showToc: true
 <br/>
 
 
-![](https://images.velog.io/images/chajanee/post/997f4f3f-c0d8-4d4d-94bd-8cc5c7cd9de4/4.png)
 
-
-
-![](https://images.velog.io/images/chajanee/post/336f8c87-0a1d-418b-9b11-e2b96edf0006/5.gif)
 
 ## 5. 상태 업데이트
 - 버튼 클릭시, 1 ~ 5 사이의 주어진 이미지 랜덤 화면구현
@@ -54,7 +47,7 @@ showToc: true
 <br/>
 
 
-![](https://images.velog.io/images/chajanee/post/4b450bdf-b606-4b8a-8ce1-272bfc190a83/6.gif)
+
 
 
 <br/>
@@ -146,7 +139,9 @@ class _BallState extends State<Ball> {
 ```
 
 
-![](https://images.velog.io/images/chajanee/post/e189d0ae-35db-4ff5-afd9-50c0e6a1eeeb/2020-02-15%2000-33-49.2020-02-15%2000_34_27.gif)
+![7](https://user-images.githubusercontent.com/55340876/74589292-565c2180-5047-11ea-84a3-16903d9ef9f0.gif)
+
+
 
 <br/>
 

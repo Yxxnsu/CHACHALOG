@@ -14,8 +14,7 @@ showToc: true
 
 # 프로젝트 첫 실행후, class 만들어보기  
   
-
-![스크린샷 2020-01-31 오후 9.17.32.png](https://images.velog.io/post-images/chajanee/ad7bfe70-4423-11ea-acb1-c7d88fea00da/-2020-01-31-9.17.32.png)  
+<img width="1575" alt="1" src="https://user-images.githubusercontent.com/55340876/74588176-87375900-503d-11ea-85c7-e71784e54a8f.png">
 
 bin > main.dart  
   
@@ -55,7 +54,8 @@ class NewClass {
   
 # class 개념  
 
-![제목_없는_아트워크.jpg](https://images.velog.io/post-images/chajanee/c0599730-442f-11ea-a046-178c7b269e2e/.jpg)  
+![2](https://user-images.githubusercontent.com/55340876/74588173-856d9580-503d-11ea-9c4b-0df7161efcf1.png)
+
 
 >class는 크게 3가지로 나눌 수 있어.
 >- Variable(변수)  
@@ -131,16 +131,24 @@ Car myNewCar = new Car(4, 4, 'black', 5000); //새로운 차량 주문
 Dart 언어에서는 new, const 키워드가 옵션이라  
 붙여도 되고 안붙여도 되는겨!! 둘다 똑같이 컴파일 되니까!! 😎  
   
-![스크린샷 2020-01-31 오후 11.00.35.png](https://images.velog.io/post-images/chajanee/13c5b8c0-4432-11ea-80bd-63538db7ad6e/-2020-01-31-11.00.35.png)  
+<img width="1083" alt="3" src="https://user-images.githubusercontent.com/55340876/74588170-8272a500-503d-11ea-85b2-17ad734d2a28.png"> 
   
+
+
 ---  
   
+
+
 # inheritance(상속) Extends  
   
   
-![제목_없는_아트워크 복사본.jpg](https://images.velog.io/post-images/chajanee/b1129810-4436-11ea-b437-f7172fb9ece8/-.jpg)  
+
+
+![4](https://user-images.githubusercontent.com/55340876/74588167-80104b00-503d-11ea-9ea1-724d946b3da5.png)
 
   
+
+
 > ### Constructor Tip!   
 >
 >Class 안에 construntor(주문서)가 없을 땐,  
@@ -195,12 +203,17 @@ class GasolineCar extends Car{
 
 ```  
   
+<img width="749" alt="5" src="https://user-images.githubusercontent.com/55340876/74588164-7edf1e00-503d-11ea-9b5d-0e64e984ab38.png">
 
-![스크린샷 2020-01-31 오후 11.52.05.png](https://images.velog.io/post-images/chajanee/46659af0-4439-11ea-a670-f7ff28b8fa62/-2020-01-31-11.52.05.png)  
+
   
 ---  
   
+
+
 # inheritance(상속) Implements  
+
+
   
 테슬라 알지?  
 유명한 자동차 회사!  
@@ -226,6 +239,8 @@ class GasolineCar extends Car{
   
 어떻게 하냐고?  
 Implements 라는 것을 사용해서 해볼거야!  
+
+
   
 ```go
 void main() {
@@ -284,19 +299,22 @@ class Chasla implements Tesla{
  **Chasla에 커서를 두고 ```Alt(option)``` + ```Enter``` 누르면 뿅! 창이 뜰거야.**  
 
 
-![스크린샷 2020-02-01 오전 12.28.46.png](https://images.velog.io/post-images/chajanee/9f15d250-443e-11ea-863f-116de53cc510/-2020-02-01-12.28.46.png)  
+<img width="569" alt="6" src="https://user-images.githubusercontent.com/55340876/74588162-7d155a80-503d-11ea-8d5e-e7b583dbce27.png">
+
+
   
 ```Create 4 missing override(s)``` 를 클릭하면,  
 
 
-![스크린샷 2020-02-01 오전 12.32.23.png](https://images.velog.io/post-images/chajanee/e57e4420-443e-11ea-876f-ed2b923508be/-2020-02-01-12.32.23.png)
+
+<img width="346" alt="7" src="https://user-images.githubusercontent.com/55340876/74588160-7c7cc400-503d-11ea-8623-e5288dd02374.png">
 
 
 짠! 자동완성 되지?!   
 그럼 상단 코드 블럭처럼 수정해주면 돼!  
 
 
-![스크린샷 2020-02-01 오전 12.27.55.png](https://images.velog.io/post-images/chajanee/127223c0-443f-11ea-8c94-a7c3ab319c42/-2020-02-01-12.27.55.png)  
+<img width="639" alt="8" src="https://user-images.githubusercontent.com/55340876/74588158-7b4b9700-503d-11ea-860d-61a4012e7f8b.png">
 
 ---
 
@@ -325,7 +343,7 @@ main(){
 
 ```
 
-![스크린샷 2020-02-05 오후 10.55.51.png](https://images.velog.io/post-images/chajanee/4479cb00-481f-11ea-8221-4da73859da2d/-2020-02-05-10.55.51.png)
+<img width="881" alt="9" src="https://user-images.githubusercontent.com/55340876/74588156-77b81000-503d-11ea-88bd-5f4ab18cfc52.png">
 
 _( ```this``` 는 해당 object = instance 를 가리키는 건 알겠지?!_  
 _ex:  ```this.seats``` =  주문서 작성함에 있어서 현재 내가 만들고 싶은 차의 좌석 )_
@@ -363,7 +381,7 @@ main(){
 
 ```
 
-![스크린샷 2020-02-05 오후 10.56.03.png](https://images.velog.io/post-images/chajanee/47eecd80-481f-11ea-8221-4da73859da2d/-2020-02-05-10.56.03.png)
+<img width="881" alt="10" src="https://user-images.githubusercontent.com/55340876/74588177-88688600-503d-11ea-96b2-218e2bede00f.png">
 
 결과는 동일해!
 
@@ -393,7 +411,7 @@ main(){
 
 ```
 
-![스크린샷 2020-02-05 오후 11.00.16.png](https://images.velog.io/post-images/chajanee/04befc00-4820-11ea-8221-4da73859da2d/-2020-02-05-11.00.16.png)
+<img width="881" alt="11" src="https://user-images.githubusercontent.com/55340876/74588175-86062c00-503d-11ea-88c8-6c73c9286d74.png">
 
 대괄호로 옵션값을 지정해주고, 밑에서 black을 빼버리니까  
 값이 ```color: null``` 이라고 뜨지?  
@@ -404,7 +422,7 @@ main(){
 값을 다시 떤져주면?!
 
 
-![2020-02-05 23-05-16.2020-02-05 23_06_26.gif](https://images.velog.io/post-images/chajanee/b8b08170-4820-11ea-8221-4da73859da2d/2020-02-05-23-05-16.2020-02-05-230626.gif)
+![12](https://user-images.githubusercontent.com/55340876/74588172-830b3b80-503d-11ea-982f-d80e5d46b523.gif)
 
 **쫜!!!**  
 
@@ -435,7 +453,7 @@ main(){
 ```
 
 
-![스크린샷 2020-02-05 오후 11.12.53.png](https://images.velog.io/post-images/chajanee/9e024150-4821-11ea-8221-4da73859da2d/-2020-02-05-11.12.53.png)
+<img width="881" alt="13" src="https://user-images.githubusercontent.com/55340876/74588169-81417800-503d-11ea-956c-23e3f834860c.png">
 
 **짜란 🤗**  
 
@@ -443,7 +461,8 @@ main(){
 기본 ```gray``` 값을 무시하고 따로 지정을 해주면 내가 지정해 준 색이 출력되는거지!
 
 
-![2020-02-05 23-17-18.2020-02-05 23_18_16.gif](https://images.velog.io/post-images/chajanee/5fd31b60-4822-11ea-a6f2-cff7049c3a58/2020-02-05-23-17-18.2020-02-05-231816.gif)
+![14](https://user-images.githubusercontent.com/55340876/74588165-7f77b480-503d-11ea-8166-28dae60712b3.gif)
+
 
 **chachaCustom!!!**
 
@@ -487,7 +506,8 @@ main(){
 ```
 
 
-![스크린샷 2020-02-05 오후 11.30.02.png](https://images.velog.io/post-images/chajanee/03321da0-4824-11ea-841e-717d6f58d90d/-2020-02-05-11.30.02.png)
+<img width="1031" alt="15" src="https://user-images.githubusercontent.com/55340876/74588163-7dadf100-503d-11ea-94eb-838535e96316.png">
+
 
 
 **뿅!**  
@@ -521,7 +541,7 @@ main(){
 
 ```
 
-![스크린샷 2020-02-05 오후 11.42.27.png](https://images.velog.io/post-images/chajanee/bf4b89d0-4825-11ea-8a2a-ddd8c4b60d47/-2020-02-05-11.42.27.png)
+<img width="1031" alt="16" src="https://user-images.githubusercontent.com/55340876/74588161-7c7cc400-503d-11ea-87b7-c4fbe2d03ecb.png">
 
 요고야! 코드를 잘 살펴봐!  
 

@@ -88,7 +88,7 @@ class XylophoneApp extends StatelessWidget {
 
 ```
 
-![](https://images.velog.io/images/chajanee/post/632b61e4-b2c1-4b49-abd1-d181b35ac75c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.08.30.png)
+<img width="1018" alt="1" src="https://user-images.githubusercontent.com/55340876/74589648-53aefb80-504a-11ea-8cf5-e14352f74ae8.png">
 
 화면처럼 실로폰이 왼쪽과 세로로 쭉 붙어서 나열되야하니까!    
 Center 위젯을 지우고,     
@@ -222,12 +222,21 @@ void getMilk() {
 
 이것은 가장 기본적인 함수였다.
 
-![](https://images.velog.io/images/chajanee/post/26dba59b-e0bf-46ac-994c-9536e873a71a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.30.36.png)
-
 () 괄호 안에 함수의 인자를 지정할 수 있고,     
 {} 중괄호 내부에 우리가 직접적으로 갖다쓰는 기능을 담당하는 것들을 넣어준다.
 
-![](https://images.velog.io/images/chajanee/post/bb95f672-6fdd-41e6-acdc-9f1792648a70/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.30.53.png)
+
+
+```go
+void playSound(String name) {
+  final AudioCache player = AudioCache();
+  player.play('$name.wav');
+}
+```
+
+``(String name)`` = input
+``('$name.wav')`` = used in the function
+
 
 로봇에게 "매장에서 우유를 가져다줘." 라고 시킨다고 생각해보자.   
 
@@ -237,7 +246,6 @@ void getMilk() {
 4병을 원하면 4를 쓸 것이다.  
 
 
-![](https://images.velog.io/images/chajanee/post/2dcb6880-f29b-4756-b0e4-e68d879a55e7/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.32.36.png)
 
 예를 들어,  
 X병 수를 얻는 비용을 계산할 수 있다.  
@@ -247,32 +255,44 @@ X병 수를 얻는 비용을 계산할 수 있다.
 우유 한병이 1.5 파운드인 경우,      
 인자값 2병을 대입해 총 비용인 3 파운드를 계산해서 던져줄 것이다.
 
-![](https://images.velog.io/images/chajanee/post/5ce5a337-8031-461f-b14c-1c7c5a503555/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.33.40.png)
+```go
+void getMilk (int bottles) {
+    double cost = bottles * 1.5;
+}
+```
+
+``(int bottles)`` = argument / input 
+
 
 여기서 중요한 2가지가 있다.
 - 데이터 타입을 지정해야 함
 - 이름을 지정해야 함   
  ({} 중괄호 안에 필요할 때 참조할 수 있도록 이름이 필요함)
  
-![](https://images.velog.io/images/chajanee/post/77844eae-c8a5-4efa-9f4b-648e70cb03a5/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.47.57.png)
+
 
 이제 최종적으로 함수호출할 때,    
 나는 2병 수를 얻는 비용을 원하니까    
 ``getMilk(2);`` 라고 호출을 해주면 되는 것이다.
 
-![](https://images.velog.io/images/chajanee/post/433fbca2-831c-47b6-870b-d740e72449d4/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.33.52.png)
 
-![](https://images.velog.io/images/chajanee/post/f6797486-abc9-4b5b-a409-2b4356affad2/2020-02-15%2016-52-22.2020-02-15%2016_54_43.gif)
+
+
 
 다트 패드를 통해 확인해보자.
 
-![](https://images.velog.io/images/chajanee/post/1cc71ba7-3c24-418d-a3cc-1e2a2c4c601b/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.03.10.png)
+<img width="785" alt="2" src="https://user-images.githubusercontent.com/55340876/74589653-5873af80-504a-11ea-9fbd-0ef2ffcda578.png">
 
-![](https://images.velog.io/images/chajanee/post/98184094-049b-492f-81a2-242370c2751a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.04.06.png)
+
+<img width="785" alt="3" src="https://user-images.githubusercontent.com/55340876/74589654-590c4600-504a-11ea-8408-2c82bda321a7.png">
+
+
 
 인자를 여러개를 줄 수도 있는데 여기서 문제점은 인자의 순서가 바뀌었을 때이다.
 
-![](https://images.velog.io/images/chajanee/post/f8875f61-ad35-486d-97af-506dfbd21c5a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.19.08.png)
+<img width="785" alt="4" src="https://user-images.githubusercontent.com/55340876/74589655-59a4dc80-504a-11ea-9024-07d2e24b9b09.png">
+
+
 
 Jane How do you do      
 이상하다... 
@@ -280,10 +300,19 @@ Jane How do you do
 인자값이 많고 순서 상관없이 대입해주기 위해    
 인자값의 이름을 정의해주고, {} 중괄호를 애용해주자!   
 
-![](https://images.velog.io/images/chajanee/post/3bb27dd4-2e9f-4a36-8481-d7f7156670f4/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.22.01.png)
+<img width="785" alt="5" src="https://user-images.githubusercontent.com/55340876/74589656-5ad60980-504a-11ea-9788-cd321919391c.png">
 
 
-![](https://images.velog.io/images/chajanee/post/008f0acc-fa62-4149-a2e8-4fbea308778c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.22.50.png)
+
+
+```go
+void getMilk ({int numBottles}) {
+    double cost = bottles * 1.5;
+}
+
+getMilk(numBottles: 2);
+```
+
 
 이런식으로!!
 
@@ -397,7 +426,9 @@ class XylophoneApp extends StatelessWidget {
 
 ```
 
-![](https://images.velog.io/images/chajanee/post/10931f67-e2ae-47ea-bd62-77a8f8f6016d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.49.35.png)
+<img width="1286" alt="6" src="https://user-images.githubusercontent.com/55340876/74589658-5c9fcd00-504a-11ea-87f3-ff99edf37509.png">
+
+
 
 ``Expanded`` 위젯을 FlatButton 의 부모로 해주면 된다!
 
@@ -412,24 +443,29 @@ class XylophoneApp extends StatelessWidget {
 이건 함수를 호출만 한 것이지 함수를 출력한 것이 아니다.    
 실질적으로 뒷단에서 계산은 되있지만 우리 눈에는 안보이는 것.
 
-![](https://images.velog.io/images/chajanee/post/8d188df4-ae4e-4955-9c7c-4541949bbd83/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%206.44.34.png)
+<img width="679" alt="7" src="https://user-images.githubusercontent.com/55340876/74589659-5e699080-504a-11ea-958f-4e5acd5669e2.png">
+
+
 
 
 
 기능이 있는 함수를호출해서 출력할 때,    
 void 타입은 불가하다.  
 
-![](https://images.velog.io/images/chajanee/post/abd2abf2-d763-4a6c-804d-f79cc02f754c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%206.45.44.png)
+<img width="1008" alt="8" src="https://user-images.githubusercontent.com/55340876/74589661-5f022700-504a-11ea-8584-3ace381691fe.png">
+
+
 
 그럼 우째해야하나~!
 
 함수의 타입을 바꿔주고 return 을 붙여서 출력해주면 된다.
-![](https://images.velog.io/images/chajanee/post/26169456-4f2d-4a08-b8e1-3d598a927797/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%206.48.37.png)
 
 
-![](https://images.velog.io/images/chajanee/post/f51778da-e6dd-49c5-8137-45fc250601a7/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%206.53.19.png)
+<img width="1008" alt="9" src="https://user-images.githubusercontent.com/55340876/74589663-5f9abd80-504a-11ea-9f29-321bb900d36c.png">
 
-로봇이 우유를 사오는 함수이다.  
+
+
+로봇이 우유를 사오는 함수가 있다고 생각하자.  
 인자로 돈을 가지고 있고,  
 우유 한병에 동전 2개라고 해보자.  
 
@@ -443,27 +479,38 @@ getMilk(5);
 우유 한병에 동전 2개니까  
 로봇은 나에게 동전 3개를 돌려준다.  
 
-![](https://images.velog.io/images/chajanee/post/e19faff6-1235-4bcd-9301-44f31166fe21/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.09.43.png)
+```go
+int getMilk (int money) {
+  return money - 2;
+}
 
-![](https://images.velog.io/images/chajanee/post/c3737993-3065-4277-b171-107092d5d1f9/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.09.54.png)
+int change = getMilk(5);
+```
 
-![](https://images.velog.io/images/chajanee/post/6922118b-d758-4ca2-b10a-2dc72b30abc5/2020-02-15%2019-23-10.2020-02-15%2019_25_49.gif)
 
 # 함수의 3가지 기능 (요약)
 
 ## 1. 바닐라맛 
   - 일부 계산을 수행하여 처리하지만 본질적으로 입력과 출력이 없다.
 
-![](https://images.velog.io/images/chajanee/post/5b2164c6-3416-41dd-8e4f-01990ad697c9/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.29.42.png)
-![](https://images.velog.io/images/chajanee/post/cca96353-d119-45d1-9958-2c7e99cceceb/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.28.11.png)
+```go
+void getMilk() { 기능 명령어들 ...  }
+
+getMilk();
+```
 
 ## 2. 초콜렛맛 
   - 입자값을 입력 할 수 있으며 괄호 안에 있는 입력을 받는다.  
   함수호출할 때, 인자값에 데이터 형식을 지정해줘야 한다.  
   해당 데이터 유형과 일치하는 데이터 및 해당 숫자 또는 해당 입력 값(인자값) 이 함수 내에서 사용된다.
   
-![](https://images.velog.io/images/chajanee/post/73cd365d-e513-4855-abfe-f7bffbde0cc5/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.25.20.png)
-![](https://images.velog.io/images/chajanee/post/331d0de5-5cb3-4df2-a942-27eac7f1fff2/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.33.28.png)
+```go
+void getMilk(int bottles) {
+    double cost = bottles * 1.5;
+}
+
+getMilk(2);
+```
 
 ## 3. 딸기맛 
   - 괄호 안에 인자값을 줄 수 있고,  
@@ -471,12 +518,17 @@ getMilk(5);
   함수 내부에 지정해야할 내용(실행 할 기능)들을 준다.  
   인자값을 줘서 입력을 제공받고 다음을 수행 할 수 있는 기능을 출력으로 얻게 된다.  
   
-![](https://images.velog.io/images/chajanee/post/8b0d24df-1ce5-4550-938e-8cf6aeb1869f/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.27.01.png)
-  
-![](https://images.velog.io/images/chajanee/post/f597f3b3-9b39-4607-868a-5584f6f4f933/2020-02-15%2019-37-06.2020-02-15%2019_37_33.gif)
+```go
+int getMilk(int money) {
+    return cost = money * 2;
+}
+
+int change = getMilk(5);
+```
+
+<img width="1131" alt="10" src="https://user-images.githubusercontent.com/55340876/74589640-4b56c080-504a-11ea-8e27-da8ee48974a7.png">
 
 
-![](https://images.velog.io/images/chajanee/post/2e4d1df5-b17e-4950-92a9-76421a4b61f8/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.59.03.png)
 
 # 실로폰 최종코드
 
@@ -531,19 +583,29 @@ class XylophoneApp extends StatelessWidget {
 
 ```
 
-![](https://images.velog.io/images/chajanee/post/79664d79-bd6d-485d-9aa9-dea73c572e5c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.17.07.png)
+<img width="1649" alt="11" src="https://user-images.githubusercontent.com/55340876/74589642-501b7480-504a-11ea-831a-bd905b606959.png">
+
+
 
 # 화살표 함수
 - 화살표 함수는 한줄의 명령 코드 경우에만 작동한다.
 
-![](https://images.velog.io/images/chajanee/post/e658a91f-823a-4261-9f28-b0da50149605/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.28.20.png)
+<img width="522" alt="12" src="https://user-images.githubusercontent.com/55340876/74589644-51e53800-504a-11ea-80b2-3f8bbd3b0b1b.png">
+
+
 
 두줄 코드를 화살표 함수로 구현하려 하면 불가하다.
 
-![](https://images.velog.io/images/chajanee/post/85397a6f-f069-4980-8c41-dd49b8cda52e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.30.55.png)
+<img width="951" alt="13" src="https://user-images.githubusercontent.com/55340876/74589646-527dce80-504a-11ea-830b-53525c74f707.png">
+
+
 
 온리 한줄만 가능하다! 
-![](https://images.velog.io/images/chajanee/post/a1ea31b5-b8b0-4a2a-a620-e4358d413db9/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.33.39.png)
+
+
+<img width="951" alt="14" src="https://user-images.githubusercontent.com/55340876/74589657-5c073680-504a-11ea-91ee-061462acbab9.png">
+
+
 
 
 # [무료 사운드 모음 사이트](https://freesound.org/)

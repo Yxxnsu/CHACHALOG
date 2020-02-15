@@ -8,7 +8,9 @@ showToc: true
 
 # 기본 위치 위젯
 
-![](https://images.velog.io/images/chajanee/post/d1d997ab-c946-40bf-91e0-5e85f62df941/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-11%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.21.20.png)
+<img width="1223" alt="1" src="https://user-images.githubusercontent.com/55340876/74589010-ecdb1380-5044-11ea-854e-09fbfc347023.png">
+
+
 
 ---
 
@@ -40,7 +42,9 @@ void main() => runApp(
 
 ```
 
-![](https://images.velog.io/images/chajanee/post/f83a4a3a-0efe-4311-85e5-04607ebc2ec0/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-13%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.54.08.png)
+<img width="1403" alt="2" src="https://user-images.githubusercontent.com/55340876/74589013-f2385e00-5044-11ea-891d-964f71518123.png">
+
+
 
 
 ---
@@ -52,7 +56,9 @@ I Am Rich App 코드를 다이어그램으로 구현했을 때 👇🏻
 
 <br/>
 
-![](https://images.velog.io/images/chajanee/post/11997158-d1f6-48ea-b7c1-ddc961a6e0ca/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-13%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.48.01.png)
+<img width="749" alt="3" src="https://user-images.githubusercontent.com/55340876/74589014-f4022180-5044-11ea-858b-8ed6471881ff.png">
+
+
 
 
 <br/>
@@ -88,7 +94,9 @@ void main() => runApp(
 
 ```
 
-![](https://images.velog.io/images/chajanee/post/2c6e19af-6cb4-46e0-93ec-a747535a7044/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-13%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%203.22.35.png)
+<img width="1676" alt="4" src="https://user-images.githubusercontent.com/55340876/74589015-f49ab800-5044-11ea-83b4-e92eedaf03db.png">
+
+
 
 <br/>
 <br/>
@@ -97,7 +105,9 @@ void main() => runApp(
 
 # * 이미지 불러오기 
 
-![](https://images.velog.io/images/chajanee/post/a02634a4-e994-47f9-99f6-0fe51c128f9c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-13%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%203.27.03.png)
+<img width="1272" alt="5" src="https://user-images.githubusercontent.com/55340876/74589016-f5334e80-5044-11ea-93a9-ca686d1df107.png">
+
+
 
 항상 ``pubspec.yaml`` 파일에서 경로를 수정 후,  
 

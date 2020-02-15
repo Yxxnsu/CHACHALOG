@@ -8,7 +8,9 @@ showToc: true
 
 # 주어진 예제
 
-![](https://images.velog.io/images/chajanee/post/f71ddda6-1a16-4b97-98fe-f593ec479702/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-14%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%202.29.04.png)
+<img width="676" alt="1" src="https://user-images.githubusercontent.com/55340876/74589183-64f60900-5046-11ea-85da-6b39560855db.png">
+
+
 
 <br/>
 
@@ -74,9 +76,13 @@ class MyApp extends StatelessWidget {
 
 ```
 
-![](https://images.velog.io/images/chajanee/post/2f2caa23-cbd5-45eb-95a2-81dff334771c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-14%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%202.31.22.png)
+<img width="1450" alt="2" src="https://user-images.githubusercontent.com/55340876/74589180-5dcefb00-5046-11ea-87b2-ff31b9e9eae3.png">
 
-![](https://images.velog.io/images/chajanee/post/90ea2284-82ab-4497-8ebb-bdbf374c1b37/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-14%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%202.29.34.png)
+
+
+<img width="397" alt="3" src="https://user-images.githubusercontent.com/55340876/74589184-658e9f80-5046-11ea-9147-2ae226ad0e8d.png">
+
+
 
 사이드에 양쪽 박스 두개는 쉬웠는데  
 가운데 박스 두개를 세로로 나열하는데서 막혔었다.  
@@ -92,7 +98,9 @@ Row 위젯 -> children 위젯 안에 복수로 자식들 위젯이 쫘ㅏ라라�
 
 해서 바로 타ㄱ타타각탁  
 
-![](https://images.velog.io/images/chajanee/post/209606db-7b84-4883-bff8-44c2fb025812/C6anKxJXQAcSZ5Q.jpg)
+![4](https://user-images.githubusercontent.com/55340876/74589182-645d7280-5046-11ea-9f5e-1f68f5f2eb70.jpg)
+
+
 
 챌린지 성공!  
 

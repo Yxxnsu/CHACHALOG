@@ -10,16 +10,22 @@ showToc: true
 
 주어진 다이어그램은 이렇다.
 
-![](https://images.velog.io/images/chajanee/post/238d6957-d4c3-401d-9711-b925aedeb99d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-13%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.28.50.png)
+<img width="784" alt="1" src="https://user-images.githubusercontent.com/55340876/74589064-6d9a0f80-5045-11ea-9f59-696ecdacb541.png">
+
+
 
 ## 내가 작성한 코드
 
-![](https://images.velog.io/images/chajanee/post/525b0a0c-d85e-4830-98ab-9d18db8c921c/Untitled%20Diagram%20(3).jpg)
+![2](https://user-images.githubusercontent.com/55340876/74589066-712d9680-5045-11ea-9a65-25ffef4b49f2.jpg)
+
+
 
 ㅋㅋㅋㅋㅋㅋㅋㅋ하  
 다이어그램으로 구현해보니 갱쟁히 복잡쓰  
 
-![](https://images.velog.io/images/chajanee/post/12b3b6f8-d6a8-4c35-8d87-b68992ba75dd/%E1%84%86%E1%85%A9%E1%86%BA%E1%84%86%E1%85%A1%E1%84%84%E1%85%A1%E1%86%BC.png)
+![3](https://user-images.githubusercontent.com/55340876/74589067-71c62d00-5045-11ea-9cdc-b8ca685ae67f.gif)
+
+
 
 몇개 추가한 기능도 있는데   
 뭔가 지저분허다.  
@@ -70,7 +76,9 @@ class MyPage extends StatelessWidget {
 
 ```
 
-![](https://images.velog.io/images/chajanee/post/351812b1-24ff-48ef-b2d2-0aaa6740841d/2020-02-13%2019-19-53.2020-02-13%2019_20_32.gif)
+![4](https://user-images.githubusercontent.com/55340876/74589068-738ff080-5045-11ea-9296-af935ed75b42.jpg)
+
+
 
 앱 아이콘은 아직 다듬는 법을 터득하지 않았으니 나중에 디테일하게 고쳐보자.  
 
@@ -87,7 +95,9 @@ MyApp 과 MyPage 위젯을 없애고,
 
 결과는 동일함.  
 
-![](https://images.velog.io/images/chajanee/post/926eacad-f4a5-4db0-a6c5-2d40b30ba0a4/%E1%84%82%E1%85%A1%E1%84%86%E1%85%AE%E1%84%82%E1%85%B4.jpg)
+<img width="1345" alt="5" src="https://user-images.githubusercontent.com/55340876/74589069-74288700-5045-11ea-9f75-035c2fb65c4b.png">
+
+
 
 아뉘대체웨!!!!  
 왜때문에!!!  

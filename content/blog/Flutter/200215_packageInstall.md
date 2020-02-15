@@ -13,12 +13,16 @@ showToc: true
 # 2. pubspec.yaml 폴더에 해당 dependency 추가
 - 들여쓰기 주의
 
-![](https://images.velog.io/images/chajanee/post/84756420-f6e7-4da5-9905-deaad7821738/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%203.22.57.png)
+<img width="1367" alt="1" src="https://user-images.githubusercontent.com/55340876/74589348-e0a48580-5047-11ea-8330-6c110dd77782.png">
+
+
 
 # 3. import로 불러오기
 - 4번에서는 오디오재생을 위한 AudioCache 를 import 했다.
 
-![](https://images.velog.io/images/chajanee/post/b815a0e4-2bc5-49db-ab4a-3563f27ae11c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%203.24.13.png)
+<img width="1367" alt="2" src="https://user-images.githubusercontent.com/55340876/74589351-e69a6680-5047-11ea-85b2-2a94c4e913f9.png">
+
+
 
 # 4. 사용방법은 문서를 잘 읽어보자
 
@@ -74,7 +78,9 @@ import 'package:audioplayers/audio_cache.dart';
 ...
 ```
 
-![](https://images.velog.io/images/chajanee/post/bffb5653-4725-40a4-8653-02ae8a523677/2020-02-15%2015-48-42.2020-02-15%2015_49_26.gif)
+![3](https://user-images.githubusercontent.com/55340876/74589352-e7cb9380-5047-11ea-8101-795a9bc6c531.gif)
+
+
 
 
 <br/>

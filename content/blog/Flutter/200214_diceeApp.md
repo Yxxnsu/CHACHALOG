@@ -102,7 +102,9 @@ class _DicePageState extends State<DicePage> {
 
 ```
 
-![](https://images.velog.io/images/chajanee/post/76dd8e33-3f82-4b26-b6e1-e0f16ab70d07/2020-02-14%2023-29-46.2020-02-14%2023_31_19.gif)
+![1](https://user-images.githubusercontent.com/55340876/74589259-1eed7500-5047-11ea-9708-bbb648aa3a45.gif)
+
+
 
 <br/>
 

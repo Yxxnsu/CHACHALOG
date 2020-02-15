@@ -71,7 +71,8 @@ class MyPage extends StatelessWidget {
 
 ```
 
-![](https://images.velog.io/images/chajanee/post/a21f030d-0379-47b6-9ccb-46e2eff32db4/2020-02-11%2003-03-09.2020-02-11%2003_03_34.gif)
+![1](https://user-images.githubusercontent.com/55340876/74588942-5149a300-5044-11ea-8650-17a94c320513.gif)
+
 
 
 <br/>

@@ -13,7 +13,6 @@ showToc: true
 <!-- Draft Post -->
 <!-- Draft Post -->
 
-![Dart이미지.png](https://images.velog.io/post-images/chajanee/85565de0-45d2-11ea-93aa-0d388aa42bd9/Dart.png)
 
 # Dart 언어
 
@@ -79,7 +78,7 @@ void main() { //Dart 언어는 run 하면 무조건 main() 부터 찾는다
 
     
 
-![스크린샷 2020-01-31 오후 3.17.34.png](https://images.velog.io/post-images/chajanee/7c483df0-43f1-11ea-b36c-cbc9a8866a8e/-2020-01-31-3.17.34.png)  
+<img width="690" alt="1" src="https://user-images.githubusercontent.com/55340876/74587935-c6fd4100-503b-11ea-8b8d-afcacaa3eb11.png">
   
 
 
@@ -139,7 +138,7 @@ Dart 에서는 타입을 추론해줘서 var 로 변수 선언을 해줘도 되�
   
 
 
-![스크린샷 2020-01-31 오후 4.02.35.png](https://images.velog.io/post-images/chajanee/b09c2e30-43f7-11ea-b36c-cbc9a8866a8e/-2020-01-31-4.02.35.png)  
+<img width="1062" alt="2" src="https://user-images.githubusercontent.com/55340876/74587938-c8c70480-503b-11ea-9f88-316e465b8912.png">
 
   
 
@@ -170,7 +169,7 @@ void main() {
 
 
 
-![2020-01-31 16-26-58.2020-01-31 16_28_02.gif](https://images.velog.io/post-images/chajanee/d4f1cc50-43fb-11ea-b810-2911e7b2d205/2020-01-31-16-26-58.2020-01-31-162802.gif)  
+![3](https://user-images.githubusercontent.com/55340876/74587940-ca90c800-503b-11ea-8f86-c5112ad6efc5.gif)
   
 
 
@@ -219,7 +218,7 @@ void main() {
 
 
 
-![스크린샷 2020-01-31 오후 4.50.50.png](https://images.velog.io/post-images/chajanee/93753e30-43fe-11ea-bf48-132c597e805c/-2020-01-31-4.50.50.png)  
+<img width="1183" alt="4" src="https://user-images.githubusercontent.com/55340876/74587941-cbc1f500-503b-11ea-8d38-0379927225c6.png">
 
   
 
@@ -227,7 +226,7 @@ void main() {
 
 **▽ NO주석 깨르꼼 버전 캡쳐**  
 
-![스크린샷 2020-01-31 오후 4.53.19.png](https://images.velog.io/post-images/chajanee/d2688200-43fe-11ea-8474-035c8def1488/-2020-01-31-4.53.19.png)  
+<img width="1183" alt="5" src="https://user-images.githubusercontent.com/55340876/74587943-cc5a8b80-503b-11ea-8f81-929c28e1721f.png">
   
 
 
@@ -275,7 +274,7 @@ main() {
 ```
 
 
-![스크린샷 2020-02-05 오후 9.46.51.png](https://images.velog.io/post-images/chajanee/9b034fa0-4815-11ea-808a-fd2499a972e2/-2020-02-05-9.46.51.png)
+<img width="1085" alt="6" src="https://user-images.githubusercontent.com/55340876/74587944-ccf32200-503b-11ea-9cfb-c66128f0baa0.png">
 
 
 
@@ -304,7 +303,7 @@ are for multiple lines''');
 ```
 
 
-![스크린샷 2020-02-05 오후 9.55.17.png](https://images.velog.io/post-images/chajanee/c7524740-4816-11ea-b996-31c898d07854/-2020-02-05-9.55.17.png)
+<img width="1136" alt="7" src="https://user-images.githubusercontent.com/55340876/74587946-cd8bb880-503b-11ea-8d03-4396576bce42.png">
 
 
 ---
@@ -340,7 +339,7 @@ main() {
 ```
 
 
-![스크린샷 2020-02-05 오후 10.07.04.png](https://images.velog.io/post-images/chajanee/6bf6e8e0-4818-11ea-8d96-e977c864a12a/-2020-02-05-10.07.04.png)
+<img width="689" alt="8" src="https://user-images.githubusercontent.com/55340876/74587947-ce244f00-503b-11ea-93f9-a419cb4a92a7.png">
 
 
 ---
@@ -380,7 +379,7 @@ String makeStory(String name){ //2️⃣갖고온 스트링(김태형)을 name �
 
 
 
-![스크린샷 2020-01-31 오후 5.22.59.png](https://images.velog.io/post-images/chajanee/f9ba4920-4402-11ea-b16d-e5da2b453a11/-2020-01-31-5.22.59.png)  
+<img width="1311" alt="9" src="https://user-images.githubusercontent.com/55340876/74587948-cebce580-503b-11ea-9e55-c975b95df704.png">
   
 
 
@@ -388,8 +387,7 @@ String makeStory(String name){ //2️⃣갖고온 스트링(김태형)을 name �
 **▽ NO주석 깨르꼼 버전 캡쳐**  
 
 
-![스크린샷 2020-01-31 오후 5.25.16.png](https://images.velog.io/post-images/chajanee/3f1b5d10-4403-11ea-b16d-e5da2b453a11/-2020-01-31-5.25.16.png)  
-
+<img width="1073" alt="10" src="https://user-images.githubusercontent.com/55340876/74587950-cfee1280-503b-11ea-9f73-6122a025be03.png">
   
 
 
@@ -454,7 +452,7 @@ String makeStoryShort(String name) => 'I have eat dinner with $name';
   
 
 
-![스크린샷 2020-01-31 오후 5.31.33.png](https://images.velog.io/post-images/chajanee/1bc49f10-4404-11ea-84ce-477f267258e7/-2020-01-31-5.31.33.png)  
+<img width="1073" alt="11" src="https://user-images.githubusercontent.com/55340876/74587951-d086a900-503b-11ea-90ee-f9acab53c9b2.png">
 
   
 

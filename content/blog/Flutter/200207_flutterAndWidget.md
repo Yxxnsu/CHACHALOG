@@ -14,7 +14,8 @@ showToc: true
 
 # flutter? 그게 뭔데?
 
-![car_factory.png](https://images.velog.io/post-images/chajanee/50de8950-48ea-11ea-97eb-e5c16f5c6177/-2020-02-06-10.50.50.png)
+<img width="849" alt="1" src="https://user-images.githubusercontent.com/55340876/74588806-e350ac00-5042-11ea-940c-962706b5f689.png">
+
 
 
 - **Flutter는 프레임워크**
@@ -63,7 +64,9 @@ showToc: true
 
 # flutter에서 쓰이는 Widget 이란?
 
-![제목_없는_아트워크.png](https://images.velog.io/post-images/chajanee/19f22b30-48f5-11ea-8e6b-637f0f28d7cd/.png)
+![2](https://user-images.githubusercontent.com/55340876/74588812-eba8e700-5042-11ea-8e1b-6461cfaf87d3.png)
+
+
 
 1. **UI를 만들고 구성하는 모든 기본 단위 요소**
    - nav bar의 text나 icon,  
@@ -73,7 +76,9 @@ showToc: true
  
  
  
-![제목_없는_아트워크.png](https://images.velog.io/post-images/chajanee/245498a0-48f6-11ea-8e6b-637f0f28d7cd/.png)
+![3](https://user-images.githubusercontent.com/55340876/74588816-f1063180-5042-11ea-97fc-2032543096d1.png)
+
+
 
  
 2. **눈에 보이지 않는 요소들까지 위젯**
@@ -95,7 +100,8 @@ showToc: true
 # flutter에서 꼭 알아야 할 위젯
 
 
-![제목_없는_아트워크.png](https://images.velog.io/post-images/chajanee/8ede2080-48f9-11ea-8746-755cded7f5a1/.png)
+![4](https://user-images.githubusercontent.com/55340876/74588817-f2375e80-5042-11ea-82bb-03bc3ae5c8d0.png)
+
 
 
 1. **Stateless Widget**
@@ -104,7 +110,9 @@ showToc: true
    - 어떤 변화(모양, 상태)을 유발시키는 value값을 가지지 않음
  
 
-![1_lEkb1HvKFvsCmSseNFZLhA.gif](https://images.velog.io/post-images/chajanee/9f435cb0-48f9-11ea-91bb-ffc1eb91820e/1lEkb1HvKFvsCmSseNFZLhA.gif)
+![5](https://user-images.githubusercontent.com/55340876/74588818-f2cff500-5042-11ea-9023-a296bc1565c2.gif)
+
+
 
 2. **Stateful Widget**
    - 사용자의 interaction에 따라서 모양, 상태가 바뀜  
@@ -126,14 +134,18 @@ showToc: true
  
  # Stateless와 Stateful의 의미
 
-![스크린샷 2020-02-07 오전 12.46.28.png](https://images.velog.io/post-images/chajanee/dc0134d0-48f7-11ea-ad20-23bdaac8ac0f/-2020-02-07-12.46.28.png)
+<img width="356" alt="6" src="https://user-images.githubusercontent.com/55340876/74588819-f5cae580-5042-11ea-9536-bd93d94cfc5c.png">
+
+
 
 
  1. **Stateless : 이전 상호작용의 어떠한 값도 저장하지 않음**
     - 상태가 없는 정적인 위젯 (어떤 움직임이나 변화가 없음)
     - 갱얼쥐가 안움직이네?!
   
-![갱얼쥐.gif](https://media.giphy.com/media/100QWMdxQJzQC4/giphy.gif)
+![7](https://user-images.githubusercontent.com/55340876/74588820-f6fc1280-5042-11ea-89c7-11ea48cd3f5c.gif)
+
+
 
  2. **Stateful : Value 값을 지속적으로 추적 보존**
     - 계속 움직임이나 변화가 있는 위젯
@@ -165,7 +177,9 @@ showToc: true
 
 
 
-![state_basic_context_tree.png](https://images.velog.io/post-images/chajanee/371d1c60-48fa-11ea-8746-755cded7f5a1/statebasiccontexttree.png)
+![8](https://user-images.githubusercontent.com/55340876/74588822-fa8f9980-5042-11ea-817e-43afd451c3b4.png)
+
+
 
 - **최상위 위치에는 ```MyApp``` 이란 위젯이 존재**
    - 앱의 root 위젯이자 앱의 시작점.
@@ -260,7 +274,9 @@ showToc: true
 구글이 노력하는게 보이지 않나?!  
 
 
-![스크린샷 2020-02-06 오후 11.17.18.png](https://images.velog.io/post-images/chajanee/592d6390-48ec-11ea-8a9f-2f0ea28e6915/-2020-02-06-11.17.18.png)
+<img width="633" alt="9" src="https://user-images.githubusercontent.com/55340876/74588824-fb283000-5042-11ea-829d-1cc3fe6e2b4f.png">
+
+
 
 
 그렇지만..  
@@ -274,7 +290,9 @@ showToc: true
 dart와 flutter에 대해서 공식 사이트, 블로그, 유튜브를 꽤 봐왔는데  
 처음볼때나 지금이나 나한테는 너무 신선했다!!  
 
-![wow.gif](https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif)
+![10](https://user-images.githubusercontent.com/55340876/74588814-ecda1400-5042-11ea-9eff-7933c174394c.gif)
+
+
 
 매력적인 프레임워크임은 틀림없다!!  
 지금도 리액트랑 같이 계속 공부를 하고있고!  
@@ -293,7 +311,9 @@ flutter가 국내에서 채용공고도 턱없이 적고,
 
 
 
-![스크린샷 2020-02-07 오전 12.07.41.jpg](https://images.velog.io/post-images/chajanee/8623a570-48f2-11ea-8ef2-99b3a9dd9c72/-2020-02-07-12.07.41.jpg)
+![11](https://user-images.githubusercontent.com/55340876/74588815-f06d9b00-5042-11ea-8f39-11ee4121097a.jpg)
+
+
 
 
 

@@ -104,13 +104,17 @@ class Person{
 - 이 부분에서는 p1 다음에 dot을 찍음으로,  
 아래 사진처럼 Person 클래스에서 지정했던 속성들을 그대로 쓸 수 있음.
 
-![](https://images.velog.io/images/chajanee/post/0de22490-6c86-4d05-81c9-9459bfce2299/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-11%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.10.32.png)
+<img width="425" alt="1" src="https://user-images.githubusercontent.com/55340876/74588914-15aed900-5044-11ea-9180-054f387b9ca1.png">
+
+
 
 ``print(p1.age);`` 값을 출력해보면?  
 
 ``30`` 이 출력되는 것을 확인할 수 있다.
 
-![](https://images.velog.io/images/chajanee/post/da6f009b-87f5-4ed8-b08c-be03668be771/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-11%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.20.24.png)
+<img width="545" alt="2" src="https://user-images.githubusercontent.com/55340876/74588916-18a9c980-5044-11ea-8df7-a6b1fa2892c8.png">
+
+
 
 ---
 
@@ -173,7 +177,9 @@ void main() {
 
 출력을 해보면?  
 
-![](https://images.velog.io/images/chajanee/post/441a68ab-8c6d-4d5d-8570-cb1e80e42818/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-11%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.39.56.png)
+<img width="596" alt="3" src="https://user-images.githubusercontent.com/55340876/74588920-1b0c2380-5044-11ea-82e8-19ed9e642a95.png">
+
+
 
 콘솔창에 7이 출력되는 것을 확인할 수 있다.
 
@@ -249,7 +255,9 @@ void main() {
 ...
 ```
 
-![](https://images.velog.io/images/chajanee/post/a049f91d-fdca-4a58-8166-d422485f9fdc/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-11%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%202.07.17.png)
+<img width="696" alt="4" src="https://user-images.githubusercontent.com/55340876/74588921-1c3d5080-5044-11ea-8d28-232aea4ab9c3.png">
+
+
 
 하지만,  
 현재 생성자는 인자가 몇개이건 반드시 그 순서 그대로 모든 값을 입력해야 하고,  
@@ -295,7 +303,11 @@ void main() {
 }
 
 ```
-![](https://images.velog.io/images/chajanee/post/8a335256-a670-4bcb-90fd-cb0f478a111e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-11%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%202.08.15.png)
+
+
+<img width="696" alt="5" src="https://user-images.githubusercontent.com/55340876/74588922-1d6e7d80-5044-11ea-8ff2-f0cf4d05cb6b.png">
+
+
 
 요런식으로 사용할 수 있다!
 
@@ -304,7 +316,11 @@ void main() {
 ``age: 29`` 어디서 많이 본 것 같지 않나?!  
 
 바로,  
-![](https://images.velog.io/images/chajanee/post/51b0c48a-0068-4ebe-9ba8-2b21a6abb749/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-11%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%202.11.09.png)
+
+
+<img width="634" alt="6" src="https://user-images.githubusercontent.com/55340876/74588923-1e9faa80-5044-11ea-9916-f1f8b27fec2e.png">
+
+
 
 이는  
 MaterialApp,  

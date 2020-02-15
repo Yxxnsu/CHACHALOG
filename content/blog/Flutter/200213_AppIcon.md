@@ -19,7 +19,9 @@ zip 형태로 다운 받아진다.
 
 압축을 풀고 폴더를 준비해놓자.
 
-  ![](https://images.velog.io/images/chajanee/post/3bcbe6d7-69ac-401f-96af-70e4c11e7052/2020-02-13%2002-24-25.2020-02-13%2002_25_33.gif)
+![1](https://user-images.githubusercontent.com/55340876/74589033-2449c000-5045-11ea-81a0-0d5fe7a75101.gif)
+
+
   
 <br/>
 
@@ -27,7 +29,9 @@ zip 형태로 다운 받아진다.
 
 (안드로이드 스튜디오 iOS 기준)
 
-  ![](https://images.velog.io/images/chajanee/post/94be9ca7-fc68-479d-8712-bf87777072be/2020-02-13%2002-18-36.2020-02-13%2002_22_22.gif)
+![2](https://user-images.githubusercontent.com/55340876/74589035-2ad83780-5045-11ea-926b-d214bb20299d.gif)
+
+
 
 ## **iOS는?**
 
@@ -46,7 +50,9 @@ zip 형태로 다운 받아진다.
 
 (안드로이드 기기라면 Android Emulator 를 재실행 해주면 확인된다.)
 
-![](https://images.velog.io/images/chajanee/post/769b338f-6162-4afc-8356-eda38c3c7477/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-13%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%202.38.45.png)
+<img width="389" alt="3" src="https://user-images.githubusercontent.com/55340876/74589038-2f045500-5045-11ea-8232-7556adf8859d.png">
+
+
 
 <br/>
 
@@ -70,7 +76,8 @@ zip 형태로 다운 받아진다.
 
 <br/>
 
-![](https://images.velog.io/images/chajanee/post/63f37a19-4c65-43d7-961a-64147aa92572/2020-02-13%2002-46-15.2020-02-13%2002_53_48.gif)
+![4](https://user-images.githubusercontent.com/55340876/74589039-30358200-5045-11ea-80a1-5e33428ca0e2.gif)
+
 
 
 <br/>

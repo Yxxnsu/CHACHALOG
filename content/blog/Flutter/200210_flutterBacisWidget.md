@@ -57,7 +57,9 @@ class MyCard extends StatelessWidget {
 ```
 
 
-![스크린샷 2020-02-10 오전 2.07.25.png](https://images.velog.io/post-images/chajanee/addf8f20-4b5e-11ea-8570-dbce49e001ff/-2020-02-10-2.07.25.png)
+<img width="1439" alt="1" src="https://user-images.githubusercontent.com/55340876/74588887-bc46aa00-5043-11ea-9b4e-e1f347fddab7.png">
+
+
 
 padding 위젯을 지워서 확인해보자  
 Center 위젯이 Column 위젯을 감싸게!!
@@ -76,7 +78,9 @@ Center 위젯이 Column 위젯을 감싸게!!
       ),
 ```
 
-![2020-02-10 02-09-40.2020-02-10 02_11_47.gif](https://images.velog.io/post-images/chajanee/5f9380a0-4b5f-11ea-8570-dbce49e001ff/2020-02-10-02-09-40.2020-02-10-021147.gif)
+![2](https://user-images.githubusercontent.com/55340876/74588890-c1a3f480-5043-11ea-9411-e511c3b29468.gif)
+
+
 
 ---
 
@@ -91,7 +95,9 @@ Center 위젯이 Column 위젯을 감싸게!!
 ```mainAxisAlignment: MainAxisAlignment.center,``` 부분을 없애버리면?
 
 
-![스크린샷 2020-02-10 오전 2.18.58.png](https://images.velog.io/post-images/chajanee/46cc01e0-4b60-11ea-86a5-4dca15d8a4bf/-2020-02-10-2.18.58.png)
+<img width="1521" alt="3" src="https://user-images.githubusercontent.com/55340876/74588893-c8cb0280-5043-11ea-90d4-dc7c714a7659.png">
+
+
 
 이런 식으로 가로축으로만 정중앙에 위치하게 된다.  
 그래서 Center 위젯과 Column 위젯이 결합했을 때,  
@@ -161,7 +167,11 @@ class Grade extends StatelessWidget {
 }
 
 ```
-![](https://images.velog.io/images/chajanee/post/f625cce3-aa98-4148-a602-7a6dd977b1d6/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-10%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.45.10.png)
+
+
+<img width="1024" alt="4" src="https://user-images.githubusercontent.com/55340876/74588895-ca94c600-5043-11ea-981c-38bcfaa41e99.png">
+
+
 
 ---
 
@@ -319,7 +329,11 @@ class Grade extends StatelessWidget {
 
 ```
 
-![](https://images.velog.io/images/chajanee/post/5926a886-06c6-43b2-baf6-9ebc80263232/2020-02-11%2000-36-02.2020-02-11%2000_36_45.gif)
+
+
+![5](https://user-images.githubusercontent.com/55340876/74588896-cb2d5c80-5043-11ea-9190-08b15d7be9a2.gif)
+
+
 
 
 ``backgroundColor: Colors.amber[800]``

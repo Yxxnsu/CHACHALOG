@@ -154,7 +154,7 @@ Future<String> gatherNewsReports() => //3️⃣
 
 **future가 완성될 때까지 await!! 기다린 후에 완료되면 프린트를 해주는거지!**  
 
-![2020-02-01 18-29-29.2020-02-01 18_30_43.gif](https://images.velog.io/post-images/chajanee/2e744290-44d7-11ea-bd20-ddf309fe25c2/2020-02-01-18-29-29.2020-02-01-183043.gif)
+![1](https://user-images.githubusercontent.com/55340876/74588414-a2a36380-503f-11ea-818b-c9b59e22d331.gif)
   
 
 ### async-await 사용안했을 때 결과 & 차이  
@@ -162,7 +162,7 @@ Future<String> gatherNewsReports() => //3️⃣
 **선물박스가 열리지 않은채로 프린트 되는게 보이지?!**  
 
 
-![2020-02-01 18-31-19.2020-02-01 18_32_44.gif](https://images.velog.io/post-images/chajanee/67abc830-44d7-11ea-9d92-fbf2d8966dbd/2020-02-01-18-31-19.2020-02-01-183244.gif)
+![2](https://user-images.githubusercontent.com/55340876/74588417-a800ae00-503f-11ea-9d90-ac7b11db7e1d.gif)
 
 ---  
   
@@ -192,16 +192,15 @@ Future<void> printDailyNewsDigest() async {
 async-await 를 사용했을 때,  
 오른쪽 하단 Documentation 부분 보면 ```newsDigest``` 가 String 으로 확인.  
 
-![스크린샷 2020-02-01 오후 6.57.00.png](https://images.velog.io/post-images/chajanee/5948b2b0-44d9-11ea-9761-557166a452d3/-2020-02-01-6.57.00.png)
+<img width="770" alt="3" src="https://user-images.githubusercontent.com/55340876/74588419-aa630800-503f-11ea-8d5d-387fdfb198c0.png">
 
 사용하지 않았을 때,  
 ```newsDigest``` 가 Future<String> 으로 확인.  
 
-![스크린샷 2020-02-01 오후 6.57.16.png](https://images.velog.io/post-images/chajanee/7d6b7dd0-44d9-11ea-bd20-ddf309fe25c2/-2020-02-01-6.57.16.png)
+<img width="838" alt="4" src="https://user-images.githubusercontent.com/55340876/74588421-aafb9e80-503f-11ea-9c93-85df408a0001.png">
   
   
-
-![스크린샷 2020-02-01 오후 7.00.28.png](https://images.velog.io/post-images/chajanee/40cf2ce0-44da-11ea-bb25-dbd7bb4c3554/-2020-02-01-7.00.28.png)
+<img width="838" alt="5" src="https://user-images.githubusercontent.com/55340876/74588422-ab943500-503f-11ea-8526-48db8b2f9a7e.png">
 
 ```go
 import 'dart:async';
@@ -220,11 +219,13 @@ Future<void> printDailyNewsDigest() {
 future API 자체를 사용해도 결과는 동일해!  
   
 
-![2020-02-01 19-05-35.2020-02-01 19_06_27.gif](https://images.velog.io/post-images/chajanee/8847fd40-44da-11ea-a3e0-6744aa038817/2020-02-01-19-05-35.2020-02-01-190627.gif)
+![6](https://user-images.githubusercontent.com/55340876/74588423-ac2ccb80-503f-11ea-86f6-ea5b1afb2326.gif)
   
 에러 잡을 때는,  
 
-![스크린샷 2020-02-01 오후 7.08.54.png](https://images.velog.io/post-images/chajanee/f2da1800-44da-11ea-bb25-dbd7bb4c3554/-2020-02-01-7.08.54.png)
+<img width="805" alt="7" src="https://user-images.githubusercontent.com/55340876/74588425-ad5df880-503f-11ea-8f93-43e68df99c94.png">
+
+
   
 ```go
 import 'dart:async';
@@ -242,6 +243,7 @@ Future<void> printDailyNewsDigest() {
   
 ...
 ```
+
   
 요론식으로 확인할 수도 있고!!  
 

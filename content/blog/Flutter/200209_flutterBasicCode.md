@@ -15,7 +15,9 @@ showToc: true
 
 # 프로젝트 폴더의 구성
 
-![스크린샷 2020-02-09 오후 9.58.52.png](https://images.velog.io/post-images/chajanee/a6e7aa70-4b3d-11ea-93c4-55cae6beeb65/-2020-02-09-9.58.52.png)
+<img width="280" alt="1" src="https://user-images.githubusercontent.com/55340876/74588853-6bcf4c80-5043-11ea-8afe-2a88d77676f2.png">
+
+
 
 **pubspec.yaml**
 - 프로젝트의 meta data 를 정의하고 관리
@@ -56,7 +58,9 @@ flutter material 라이브러리를 import 하는 것.
 
 vscode 를 통해 import 부터 작성해보자.
 
-![2020-02-09 22-10-06.2020-02-09 22_10_33.gif](https://images.velog.io/post-images/chajanee/aaa85bf0-4b3d-11ea-92b5-8367a11cd064/2020-02-09-22-10-06.2020-02-09-221033.gif)
+![2](https://user-images.githubusercontent.com/55340876/74588854-6eca3d00-5043-11ea-8301-2cefba1728d9.gif)
+
+
 
 ```go
 import 'package:flutter/material.dart';
@@ -113,7 +117,9 @@ class MyApp extends StatelessWidget {
 ```
 
 
-![2020-02-09 22-51-50.2020-02-09 22_52_50.gif](https://images.velog.io/post-images/chajanee/8b6f2330-4b43-11ea-8b77-df09647a644e/2020-02-09-22-51-50.2020-02-09-225250.gif)
+![3](https://user-images.githubusercontent.com/55340876/74588855-70940080-5043-11ea-97cf-e30ecb9fe438.gif)
+
+
 
 **``stl`` : 클래스 생성 단축키**
 
@@ -147,7 +153,9 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![2020-02-09 23-02-36.2020-02-09 23_04_15.gif](https://images.velog.io/post-images/chajanee/26163e40-4b45-11ea-a2f3-09ae56241815/2020-02-09-23-02-36.2020-02-09-230415.gif)
+![4](https://user-images.githubusercontent.com/55340876/74588857-74c01e00-5043-11ea-9d58-9e360ea29c4c.gif)
+
+
 
 - MaterialApp 위젯은 기본적으로 title 문자열을 argument로 갖고있음
  - 앱을 총칭하는 이름 (스마트폰 상에서 최근 사용한 앱의 리스트를 보여질때 이 타이틀이 보여짐)
@@ -182,7 +190,9 @@ class MyApp extends StatelessWidget {
 # 코드작성 빠르게 복습하기!
 (갑자기 분위기 안드로이드 스튜디오..헿)
 
-![2020-02-10 00-10-17.2020-02-10 00_13_34.gif](https://images.velog.io/post-images/chajanee/c717cee0-4b4e-11ea-9257-e53d51104339/2020-02-10-00-10-17.2020-02-10-001334.gif)
+![5](https://user-images.githubusercontent.com/55340876/74588859-77bb0e80-5043-11ea-9dac-8e0b4068eb9b.gif)
+
+
 
 
 ---

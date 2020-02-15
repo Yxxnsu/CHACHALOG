@@ -20,7 +20,9 @@ https://dart.dev/get-dart
  - Homebrew가 없으면 먼저 설치 후, 저 명령어를 실행해야해! _(homebrew -v 명령어로 확인)_  
 
 
-![스크린샷 2020-01-31 오후 8.02.25.png](https://images.velog.io/post-images/chajanee/30d97410-4419-11ea-8dc1-13fc2f2de277/-2020-01-31-8.02.25.png)  
+<img width="908" alt="1" src="https://user-images.githubusercontent.com/55340876/74588027-7cc88f80-503c-11ea-9bab-1387dcc6e69c.png">
+  
+
   
 ### 2. 명령어 실행  
  - 마찬가지로 pub -v 로 확인 후, 없다면 먼저 설치해주고 실행해야해!  
@@ -70,7 +72,7 @@ $ stagehand console-full
    
  ```sudo``` 명령어를 통해 vi 열어주면,  
  
- ![스크린샷 2020-01-31 오후 8.19.47.png](https://images.velog.io/post-images/chajanee/a722c160-441b-11ea-85db-f9c57a59f52d/-2020-01-31-8.19.47.png)  
+<img width="812" alt="2" src="https://user-images.githubusercontent.com/55340876/74588025-7afecc00-503c-11ea-8d5b-dc9d51851449.png">
 
 
  이런식으로 뜨는데,   
@@ -93,7 +95,7 @@ $ pub global activate stagehand
  여기까지 실행을 해주고 나면...  
 **짠! 요로코롬 폴더 안에 뭔가 만들어졌지?!**  
  
-![스크린샷 2020-01-31 오후 8.25.12.png](https://images.velog.io/post-images/chajanee/5da88640-441c-11ea-85db-f9c57a59f52d/-2020-01-31-8.25.12.png)  
+<img width="303" alt="3" src="https://user-images.githubusercontent.com/55340876/74588020-7803db80-503c-11ea-8236-5910129fd46e.png">
   
 
 ### 5. vscode 통해서 프로젝트 실행 (없으면 설치해야지 뭐..)  

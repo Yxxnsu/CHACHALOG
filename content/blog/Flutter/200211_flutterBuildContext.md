@@ -79,9 +79,13 @@ ex)
 라는 의미. 
 
 
-![](https://images.velog.io/images/chajanee/post/65d9dbd5-763f-49a0-9434-03e952d409c8/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-11%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.33.40.png)
+<img width="1014" alt="1" src="https://user-images.githubusercontent.com/55340876/74588994-bd2c0b80-5044-11ea-9ffd-e84d45e8bdee.png">
 
-![](https://images.velog.io/images/chajanee/post/053c358d-9fa1-477c-bc5c-ece6a974c69b/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-11%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.33.49.png)
+
+
+<img width="1014" alt="2" src="https://user-images.githubusercontent.com/55340876/74588996-c1f0bf80-5044-11ea-97bc-0b28812eaf90.png">
+
+
 
 위젯트리 상에서 Scaffold.of(context) 메서드는 주어진 context를 가지고 Scaffold 위젯을 찾아나서는데,  
 이 context는 결국 MyPage의 context 이므로 MyPage 위젯부터 Scaffold를 찾게되고  
@@ -153,7 +157,8 @@ class MyPage extends StatelessWidget {
 ```
 
 
-![](https://images.velog.io/images/chajanee/post/253f74bc-30fc-4186-8ad8-4894401b2df5/2020-02-11%2016-34-38.2020-02-11%2016_35_12.gif)
+![3](https://user-images.githubusercontent.com/55340876/74588997-c2895600-5044-11ea-9126-7fad2dbe98d0.gif)
+
 
 
 <br/>

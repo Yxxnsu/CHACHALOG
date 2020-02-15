@@ -53,7 +53,9 @@ class MyApp extends StatelessWidget {
 
 ```
 
-![](https://images.velog.io/images/chajanee/post/2b7ab340-5c6e-4f9f-bd97-894d50407463/2020-02-13%2023-43-21.2020-02-14%2000_36_48.gif)
+![1](https://user-images.githubusercontent.com/55340876/74589130-f618b000-5045-11ea-8e9f-78972ac288c8.gif)
+
+
 
 
 ``margin: EdgeInsets.all(50.0),`` : 외부 4면 모두 마진 50 만큼
@@ -128,7 +130,10 @@ class MyApp extends StatelessWidget {
 }
 
 ```
-![](https://images.velog.io/images/chajanee/post/008fdda6-9ec7-40c5-9038-31b7ec3a749f/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-14%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.37.21.png)
+
+<img width="1441" alt="2" src="https://user-images.githubusercontent.com/55340876/74589136-fe70eb00-5045-11ea-877a-b3bae1f4f87c.png">
+
+
 
 <br/>
 
@@ -138,7 +143,9 @@ width 길이를 주면
 
 <br/>
 
-![](https://images.velog.io/images/chajanee/post/7cbc8ece-6bf8-403a-9c0f-992afa6e8f59/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-14%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.42.35.png)
+<img width="1441" alt="3" src="https://user-images.githubusercontent.com/55340876/74589137-ff098180-5045-11ea-9340-898abd99035a.png">
+
+
 
 
 <br/>
@@ -202,7 +209,11 @@ class MyApp extends StatelessWidget {
 }
 
 ```
-![](https://images.velog.io/images/chajanee/post/d006f728-a7f7-4f8a-8f9c-2f1d3a1cd8f0/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-14%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.02.50.png)
+
+
+<img width="1441" alt="4" src="https://user-images.githubusercontent.com/55340876/74589138-ffa21800-5045-11ea-8c3c-57538c721a12.png">
+
+
 
 <br/>
 
@@ -250,7 +261,9 @@ class MyApp extends StatelessWidget {
 ...
 ```
 
-![](https://images.velog.io/images/chajanee/post/e238f1e3-31ed-45ba-bfe1-2db29084bc60/2020-02-14%2000-57-57.2020-02-14%2000_59_22.gif)
+![5](https://user-images.githubusercontent.com/55340876/74589139-00d34500-5046-11ea-9253-e071cddfe50a.gif)
+
+
 
 <br/>
 
@@ -297,7 +310,11 @@ class MyApp extends StatelessWidget {
 ...
 ```
 
-![](https://images.velog.io/images/chajanee/post/cdb99b79-5082-46e2-a0ad-97014d10d37e/2020-02-14%2000-59-41.2020-02-14%2001_01_06.gif)
+
+
+![6](https://user-images.githubusercontent.com/55340876/74589140-02047200-5046-11ea-96e4-dd3fa8fb2e17.gif)
+
+
 
 <br/>
 
@@ -349,7 +366,11 @@ class MyApp extends StatelessWidget {
 ...
 ```
 
-![](https://images.velog.io/images/chajanee/post/65947b84-8a6f-4636-9db4-d54d510ea2dc/2020-02-14%2001-22-00.2020-02-14%2001_26_05.gif)
+
+
+![7](https://user-images.githubusercontent.com/55340876/74589141-03359f00-5046-11ea-9455-e3fe71b32bb2.gif)
+
+
 
 <br/>
 
@@ -397,7 +418,9 @@ class MyApp extends StatelessWidget {
 ...
 ```
 
-![](https://images.velog.io/images/chajanee/post/ee49f97b-0403-472c-a64e-3fc2ff42e98c/2020-02-14%2001-28-29.2020-02-14%2001_39_03.gif)
+![8](https://user-images.githubusercontent.com/55340876/74589142-0597f900-5046-11ea-8430-2e6a7a6f1445.gif)
+
+
 
 Row 위젯으로 .stretch 주고,  
 각 하위요소의 Container 1 만 가로 세로 길이 주고,  
@@ -449,7 +472,9 @@ class MyApp extends StatelessWidget {
 }
 
 ```
-![](https://images.velog.io/images/chajanee/post/4cdd75d5-a500-4cac-a540-5f7708b199d7/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-14%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.48.09.png)
+
+
+<img width="1441" alt="9" src="https://user-images.githubusercontent.com/55340876/74589143-092b8000-5046-11ea-951c-501dcd1018ed.png">
 
 
 

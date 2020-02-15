@@ -15,7 +15,9 @@ showToc: true
 
 <br/>
 
-![](https://images.velog.io/images/chajanee/post/572fd336-59f6-4e35-bc8c-82875927ce0a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-02-11%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%203.17.01.png)
+<img width="750" alt="1" src="https://user-images.githubusercontent.com/55340876/74588958-7ccc8d80-5044-11ea-829f-f290477a5c14.png">
+
+
 
 <br/>
 
@@ -50,7 +52,9 @@ ListTile 이란 위젯을 제공한다.
 ```
 
 
-![](https://images.velog.io/images/chajanee/post/a38d183c-e2ff-4d49-ab2c-b0084b51a2bc/2020-02-11%2003-28-24.2020-02-11%2003_29_07.gif)
+![2](https://user-images.githubusercontent.com/55340876/74588959-80601480-5044-11ea-9b60-644f25a9ddb7.gif)
+
+
 
 ``UserAccountsDrawerHeader`` 를 컨트롤+위젯을 클릭하면 위젯이 갖고있는 argument를 확인할 수 있는데, 
 
@@ -138,7 +142,10 @@ class MyPage extends StatelessWidget {
 
 ```
 
-![](https://images.velog.io/images/chajanee/post/a6225e60-e6d6-423c-87c7-bc68ef24726d/2020-02-11%2003-38-58.2020-02-11%2003_39_19.gif)
+
+![3](https://user-images.githubusercontent.com/55340876/74588961-835b0500-5044-11ea-8c34-134195356f85.gif)
+
+
 
 ---
 
@@ -173,11 +180,16 @@ class MyPage extends StatelessWidget {
 ...
 ```
 
-![](https://images.velog.io/images/chajanee/post/49467f62-7bba-46d5-a745-275f23dac5f7/2020-02-11%2003-51-22.2020-02-11%2003_51_47.gif)
+![4](https://user-images.githubusercontent.com/55340876/74588962-83f39b80-5044-11ea-9632-779829a3fa74.gif)
+
+
 
 ``otherAccountsPictures`` 사용하면 요로코롬 여러 사용자 계정을 구현 가능하다.
 
-![](https://images.velog.io/images/chajanee/post/dcd4263d-657a-40c5-8136-95767e3a9cd1/%E1%84%8C%E1%85%A6%E1%84%86%E1%85%A9%E1%86%A8_%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%82%E1%85%B3%E1%86%AB_%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%E1%84%8B%E1%85%AF%E1%84%8F%E1%85%B3.jpg)
+
+![5](https://user-images.githubusercontent.com/55340876/74588963-8524c880-5044-11ea-9170-b40670478c9e.jpg)
+
+
 
 
 ``onTap``
@@ -317,7 +329,9 @@ class MyPage extends StatelessWidget {
 
 ```
 
-![](https://images.velog.io/images/chajanee/post/2baaa006-c731-4975-a7a6-e8edb2ee8214/2020-02-11%2004-13-43.2020-02-11%2004_14_05.gif)
+
+
+![6](https://user-images.githubusercontent.com/55340876/74588964-85bd5f00-5044-11ea-8b7f-225635d07719.gif)
 
 
 
