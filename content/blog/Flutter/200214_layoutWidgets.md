@@ -1,5 +1,5 @@
 ---
-title: '💎 [Flutter] Layout widgets (수정중🧐)'
+title: '💎 [Flutter] Layout widgets'
 date: 2020-02-14 01:50:00
 category: 'Flutter'
 draft: false 
