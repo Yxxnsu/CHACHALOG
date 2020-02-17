@@ -46,7 +46,6 @@ lang: 'en'
 - ReactJS
 - React-Redux
 - Git
-- AWS
 - Dart
 - Flutter
 
@@ -62,15 +61,12 @@ lang: 'en'
 **"CASETIFY" 웹사이트 클론  
 20.01.06 ~ 20.01.17**  
 
-코딩 2개월차 WeCode 5기 수강생들의 2주 클론 프로젝트입니다.  
-_(1개월차 프로젝트를 토대로 새로운 기능을 구현하려 노력했습니다.)_  
 프론트엔드 3명과 백엔드 2명이 팀을 이뤄 개발했습니다.
 
 #### 사용된 기술
 - Front-End: React, Hooks, Redux, Styled-Components,  
   Kakao Login, 아임포트 결제 시스템
 - Back-End: Django, MySQL
-- Deployment: AWS
   
 #### 기능
 - 외부 라이브러리 없이 순수 CSS를 활용한 애니메이션
@@ -93,7 +89,6 @@ _(1개월차 프로젝트를 토대로 새로운 기능을 구현하려 노력�
 **"오늘의 집" 웹사이트 클론     
 19.12.23 ~ 20.01.03**  
 
-코딩 1개월차 WeCode 5기 수강생들의 2주 클론 프로젝트입니다.  
 프론트엔드 3명과 백엔드 1명이 팀을 이뤄 개발했습니다.
 
 #### 사용된 기술
@@ -123,8 +118,8 @@ _(1개월차 프로젝트를 토대로 새로운 기능을 구현하려 노력�
 
 <div align="left">
 
-**[WeCode](https://wecode.co.kr/) 5기  
-19.11.25 ~ 현재 수강중**
+**[WeCode](https://wecode.co.kr/) 5기 수료
+19.11.25 ~ 20.02.21**
 
 </div>
 <br/>

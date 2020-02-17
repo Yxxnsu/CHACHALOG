@@ -320,6 +320,50 @@ void loveCalculator() {
 
 
 
+<br/>
+<br/>
+
+---
+
+<br/>
+
+
+# Dart - CLASS
+
+``class``  라는 ``블루프린트`` 를 사용하여 앱을 만들거다.  
+
+자동차를 빗대어보면 2가지 중요점이 있다.
+
+Properties
+- color;
+- numberOfSeats;
+
+Methods
+- drive();
+- break();
+
+자동차의 속성과, 기능을 담당하는 메소드이다.  
+
+```go
+class Car {
+  int numberOfDoors = 5;
+
+   void drive() {
+     print('wheels start turning');
+   }
+}
+```
+
+```go
+Car myCar = Car();
+```
+
+
+- 클래스 키워드를 사용해서 클래스 이름을 대문자로 하고 변수를 정의한다.  
+- 정의 된 변수는 해당 클래스의 속성이다.
+- 클래스가 할 수 있는 기능 담당 메소드가 되는 함수도 준다.
+
+
 
 <br/>
 
