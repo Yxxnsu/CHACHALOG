@@ -72,10 +72,10 @@ class MyPage extends StatelessWidget {
 
 ex)  
 ``Something.of(context)``
-메서드는 현재 주어진 context에서 우로 올라가면서 가장 가까운 Something을 찾아서 반환하라  
+메서드는 현재 주어진 context에서 위로 올라가면서 가장 가까운 Something을 찾아서 반환하라  
 라는 의미.  
 ``Theme.of(context)``
-메서드는 현재 주어진 context에서 우로 올라가면서 가장 가까운 Theme을 찾아서 반환하라  
+메서드는 현재 주어진 context에서 위로 올라가면서 가장 가까운 Theme을 찾아서 반환하라  
 라는 의미. 
 
 
