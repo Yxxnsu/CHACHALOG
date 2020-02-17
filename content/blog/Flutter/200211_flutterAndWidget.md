@@ -351,7 +351,29 @@ new 라는 키워드와 생성자를 통해서
 어떤 형태로 dart 에서 활용되는지 이해하자!  
 
 
+```go
+class Human { //class 
+  String name;
+  int age;
+  String sex;
+  
+  Human({String name, int age, String sex}) { //생성자, 인자값에 {}를 줌으로 옵션선택이 가능해짐
+    this.name = name;
+    this.age = age;
+    this.sex = sex;
+  }
+  
+}
 
+void main() { 
+  
+  Human p1 = new Human(age: 30); //인스턴스, 생성자 인자값이 옵션선택이 가능해짐으로 인자: 형식으로 가져와야함
+  
+  print(p1.age);
+  
+  
+}
+```
 
 
 
