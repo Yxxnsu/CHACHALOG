@@ -32,7 +32,7 @@ showToc: true
 
 ### 6. 최종코드
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -83,7 +83,7 @@ class MyApp extends StatelessWidget {
 ### 7. pubspec.yaml 코드
 
 
-```go
+```dart
 ...
 
 

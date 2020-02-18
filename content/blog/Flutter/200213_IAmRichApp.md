@@ -16,7 +16,7 @@ showToc: true
 
 # I Am Rich App 1
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 //main() 함수는 모든 Flutter 앱의 시작점이다.
@@ -69,7 +69,7 @@ I Am Rich App 코드를 다이어그램으로 구현했을 때 👇🏻
 
 # I Am Rich App 2 (최종코드)
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 //main() 함수는 모든 Flutter 앱의 시작점이다.

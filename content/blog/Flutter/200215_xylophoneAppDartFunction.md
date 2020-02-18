@@ -14,7 +14,7 @@ showToc: true
 
 해답은?!
 
-```go
+```dart
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
 
@@ -104,7 +104,7 @@ Column 위젯으로 바꾼 뒤 children 으로 FlatButton 위젯을 세로로 �
 코드가 지저분하지않나?!      
 Dicee 에서 한 것처럼 함수를 만들어서 노가다 작업을 줄여보자!  
 
-```go
+```dart
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
 
@@ -179,7 +179,7 @@ class XylophoneApp extends StatelessWidget {
 
 자세히 함 보까?!
 
-```go
+```dart
 ...
 
 
@@ -214,7 +214,7 @@ class XylophoneApp extends StatelessWidget {
 {} 중괄호 안에 코드 전체를 함께 묶기 때문에 모든 것을 원할 때,      
 이 명령 중 한번에 실행될 명령의 이름을 지정하여 함수를 호출하면 된다.  
 
-```go
+```dart
 void getMilk() {
 	실행될 기능들
 }
@@ -227,7 +227,7 @@ void getMilk() {
 
 
 
-```go
+```dart
 void playSound(String name) {
   final AudioCache player = AudioCache();
   player.play('$name.wav');
@@ -255,7 +255,7 @@ X병 수를 얻는 비용을 계산할 수 있다.
 우유 한병이 1.5 파운드인 경우,      
 인자값 2병을 대입해 총 비용인 3 파운드를 계산해서 던져줄 것이다.
 
-```go
+```dart
 void getMilk (int bottles) {
     double cost = bottles * 1.5;
 }
@@ -305,7 +305,7 @@ Jane How do you do
 
 
 
-```go
+```dart
 void getMilk ({int numBottles}) {
     double cost = bottles * 1.5;
 }
@@ -325,7 +325,7 @@ getMilk(numBottles: 2);
 - 실로폰을 화면에 꽉차게 비율을 맞춰서 정렬을 해줘야하는데,   
  가로 자동으로 꽉 채워지게끔 
  
- ```go
+ ```dart
  ...
  
  
@@ -342,7 +342,7 @@ getMilk(numBottles: 2);
  해답은?!
  
  
-```go
+```dart
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
 
@@ -484,7 +484,7 @@ getMilk(5);
 우유 한병에 동전 2개니까  
 로봇은 나에게 동전 3개를 돌려준다.  
 
-```go
+```dart
 int getMilk (int money) {
   return money - 2;
 }
@@ -498,7 +498,7 @@ int change = getMilk(5);
 ## 1. 바닐라맛 
   - 일부 계산을 수행하여 처리하지만 본질적으로 입력과 출력이 없다.
 
-```go
+```dart
 void getMilk() { 기능 명령어들 ...  }
 
 getMilk();
@@ -509,7 +509,7 @@ getMilk();
   함수호출할 때, 인자값에 데이터 형식을 지정해줘야 한다.  
   해당 데이터 유형과 일치하는 데이터 및 해당 숫자 또는 해당 입력 값(인자값) 이 함수 내에서 사용된다.
   
-```go
+```dart
 void getMilk(int bottles) {
     double cost = bottles * 1.5;
 }
@@ -523,7 +523,7 @@ getMilk(2);
   함수 내부에 지정해야할 내용(실행 할 기능)들을 준다.  
   인자값을 줘서 입력을 제공받고 다음을 수행 할 수 있는 기능을 출력으로 얻게 된다.  
   
-```go
+```dart
 int getMilk(int money) {
     return cost = money * 2;
 }
@@ -537,7 +537,7 @@ int change = getMilk(5);
 
 # 실로폰 최종코드
 
-```go
+```dart
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
 

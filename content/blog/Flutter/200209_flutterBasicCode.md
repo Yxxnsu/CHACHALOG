@@ -62,7 +62,7 @@ vscode 를 통해 import 부터 작성해보자.
 
 
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -102,7 +102,7 @@ void main() => runApp(MyApp());
 
 # 앱페이지 기본 코드 2
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -128,7 +128,7 @@ class MyApp extends StatelessWidget {
 stateless 위젯으로 지정해야 함
 
 
-```go
+```dart
   Widget build(BuildContext context) {
     return MaterialApp();
     
@@ -141,7 +141,7 @@ stateless 위젯으로 지정해야 함
  - 실질적으로 모든 위젯을 감싸고 있음
 - 플러터의 모든 위젯들은 argument 를 가진다고 생각하자
 
-```go
+```dart
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -165,7 +165,7 @@ class MyApp extends StatelessWidget {
  (특정 색의 음영들을 기본 색상으로 지정해서 사용하겠다 를 의미 / Colors.색상명
  
  
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -198,7 +198,7 @@ class MyApp extends StatelessWidget {
 ---
 # 앱페이지 기본 코드 3
 
-```go
+```dart
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -236,7 +236,7 @@ class MyHomePage extends StatelessWidget {
 
 # 최종 코드
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

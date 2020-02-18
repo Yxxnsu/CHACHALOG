@@ -67,7 +67,7 @@ stl 위젯 안에 있는 빌드 위젯을 통해 앱 화면이 재호출된다.
 <br/>
 
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

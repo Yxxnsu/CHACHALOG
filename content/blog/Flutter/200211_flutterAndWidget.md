@@ -10,7 +10,7 @@ showToc: true
 
 ## class 개념 1
 
-```go
+```dart
 Class {  
 	  속성: 액정, 카메라모듈, 홈버튼, 스크린  
       기능: 전화걸기, 사진찍기, 인터넷검색  
@@ -22,7 +22,7 @@ Class {
 각 스마트폰은 같은 설계도에 의해 만들어졌기에 모양, 기능은 완벽히 동일하지만  
 시리얼 넘버등에 의해서 인스턴스로서의 각 스마트폰은 확실히 구별 가능함.  
       
-```go
+```dart
 Class {  
 	  속성: 눈, 코, 입  
       기능: 말하기, 먹기, 걷기  
@@ -60,7 +60,7 @@ class 명은 항상 대문자로 시작한다.
 
 코드를 통해 한 번 훑어보자.  
 
-```go
+```dart
 class Person{
   String name;
   int age;
@@ -78,7 +78,7 @@ void main() {
 
 이 코드를 뜯어보자면,  
 
-```go
+```dart
 class Person{
   String name;
   int age;
@@ -125,7 +125,7 @@ class Person{
 이 함수는  
 두개의 정수를 더해주는 기능을 가진 함수이다.
 
-```go
+```dart
 addNumber(int num1, int num2){
   return num1 + num2;
 }
@@ -145,7 +145,7 @@ addNumber(int num1, int num2){
 
 이제 main 함수에서 이 addNumber 함수를 사용해보자.
 
-```go
+```dart
 addNumber(3, 4); 
 ```
 
@@ -153,7 +153,7 @@ addNumber(3, 4);
 이 함수는 인자로 두개의 숫자를 받아야함으로 괄호 안에 3, 4 라는 두개의 숫자를 넣어준다.
 
 최종 코드
-```go
+```dart
 class Person{
   String name;
   int age;
@@ -187,7 +187,7 @@ void main() {
 
 ## class 개념 3
 
-```go
+```dart
 class Person{
   String name;
   int age;
@@ -217,7 +217,7 @@ void main() {
 
 코드를 뜯어보자.
 
-```go
+```dart
 class Person{
   String name;
   int age;
@@ -227,7 +227,7 @@ class Person{
 ```
 - 클래스에서 정의한 이 변수들을 멤버변수 라고 함
 
-```go
+```dart
   Person(String name, int age, String sex){
     this.name = name;
     this.age = age;
@@ -246,7 +246,7 @@ class Person{
 ``this.name = name;`` : name 이란 이름에 인자값으로 무언가를 입력 받게 되면 이 값을 멤버변수에 할당해주게 된다.
 
 
-```go
+```dart
 void main() {
   
   Person p1 = new Person('JinJoo', 29, 'female');
@@ -266,7 +266,7 @@ void main() {
 
 이를 해결하기 위해 ``named argument`` 가 있다.
 
-```go
+```dart
   Person({String name, int age, String sex}){
   
 ...
@@ -278,7 +278,7 @@ void main() {
 
 최종코드로 확인해보자.
 
-```go
+```dart
 class Person{
   String name;
   int age;
@@ -351,7 +351,7 @@ new 라는 키워드와 생성자를 통해서
 어떤 형태로 dart 에서 활용되는지 이해하자!  
 
 
-```go
+```dart
 class Human { //class 
   String name;
   int age;

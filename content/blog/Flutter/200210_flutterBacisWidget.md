@@ -14,7 +14,7 @@ showToc: true
 
 # 위젯정리
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -65,7 +65,10 @@ padding 위젯을 지워서 확인해보자
 Center 위젯이 Column 위젯을 감싸게!!
 
 
-```go
+```dart
+...
+
+
       body: Center(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center, //앱스크린내에서 세로축으로 center 정렬할때 쓰임
@@ -76,6 +79,9 @@ Center 위젯이 Column 위젯을 감싸게!!
         ],
         ),
       ),
+
+
+...
 ```
 
 ![2](https://user-images.githubusercontent.com/55340876/74588890-c1a3f480-5043-11ea-9411-e511c3b29468.gif)
@@ -111,7 +117,7 @@ Column 위젯을 가로축 상으로 정중앙에 위치시키려면 Center 위�
 
 # 실전코딩 1
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -181,13 +187,13 @@ class Grade extends StatelessWidget {
 assets -> duck.png, moana.gif 추가.**
 
 
-```go
+```dart
   assets:
    - assets/duck.png
    - assets/moana.gif
 ```
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

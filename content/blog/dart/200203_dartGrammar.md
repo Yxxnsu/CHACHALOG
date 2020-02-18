@@ -39,7 +39,7 @@ showToc: true
 ## ```Dart 언어는 run 하면 무조건 main() 부터 찾는다```  
   
 
-```go
+```dart
 void main() { //Dart 언어는 run 하면 무조건 main() 부터 찾는다
   print('Hello World');
 }
@@ -92,7 +92,7 @@ void main() { //Dart 언어는 run 하면 무조건 main() 부터 찾는다
   
 
 
-```go
+```dart
 void main() {
 //   var name = 'jane'; //string
 //   var year = 1992; //int
@@ -148,7 +148,7 @@ Dart 에서는 타입을 추론해줘서 var 로 변수 선언을 해줘도 되�
   
 # if문  
   
-```go
+```dart
 void main() {
   
   int age = -1;
@@ -184,7 +184,7 @@ void main() {
 
 
 
-```go
+```dart
 void main() {
   
   List<String> boyfriends = ['김태형', '남주혁', '안효섭', '강하늘'];
@@ -244,7 +244,7 @@ _무한루프 돌다 다운되면 내 잘못이니까..._ 🥺
 
 # bool
 
-```go
+```dart
 bool isEven(int x) { //정수 x가 짝수야? (isOdd 홀수야?)
   // An if-else statement.
   if (x % 2 == 0) { //만약에 x를 2로 나눈 나머지 값이 0과 값으면 (나머지가 0이면 짝수)
@@ -282,7 +282,7 @@ main() {
 
 # Strings
 
-```go
+```dart
 main() {
   print('a single quoted string');
   print("a double quoted string"); //작은따옴표, 큰따옴표 상관없어!
@@ -310,7 +310,7 @@ are for multiple lines''');
  
 # collection literals
 
-```go
+```dart
 // A list literal.
 var lostNumbers = [4, 8, 15, 16, 23, 42];
 
@@ -348,7 +348,7 @@ main() {
   
 
 
-```go
+```dart
 void main() {
   
   List<String> boyfriends = ['김태형', '남주혁', '안효섭', '강하늘'];
@@ -399,7 +399,7 @@ String makeStory(String name){ //2️⃣갖고온 스트링(김태형)을 name �
 그런데 여기서 만약 return 값을 한줄로 바꿔준다면?!  
   
 
-```go
+```dart
 String makeStory(String name){
   return 'I have eat dinner with $name';
 }
@@ -412,7 +412,7 @@ String makeStory(String name){
   
 
 
-```go
+```dart
 String makeStoryShort(String name) => 'I have eat dinner with $name';
 ```  
   
@@ -426,7 +426,7 @@ String makeStoryShort(String name) => 'I have eat dinner with $name';
   
 
 
-```go
+```dart
 void main() {
   
   List<String> boyfriends = ['김태형', '남주혁', '안효섭', '강하늘'];

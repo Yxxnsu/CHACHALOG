@@ -19,7 +19,7 @@ Icon 위젯은
 색상 불러올때처럼 있는 디자인 참고해서 갖다쓰면 되는거니까   
 더 이상의 설명은 생략한다.
 
-```go
+```dart
 ...
 
 
@@ -122,7 +122,7 @@ Card 위젯의 자식으로 Padding 위젯을 써주자.
 
 
 
-```go
+```dart
 ...
 
 
@@ -201,7 +201,7 @@ Card 위젯의 자식으로 Padding 위젯을 써주자.
 
 # 최종코드
 
-```go
+```dart
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

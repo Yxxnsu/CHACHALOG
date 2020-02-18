@@ -32,7 +32,7 @@ showToc: true
 코드도 넘모 길어.. 🤔 
 
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -106,7 +106,7 @@ MyApp 과 MyPage 위젯을 없애고,
 정신체리 진주야  
 배운거 워따써먹는겨 밥먹을 때 쓰니?!
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(

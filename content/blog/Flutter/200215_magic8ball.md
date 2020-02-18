@@ -86,7 +86,7 @@ showToc: true
 
 # 최종코드
 
-```go
+```dart
 import 'dart:math';
 import 'package:flutter/material.dart';
 

@@ -21,7 +21,7 @@ showToc: true
 # 내가 작성한 코드
 
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

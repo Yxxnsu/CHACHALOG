@@ -16,7 +16,7 @@ showToc: true
 
 
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -79,7 +79,7 @@ class MyApp extends StatelessWidget {
 ``SizedBox`` : 가로, 세로 요소 사이 여백주는 위젯
 
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -161,7 +161,7 @@ width 길이를 주면
 ``Column`` : 세로 배치
 
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -229,7 +229,7 @@ class MyApp extends StatelessWidget {
 - .max
 
 
-```go
+```dart
 ...
 
 
@@ -278,7 +278,7 @@ class MyApp extends StatelessWidget {
 - .down
 - .up
 
-```go
+```dart
 ...
 
 
@@ -322,6 +322,12 @@ class MyApp extends StatelessWidget {
 
 <br/>
 
+<div align="center">
+
+<img width="400" alt="rowcolumn" src="https://user-images.githubusercontent.com/55340876/74718880-6574e680-5276-11ea-8eb4-8071856f3fe9.png">
+
+</div>
+
 
 ### mainAxisAlignment
 ``mainAxisAlignment: MainAxisAlignment.위치`` : 수직 정렬 배치
@@ -334,7 +340,7 @@ class MyApp extends StatelessWidget {
 
 ``width: double.infinity`` 가로 길이 창만큼 모두 차지.
 
-```go
+```dart
 ...
 
 
@@ -386,7 +392,7 @@ class MyApp extends StatelessWidget {
 - .stretch (컨테이너 가로 너비 속성 별도로 지정 안해도 모든 하위 요소들 가로 길이가 전체창만큼 뻗음)
 
 
-```go
+```dart
 ...
 
 
@@ -426,7 +432,7 @@ Row 위젯으로 .stretch 주고,
 각 하위요소의 Container 1 만 가로 세로 길이 주고,  
 SizedBox 위젯만 속성 부여를 했을 경우엔? 👇🏻
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

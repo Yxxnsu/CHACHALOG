@@ -16,7 +16,7 @@ showToc: true
   - 반환값이 없는 함수의 형태로 일반 버튼이나 아이콘 버튼을 터치했을 때 일어나는 이벤트를 정의하는 곳
   
   
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

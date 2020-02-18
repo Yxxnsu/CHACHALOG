@@ -18,7 +18,7 @@ showToc: true
 
 bin > main.dart  
   
-```go
+```dart
 import 'package:classyo/classyo.dart' as classyo;
 import 'package:classyo/newclass.dart';
 
@@ -30,7 +30,7 @@ void main(List<String> arguments) {
   
 lib > classyo.dart  
 
-```go
+```dart
 int calculate() {
   return 6 * 7;
 }
@@ -39,7 +39,7 @@ int calculate() {
   
 lib > newclass.dart  
   
-```go
+```dart
 class NewClass {
   String chacha = "wassup!";
 }
@@ -85,7 +85,7 @@ _주문서가 있어야 차를 뽑을 수 있지!_
   
   
 
-```go
+```dart
 void main() {
   
   Car myNewCar = new Car(4, 4, 'black', 5000); //새로운 차량 주문
@@ -121,7 +121,7 @@ class Car{ //변수, 차량의 설정값
   
 **```this``` 는 해당 Class의 인스턴스(object)를 가리키는 키워드야.**  
   
-```go
+```dart
 Car myNewCar = new Car(4, 4, 'black', 5000); //새로운 차량 주문
 ```
   
@@ -157,7 +157,7 @@ Dart 언어에서는 new, const 키워드가 옵션이라
 >예를 들어,  
 Car class에는 Car(){}라는 깡통 주문서가 있다고 생각하면 돼!
   
-```go
+```dart
 void main() {
   ElectricCar tesla = ElectricCar();
   GasolineCar sonata = GasolineCar();
@@ -242,7 +242,7 @@ Implements 라는 것을 사용해서 해볼거야!
 
 
   
-```go
+```dart
 void main() {
   Tesla modelx = Tesla();
   print(modelx.makeBattery());
@@ -289,7 +289,7 @@ class Chasla implements Tesla{ //테슬라 블루프린트를 차슬라에 적�
   
 작성하면서  
   
-```go
+```dart
 class Chasla implements Tesla{
   
 }
@@ -320,7 +320,7 @@ class Chasla implements Tesla{
 
 # 🔥 다시 한 번 개념 훑기!
 
-```go
+```dart
 class Car{
   int seats;
   String color;
@@ -349,14 +349,14 @@ _( ```this``` 는 해당 object = instance 를 가리키는 건 알겠지?!_
 _ex:  ```this.seats``` =  주문서 작성함에 있어서 현재 내가 만들고 싶은 차의 좌석 )_
 
 여기서,
-```go
+```dart
 print('seat: ${newCar.seats}, color: ${newCar.color}');
 ```
 
 요 부분을 다르게 바꿔서 출력해 줄 수도 있어!
 예를 들면..
 
-```go
+```dart
 class Car{
   int seats;
   String color;
@@ -387,7 +387,7 @@ main(){
 
 따로 지정 없이, 옵션값으로 지정하고 싶을 때는,  
 
-```go
+```dart
 class Car{
   int seats;
   String color;
@@ -428,7 +428,7 @@ main(){
 
 이번에는 옵션에 기본값으로 다른 색을 줘볼까?
 
-```go
+```dart
 class Car{
   int seats;
   String color;
@@ -468,7 +468,7 @@ main(){
 
 만약에,  
 
-```go
+```dart
 class Car{
   int seats;
   String color;
@@ -481,7 +481,7 @@ class Car{
 
 그 번거로움을 해소하기 위해선 요 방법을 써주면 됨!
 
-```go
+```dart
 class Car{
   int seats;
   String color;
@@ -519,7 +519,7 @@ main(){
 
 마지막 방법은,
 
-```go
+```dart
 class Car{
   int seats;
   String color;

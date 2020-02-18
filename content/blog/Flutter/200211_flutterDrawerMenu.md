@@ -29,7 +29,7 @@ ListTile 이란 위젯을 제공한다.
 
 
 
-```go
+```dart
 ...
 
 
@@ -58,7 +58,7 @@ ListTile 이란 위젯을 제공한다.
 
 ``UserAccountsDrawerHeader`` 를 컨트롤+위젯을 클릭하면 위젯이 갖고있는 argument를 확인할 수 있는데, 
 
-```go
+```dart
     @required this.accountName,
     @required this.accountEmail,
 ```
@@ -67,7 +67,7 @@ ListTile 이란 위젯을 제공한다.
 
 이제까지 작성한 코드를 다시보자!
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -153,7 +153,7 @@ class MyPage extends StatelessWidget {
 
 
 
-```go
+```dart
 ...
 
 
@@ -213,7 +213,7 @@ ListTile 위젯은 탭하거나 길게 누르기 등 액션을 감지할 수 있
 
 # 최종코드
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

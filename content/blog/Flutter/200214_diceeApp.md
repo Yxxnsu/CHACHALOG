@@ -26,7 +26,7 @@ leftDiceNumber 와 rightDiceNumber 의 값을 변경한다.
 
 <br/>
 
-```go
+```dart
 import 'dart:math';
 import 'package:flutter/material.dart';
 

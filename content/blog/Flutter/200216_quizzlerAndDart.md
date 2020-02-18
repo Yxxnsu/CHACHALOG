@@ -1,5 +1,5 @@
 ---
-title: '💎 [Flutter] 퀴즈 / Dart 리스트, 조건부, 클래스'
+title: '💎 [Flutter] 퀴즈 / Dart 리스트, 조건부, 클래스 (미완)'
 date: 2020-02-17 01:18:00
 category: 'Flutter'
 draft: false
@@ -11,7 +11,7 @@ showToc: true
 리스트 = [] 이다.  
 리스트 생성시에는 ``List<dataType>`` 꺽쇠 안에 데이터 타입을 꼭 명시해주어야 한다.
 
-```go
+```dart
 void main() {
   
   List<String> myList = [
@@ -36,7 +36,7 @@ void main() {
 
 색인 방식으로 접근을 원한다면 이런식으로도 가능하다.  
 
-```go
+```dart
 void main() {
   
   List<String> myList = [
@@ -60,7 +60,7 @@ void main() {
 
 리스트에 데이터를 또 추가하고 싶을 경우엔?  
 
-```go
+```dart
 void main() {
   
   List<String> myList = [
@@ -90,7 +90,7 @@ void main() {
 '오, 나는 항상 끝에 말고 내가 원하는 곳에 추가하고 싶은데?'  
 라고 생각할 수도 있다.  
 
-```go
+```dart
 void main() {
   
   List<String> myList = [
@@ -195,7 +195,7 @@ VCS -> Local History -> Show History
 
 IF문은 기본적으로 조건이 있는지 확인한다.
 
-```go
+```dart
 if (track == 'clear') {go();}
 ```
 
@@ -208,7 +208,7 @@ if (track == 'clear') {go();}
 
 조건 불충족일 때 코드는 이렇다.  
 
-```go
+```dart
 if (track == 'clear') {goStraight();}
 else {turnRight();}
 ```
@@ -218,7 +218,7 @@ else {turnRight();}
 
 자세히는 다음과 같이 구조화 되어있다.
 
-```go
+```dart
 if (track == 'clear') {
     goStraight();
 } else {
@@ -228,7 +228,7 @@ if (track == 'clear') {
 
 다트 패드로 좀 더 알아보자.
 
-```go
+```dart
 import 'dart:math';
 
 void main() {
@@ -262,7 +262,7 @@ void loveCalculator() {
 
 조건문에 사용되는 기호는 여러가지가 있다.  
 
-```go
+```dart
 == //같다면
 != //같지않다면
 > //크다면
@@ -277,7 +277,7 @@ void loveCalculator() {
 
 ``else if`` 로 조건을 추가해줄 수도 있다.
 
-```go
+```dart
 if (loveScore > 70) { 
     //do A   
 } else if (loveScore > 30) {    
@@ -288,7 +288,7 @@ if (loveScore > 70) {
 ```
 
 
-```go
+```dart
 import 'dart:math';
 
 void main() {
@@ -344,7 +344,7 @@ Methods
 
 자동차의 속성과, 기능을 담당하는 메소드이다.  
 
-```go
+```dart
 class Car {
   int numberOfDoors = 5;
 
@@ -354,7 +354,7 @@ class Car {
 }
 ```
 
-```go
+```dart
 Car myCar = Car();
 ```
 

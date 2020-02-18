@@ -74,7 +74,7 @@ Dart 언어에는 Async 프로그램을 사용하는 2가지 방법이 있어.
   
 **아래 코드를 실행시 프로그램이 중간에 멈추는 것을 볼 수 있어!**  
 
-```go
+```dart
 // Synchronous code
 void printDailyNewsDigest() {
   var newsDigest = gatherNewsReports(); // Can take a while.
@@ -110,7 +110,7 @@ main() {
 
 그걸 방지하지 위해 async 프로그래밍을 배워보자규!!  
 
-```go
+```dart
 import 'dart:async';
 
 Future<void> printDailyNewsDigest() async { //2️⃣
@@ -172,7 +172,7 @@ Future<String> gatherNewsReports() => //3️⃣
 만약에 에러 발생 확률이 있다면?!  
 try-catch 블럭을 사용해서 에러를 잡는거지.  
   
-```go
+```dart
 import 'dart:async';
 
 Future<void> printDailyNewsDigest() async {
@@ -202,7 +202,7 @@ async-await 를 사용했을 때,
   
 <img width="838" alt="5" src="https://user-images.githubusercontent.com/55340876/74588422-ab943500-503f-11ea-8526-48db8b2f9a7e.png">
 
-```go
+```dart
 import 'dart:async';
 
 Future<void> printDailyNewsDigest() {
@@ -227,7 +227,7 @@ future API 자체를 사용해도 결과는 동일해!
 
 
   
-```go
+```dart
 import 'dart:async';
 
 Future<void> printDailyNewsDigest() {

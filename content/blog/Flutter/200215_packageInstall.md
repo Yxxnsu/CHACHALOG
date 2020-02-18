@@ -30,7 +30,7 @@ showToc: true
 AudioCache 부분을 import 해서 사용해보았는데,    
 실제로 소리가 잘 나는 것을 확인할 수 있다.
 
-```go
+```dart
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
 
@@ -60,7 +60,7 @@ class XylophoneApp extends StatelessWidget {
 
 ```
 
-```go
+```dart
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
 ...

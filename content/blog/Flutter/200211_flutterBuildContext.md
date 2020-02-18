@@ -22,7 +22,7 @@ build method 는 Scaffold Widget 라는 위젯을 리턴하는데
 
 
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -109,7 +109,7 @@ Builder 위젯의 context를 사용하게 만드는 것이다.
 Scaffold.of(context) 메서드가 위젯트리 상에서 Builder 위젯 위로 거슬러 올라가면서 Scaffold 위젯을 찾게 된다.
 
 
-```go
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
