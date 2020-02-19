@@ -2,7 +2,7 @@
 title: '💎 [Flutter] 패키지 설치 방법'
 date: 2020-02-15 15:39:00
 category: 'Flutter'
-draft: false
+draft: true
 showToc: true
 ---
 
