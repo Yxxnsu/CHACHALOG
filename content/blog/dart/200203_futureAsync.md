@@ -258,6 +258,7 @@ async-await 는 콜백없이 차례차례 기다렸다 가지만,
 - [더코딩파파 유튜브](http://bit.ly/TheCodingPapa)
 - [getinthere님의 블로그 (설명 베리나이스! 👍🏻)](https://blog.naver.com/getinthere/221663923222)
 - [Dart 공식문서](https://dart.dev/)
-
+- [Futures (공식유튜브)](https://www.youtube.com/watch?v=OTS-ap9_aXc)
+- [Async/Await (공식유튜브)](https://www.youtube.com/watch?v=SmTCmDMi4BY)
 
 
