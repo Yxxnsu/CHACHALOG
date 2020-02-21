@@ -1,10 +1,155 @@
 ---
-title: '💎 [Flutter] 퀴즈 / Dart 리스트, 조건부, 클래스 (미완)'
+title: '💎 [Flutter] 퀴즈 앱 / Dart 리스트, 조건부, 클래스 (미완)'
 date: 2020-02-17 01:18:00
 category: 'Flutter'
 draft: false
 showToc: true
 ---
+
+# 퀴즈 앱 - 1. List 생성
+- 위젯 타입의 List 생성하여 아이콘 나열해주기
+- ``.add`` 를 이용하여 유저가 클릭했을때 아이콘 새로 추가
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(Quizzler());
+
+class Quizzler extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.grey.shade900,
+        body: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            child: QuizPage(),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class QuizPage extends StatefulWidget {
+  @override
+  _QuizPageState createState() => _QuizPageState();
+}
+
+class _QuizPageState extends State<QuizPage> {
+  List<Icon> scoreKeeper = [
+    //Icon 위젯을 포함하므로 List 옆 꺽쇠 안에 데이터타입을 꼭 명시해줘야 함
+    //String 이라던지 int 같은 전혀 다른 유형의 데이터타입을 명시하면 에러가 난다.
+    Icon(
+      Icons.check,
+      color: Colors.green,
+    ),
+    Icon(
+      Icons.close,
+      color: Colors.red,
+    ),
+    Icon(
+      Icons.close,
+      color: Colors.red,
+    ),
+    Icon(
+      Icons.close,
+      color: Colors.red,
+    ),
+    Icon(
+      Icons.close,
+      color: Colors.red,
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        Expanded(
+          flex: 5,
+          child: Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Center(
+              child: Text(
+                '이것은 퀴즈 앱이다.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 25.0,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.all(15.0),
+            child: FlatButton(
+              textColor: Colors.white,
+              color: Colors.green,
+              child: Text(
+                'True',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0,
+                ),
+              ),
+              onPressed: () {
+                //유저가 True를 클릭했을 때 새로운 아이콘이 추가된다.
+                setState(() {
+                  scoreKeeper.add(
+                    Icon(
+                      Icons.check,
+                      color: Colors.green,
+                    ),
+                  );
+                }); //함수의 끝은 항상 세미콜론 ; 이다.
+              },
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.all(15.0),
+            child: FlatButton(
+              color: Colors.red,
+              child: Text(
+                'False',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                ),
+              ),
+              onPressed: () {
+                //The user picked false.
+              },
+            ),
+          ),
+        ),
+        Row(
+          children: scoreKeeper,
+        ),
+      ],
+    );
+  }
+}
+
+/*
+question1: '한국은 4계절이다.', true,
+question2: '1 + 1 은 3이다.', false,
+question3: '인간의 피는 초록색이다.', false,
+*/
+```
+<div align="center">
+
+<img width="300" src="https://user-images.githubusercontent.com/55340876/75015968-37d5aa80-54cd-11ea-8ef2-7c1e095ccc32.gif">
+
+</div>
 
 # Dart - LIST
 
@@ -147,6 +292,8 @@ _(케바케겠지만?!)_
 웜마? 이걸 이 때 쓰는거야?  
 이렇게 머리에 들어오는 타입이라 이 말에 백배 공감한다.
 
+
+
 <br/>
 <br/>
 
@@ -167,12 +314,16 @@ VCS -> Local History -> Show History
 를 통해 시점 변경을 하고 진행을 하자!
 
 
+
 <br/>
 <br/>
 
 ---
 
 <br/>
+
+
+
 
 # 오타지적 👾
 
@@ -181,6 +332,369 @@ VCS -> Local History -> Show History
 그럴 때는 사전에 강제저장 해주자.
 
 ![2020-02-16 18-42-26 2020-02-16 18_42_55](https://user-images.githubusercontent.com/55340876/74602476-2ca90600-50ec-11ea-8574-2cc148be8bed.gif)
+
+
+
+<br/>
+<br/>
+
+---
+
+<br/>
+
+
+
+# 퀴즈 앱 - 2. 질문 생성
+
+지금까지는 List에 하드코딩을 한 것이고,  
+유저가 실제로 대답한 것에 따라 질문이 바뀌는 것을 구현해야 한다!
+
+questionNumber의 초기 세팅값은 0이고,   
+유저가 true 를 클릭했을 때, 다음 질문으로 넘어가야 한다.  
+즉,  
+questions[questionNumber] 의 **questionNumber가 +1 씩 증가해야한다.**
+
+
+```dart
+...
+
+
+      onPressed: () {
+        questionNumber++;
+      },
+
+
+...
+```
+
+``questionNumber++;`` 요 부분은,  
+
+``questionNumber = questionNumber + 1;`` 와 같은 말이다.
+
+![2020-02-21 17-55-43 2020-02-21 17_56_10](https://user-images.githubusercontent.com/55340876/75019038-8423e900-54d3-11ea-97c8-3b236502cb68.gif)
+
+print를 찍어보면 실제로 +1씩 증가하는게 콘솔창에 확인된다.
+
+자.  
+이제 onPressed 내에 ``setState((){});`` 를 이용해서 **상태 업데이트**를 한다.  
+
+코드는 이렇다.
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(Quizzler());
+
+class Quizzler extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.grey.shade900,
+        body: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            child: QuizPage(),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class QuizPage extends StatefulWidget {
+  @override
+  _QuizPageState createState() => _QuizPageState();
+}
+
+class _QuizPageState extends State<QuizPage> {
+  List<Icon> scoreKeeper = [];
+
+  List<String> questions = [
+    //질문 리스트 생성
+    '한국은 4계절이다.',
+    '1 + 1 은 3이다.',
+    '인간의 피는 초록색이다.',
+  ];
+
+  int questionNumber = 0; //질문 넘버 생성
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        Expanded(
+          flex: 5,
+          child: Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Center(
+              child: Text(
+                questions[questionNumber], //0번째 질문을 불러온다.
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 25.0,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.all(15.0),
+            child: FlatButton(
+              textColor: Colors.white,
+              color: Colors.green,
+              child: Text(
+                'True',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0,
+                ),
+              ),
+              onPressed: () {
+                setState(() {
+                  //상태 업데이트
+                  questionNumber++; //+1씩 증가
+                  print(questionNumber);
+                });
+              },
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.all(15.0),
+            child: FlatButton(
+              color: Colors.red,
+              child: Text(
+                'False',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                ),
+              ),
+              onPressed: () {
+                setState(() {
+                  //상태 업데이트
+                  questionNumber++; //+1씩 증가
+                  print(questionNumber);
+                });
+              },
+            ),
+          ),
+        ),
+        Row(
+          children: scoreKeeper,
+        ),
+      ],
+    );
+  }
+}
+
+/*
+question1: '한국은 4계절이다.', true,
+question2: '1 + 1 은 3이다.', false,
+question3: '인간의 피는 초록색이다.', false,
+*/
+```
+
+![2020-02-21 18-10-29 2020-02-21 18_11_16](https://user-images.githubusercontent.com/55340876/75020226-a1f24d80-54d5-11ea-8545-1b44d6e2303c.gif)
+
+<img width="385" alt="스크린샷 2020-02-21 오후 6 11 39" src="https://user-images.githubusercontent.com/55340876/75020260-b6cee100-54d5-11ea-86c1-be9dbb8af7cc.png">
+
+만들어놓은 질문은 총 3가지로(0, 1, 2) 인덱스 2까지였기 때문에 에러가 뜬다.  
+3번째 질문은 없으니 당욘히 에러어어어어!!!
+
+<br/>
+<br/>
+
+---
+
+<br/>
+
+
+
+
+# \ 백 슬러시 
+
+```dart
+'A slug\'s blood is green'
+```
+
+문자열을 표시하는 따옴표 안에 한 개의 따옴표가 더 존재한다.  
+그때 문자열이 끝나는 곳을 프로그램이 헷갈려서 에러를 낼 수 있으니  
+``\'`` 백 슬러시와 함께 표시를 해준다.
+
+
+
+<br/>
+<br/>
+
+---
+
+<br/>
+
+
+
+
+# 퀴즈 앱 - 3. 정답 판별
+
+정답 리스트를 만들고,  
+유저가 선택한 답과 함께 조건문을 추가해준다.
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(Quizzler());
+
+class Quizzler extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.grey.shade900,
+        body: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            child: QuizPage(),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class QuizPage extends StatefulWidget {
+  @override
+  _QuizPageState createState() => _QuizPageState();
+}
+
+class _QuizPageState extends State<QuizPage> {
+  List<Icon> scoreKeeper = [];
+
+  List<String> questions = [
+    '한국은 4계절이다.',
+    '1 + 1 은 3이다.',
+    '인간의 피는 초록색이다.',
+  ];
+
+  List<bool> answers = [
+    //정답 리스트 생성
+    true,
+    false,
+    false,
+  ];
+
+  int questionNumber = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        Expanded(
+          flex: 5,
+          child: Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Center(
+              child: Text(
+                questions[questionNumber],
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 25.0,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.all(15.0),
+            child: FlatButton(
+              textColor: Colors.white,
+              color: Colors.green,
+              child: Text(
+                'True',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0,
+                ),
+              ),
+              onPressed: () {
+                bool correctAnswer = answers[questionNumber]; //선택했을때,
+
+                if (correctAnswer == true) {
+                  //조건문 추가
+                  print('정답이야!');
+                } else {
+                  print('틀렸어!');
+                }
+
+                setState(() {
+                  questionNumber++;
+                  print(questionNumber);
+                });
+              },
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.all(15.0),
+            child: FlatButton(
+              color: Colors.red,
+              child: Text(
+                'False',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                ),
+              ),
+              onPressed: () {
+                bool correctAnswer = answers[questionNumber]; //선택했을때,
+
+                if (correctAnswer == false) {
+                  //조건문 추가
+                  print('정답이야!');
+                } else {
+                  print('틀렸어!');
+                }
+
+                setState(() {
+                  questionNumber++;
+                  print(questionNumber);
+                });
+              },
+            ),
+          ),
+        ),
+        Row(
+          children: scoreKeeper,
+        ),
+      ],
+    );
+  }
+}
+
+/*
+question1: '한국은 4계절이다.', true,
+question2: '1 + 1 은 3이다.', false,
+question3: '인간의 피는 초록색이다.', false,
+*/
+```
+
+
+![2020-02-21 19-34-39 2020-02-21 19_35_37](https://user-images.githubusercontent.com/55340876/75027113-5e9ddc00-54e1-11ea-8865-472030bda9e7.gif)
+
+판별은 해주나 아직 목록이 3가지 뿐이니 에러는 동일한 이유로 발생한다.
+
 
 
 <br/>
@@ -319,6 +833,49 @@ void loveCalculator() {
 ![2020-02-17 00-17-40 2020-02-17 00_18_39](https://user-images.githubusercontent.com/55340876/74607291-17979b80-511b-11ea-8bbf-341bcbba14f1.gif)
 
 
+
+<br/>
+<br/>
+
+---
+
+<br/>
+
+
+# 퀴즈 앱 - 4. 질문 class 만들기
+
+lib에 ``question.dart`` 라는 새로운 다트 파일을 생성하자.
+
+여기에는 ``Question`` 이란 클래스를 생성해주자.
+
+**_question.dart_**
+```dart
+class Question { //클래스 생성
+  String questionText;
+  bool questionAnswer;
+
+  Question({String q, bool a}) {
+    //생성자 Constructor 생성
+
+    questionText = q;
+    questionAnswer = a;
+  }
+}
+```
+
+이제 이걸 main.dart 에 가져와서 써야하는데  
+그러기 위해선 메인 파일 상단에 임포트 해주어야 한다.  
+
+**_main.dart_**
+```dart
+import 'package:flutter/material.dart';
+import 'package:quizzler/question.dart'; //가져다 쓸 파일
+
+
+...
+```
+
+이제 데이터 타입의 질문을 가진 새로운 변수를 만들자.
 
 <br/>
 <br/>

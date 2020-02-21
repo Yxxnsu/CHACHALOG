@@ -93,7 +93,7 @@ void main() {
 }
 ```
 
-### Map - ket: value
+### Map - key: value
 
 ```dart
 void main() {
