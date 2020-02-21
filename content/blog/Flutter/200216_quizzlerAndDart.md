@@ -864,7 +864,9 @@ class Question { //클래스 생성
 ```
 
 이제 이걸 main.dart 에 가져와서 써야하는데  
-그러기 위해선 메인 파일 상단에 임포트 해주어야 한다.  
+그러기 위해선 메인 파일 상단에 임포트 해주어야 한다.
+
+그리고 Question 데이터 타입의 Q&A 리스트 객체(object)를 만들자.
 
 **_main.dart_**
 ```dart
@@ -873,9 +875,166 @@ import 'package:quizzler/question.dart'; //가져다 쓸 파일
 
 
 ...
+
+
+  List<Question> questionBank = [
+    //Question 데이터 타입의 Q&A 리스트 생성
+    Question(q: '한국은 4계절이다.', a: true),
+    Question(q: '1 + 1 은 3이다.', a: false),
+    Question(q: '인간의 피는 초록색이다.', a: false),
+  ];
+
+
+...
 ```
 
-이제 데이터 타입의 질문을 가진 새로운 변수를 만들자.
+
+이로써 이전에 작성했던 questions 리스트, answers 리스트, q1 인스턴스는 필요가 없으니 삭제해준다.  
+이제 Question 클래스의 생성자를 통해 만든 요 변수 한 놈만 관리해주면 된다.  
+
+오류도 수정하자.
+
+**_main.dart_**
+```dart
+import 'package:flutter/material.dart';
+import 'package:quizzler/question.dart'; //가져다 쓸 파일
+
+void main() => runApp(Quizzler());
+
+class Quizzler extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.grey.shade900,
+        body: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            child: QuizPage(),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class QuizPage extends StatefulWidget {
+  @override
+  _QuizPageState createState() => _QuizPageState();
+}
+
+class _QuizPageState extends State<QuizPage> {
+  List<Icon> scoreKeeper = [];
+
+  List<Question> questionBank = [
+    //Question 데이터 타입의 Q&A 리스트 생성
+    Question(q: '한국은 4계절이다.', a: true),
+    Question(q: '1 + 1 은 3이다.', a: false),
+    Question(q: '인간의 피는 초록색이다.', a: false),
+  ];
+
+  int questionNumber = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        Expanded(
+          flex: 5,
+          child: Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Center(
+              child: Text(
+                //questions[questionNumber],
+                questionBank[questionNumber].questionText, //Question 속성에서 비롯됨
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 25.0,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.all(15.0),
+            child: FlatButton(
+              textColor: Colors.white,
+              color: Colors.green,
+              child: Text(
+                'True',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0,
+                ),
+              ),
+              onPressed: () {
+                //bool correctAnswer = answers[questionNumber];
+                bool correctAnswer = questionBank[questionNumber]
+                    .questionAnswer; //Question 속성에서 비롯됨
+
+                if (correctAnswer == true) {
+                  print('정답이야!');
+                } else {
+                  print('틀렸어!');
+                }
+
+                setState(() {
+                  questionNumber++;
+                  print(questionNumber);
+                });
+              },
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.all(15.0),
+            child: FlatButton(
+              color: Colors.red,
+              child: Text(
+                'False',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                ),
+              ),
+              onPressed: () {
+                //bool correctAnswer = answers[questionNumber];
+                bool correctAnswer = questionBank[questionNumber]
+                    .questionAnswer; //Question 속성에서 비롯됨
+
+                if (correctAnswer == false) {
+                  print('정답이야!');
+                } else {
+                  print('틀렸어!');
+                }
+
+                setState(() {
+                  questionNumber++;
+                  print(questionNumber);
+                });
+              },
+            ),
+          ),
+        ),
+        Row(
+          children: scoreKeeper,
+        ),
+      ],
+    );
+  }
+}
+```
+
+작동은 동일하게 된다.  
+이렇게 class를 생성하고 그것을 이용하여 Question 데이터 타입의 Q&A 리스트 객체(object)를 만들 수 있다.
+
+
 
 <br/>
 <br/>
@@ -887,19 +1046,40 @@ import 'package:quizzler/question.dart'; //가져다 쓸 파일
 
 # Dart - CLASS
 
-``class``  라는 ``블루프린트`` 를 사용하여 앱을 만들거다.  
+## [클래스와 위젯 개념정리 참고](https://jinjoo.netlify.com/Flutter/200211_flutterAndWidget/)
 
+## [Class 참고](https://jinjoo.netlify.com/dart/200203_dartClass/)
+
+## [🔥애증의 Dart🔥 Classes 부분 참고](https://jinjoo.netlify.com/dart/200220_dartBasic/)
+
+
+아 정말 내가 상당히 어려워하는 부분....
+
+<img width="400" alt="피오" src="https://user-images.githubusercontent.com/55340876/75034912-9876de80-54f1-11ea-883a-9c0c417f1dc8.jpg">
+
+정말 ~~죽겠는~~ 부분이다.... x999999999  
+후.. 시작해보자.
+
+<br/>
+
+
+
+**class**  라는 **블루프린트** 를 사용하여 앱을 만들거다.  
+
+비유를 들어보자면..  
 자동차를 빗대어보면 2가지 중요점이 있다.
 
-Properties
+``Properties``
 - color;
 - numberOfSeats;
 
-Methods
+``Methods``
 - drive();
 - break();
 
-자동차의 속성과, 기능을 담당하는 메소드이다.  
+<br/>
+
+**자동차의 속성과, 기능을 담당하는 메소드이다.**
 
 ```dart
 class Car {
@@ -911,14 +1091,21 @@ class Car {
 }
 ```
 
+- 클래스 키워드를 사용해서 클래스 이름을 대문자로 하고 변수를 정의한다.  
+- 정의 된 변수는 해당 클래스의 속성이다.
+- 클래스의 중괄호 {} 안에 정의 된 함수는 메소드라고 한다.  
+  (클래스가 할 수 있는 기능을 담당하는 메소드가 되는 함수 제공)
+
+
+이 클래스에서 객체를 만들면 이렇다.
+
 ```dart
-Car myCar = Car();
+Car myCar = Car(); //Object
 ```
 
 
-- 클래스 키워드를 사용해서 클래스 이름을 대문자로 하고 변수를 정의한다.  
-- 정의 된 변수는 해당 클래스의 속성이다.
-- 클래스가 할 수 있는 기능 담당 메소드가 되는 함수도 준다.
+
+
 
 
 
@@ -930,4 +1117,5 @@ Car myCar = Car();
 
 # Reference  
 - [Angela Yu 강의(유료)](https://www.udemy.com/course/flutter-bootcamp-with-dart/)
+- [클래스, 객체, 인스턴스의 차이](https://gmlwjd9405.github.io/2018/09/17/class-object-instance.html)
 
