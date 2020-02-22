@@ -1044,14 +1044,7 @@ class _QuizPageState extends State<QuizPage> {
 <br/>
 
 
-# Dart - CLASS
-
-## [클래스와 위젯 개념정리 참고](https://jinjoo.netlify.com/Flutter/200211_flutterAndWidget/)
-
-## [Class 참고](https://jinjoo.netlify.com/dart/200203_dartClass/)
-
-## [🔥애증의 Dart🔥 Classes 부분 참고](https://jinjoo.netlify.com/dart/200220_dartBasic/)
-
+# 🔥Dart - CLASS
 
 아 정말 내가 상당히 어려워하는 부분....
 
@@ -1247,7 +1240,7 @@ class Human { // 클래스
 ```dart
 //console 결과는??
 -----jane-----
-null
+null //지정된 height 값이 어디에도 없으니 null이 나온다.
 3
 -----james-----
 2
@@ -1276,12 +1269,14 @@ null
 
 ``Human james = new Human(age: 2, height: 20);``  
 ``Human yammy = new Human(age: 5);``  
-선택해서 줘도 되고   
+선택해서 줘도 된다.  
 (이름을 정의해서 불러오기 때문에 생성자 매개변수 자리와 똑같이 기입 안하고!  
  순서가 바뀌어도 상관없다)
 
 
 ## 메소드
+
+메소드는 단순히 클래스 내부에 정의 된 함수이다.  
 
 이제 인간에게 키랑 나이 기본적으로 가져야하는 속성도 줬겠다..  
 말하는 기능을 가진 메소드를 만들어보자.
@@ -1294,9 +1289,52 @@ null
 여기서 믹서기는 메소드이다. 입력을 가지고 어떤 일을 수행한 다음에 결과물을 내어놓는 것,   
 이것이 메소드가 하는 일이다.
 
+**“어떤 입력값을 주었을 때 어떤 리턴값을 돌려준다”**
 
+```dart
+void main() {
+  Human jane = new Human(height: 15); //객체(Human 클래스의 인스턴스)
+  print('-----jane-----');
+  print(jane.height);
+  print(jane.age);
+  
+  jane.talk('배고파죽겄다');
+  
 
+}
 
+class Human { // 클래스
+  
+  //속성(멤버변수, 필드라고도 함. 객채의 고유 데이터가 저장되는 곳)
+  double height;
+  int age;
+  
+  Human({this.height, this.age=3}) { //생성자(명명된 매개변수)
+  }
+  
+  void talk(String whatToSay) { //메소드
+    print(whatToSay);
+  }
+  
+}
+```
+
+```dart
+//console 결과는??
+-----jane-----
+15
+3
+배고파죽겄다
+```
+
+메소드 역시,  
+``jane.talk('배고파죽겄다');``  
+요로코롬 클래스 필드에 접근할때처럼 ``.`` 방식을 이용해서 접근한다.
+객체는 ``.`` 을 통해 그것을 수행하거나 속성을 얻는다.
+
+## [(참고)실로폰 앱 / Dart 함수](https://jinjoo.netlify.com/Flutter/200215_xylophoneAppDartFunction/)
+
+요 게시물의 함수 내용도 참고하자!!!
 
 
 <br/>
