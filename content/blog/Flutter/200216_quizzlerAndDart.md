@@ -1062,9 +1062,13 @@ class _QuizPageState extends State<QuizPage> {
 
 <br/>
 
-
+## 클래스
 
 **class**  라는 **블루프린트** 를 사용하여 앱을 만들거다.  
+
+**Class 는  
+객체가 가져야 하는 속성과 기능을 정의한 내용을 담고 있는 설계도 역할을 한다.  
+변수와 메소드의 집합체라고 보면 된다.**
 
 비유를 들어보자면..  
 자동차를 빗대어보면 2가지 중요점이 있다.
@@ -1103,6 +1107,192 @@ class Car {
 Car myCar = Car(); //Object
 ```
 
+"인간" 이라는 클래스를 만들어보자.
+
+```dart
+void main() {
+  Human jane = new Human(); //객체(Human 클래스의 인스턴스)
+  print(jane.height); //객체.객체변수
+  
+  jane.height = 20; //객체.객체변수 = 값
+  print(jane.height); //객체: jane, 객체변수: height
+  
+}
+
+class Human { // 클래스 
+  
+  //속성(멤버변수, 필드라고도 함. 객채의 고유 데이터가 저장되는 곳)
+  double height = 15;
+  int age = 0;
+  
+}
+```
+
+```dart
+//console 결과는??
+15
+20
+```
+
+클래스 안에 속성 값이 정해지지 않으면,  
+출력시 ``null`` 값이 나온다.
+
+``Human jane = new Human();``   
+Human 클래스의 인스턴스인,  
+Human 의 객체가 만들어진 것이다.  
+**new** 는 객체를 생성해주는 키워드 이다. (dart 언어는 옵션이라 안써도 됨)    
+new 키워드로 객체가 만들어짐(객체 생성)
+
+
+>※ 객체와 인스턴스 (점프 투 자바 참고)  
+클래스에 의해서 만들어진 객체를 인스턴스라고도 한다.   
+그렇다면 객체와 인스턴스의 차이는 무엇일까? 이렇게 생각 해 보자.   
+Animal cat = new Animal() 이렇게 만들어진 cat은 객체이다.   
+그리고 cat이라는 객체는 Animal의 인스턴스(instance)이다.   
+즉 인스턴스라는 말은 특정 객체(cat)가 어떤 클래스(Animal)의 객체인지를   
+관계위주로 설명할 때  사용된다.   
+즉, "cat은 인스턴스" 보다는 "cat은 객체"라는 표현이   
+"cat은 Animal의 객체" 보다는 "cat은 Animal의 인스턴스" 라는 표현이 훨씬 잘 어울린다.  
+
+```dart
+Human jane = new Human();
+Human jinjoo = new Human();
+Human dohee = new Human();
+Human bobea = new Human();
+...
+```
+
+이렇게 수많은 인간 객체를 Human 클래스로 만들 수 있다.
+
+
+## 생성자
+
+
+하지만 내가 만든 코드에서는 인간의 키가 다 15센치로 태어난다.  
+이처럼 클래스를 통해 생성되는 객체는  
+클래스의 필드를 기본 초기값으로 갖고있다.  
+
+각 객체를 다른 값으로 초기화 하는 방법 2가지
+- 필드 선언시 초기값을 맥이는 방법
+- 생성자에 초기값을 맥이는 방법
+
+생성자(Constructor) 를 이용해 초기값을 주는 방법을 살펴보자.  
+**생성자는 메소드와 비슷하지만 클래스와 이름이 동일하고 return 타입이 없다.**  
+
+```dart
+void main() {
+  Human jane = new Human(15);
+  print(jane.height);
+  
+  Human james = new Human(20); //new 클래스명(입력항목, ...)
+  print(james.height); //객체: jane, 객체변수: height
+}
+
+class Human {
+  
+  double height;
+  int age = 0;
+  
+  Human(double startingHeight) { //생성자
+    height = startingHeight;
+  }
+  
+}
+```
+
+생성자 역시 new 키워드로 객체가 생성될 때 호출된다.
+
+``Human(double startingHeight)``  
+요 생성자 놈은 ``double startingHeight`` 요 값을 필요로 하기 때문에  
+객체 생성시(생성사 호출시) 반드시 값을 전달해줘야 한다.
+
+```dart
+Human james = new Human();
+```
+
+이런식으로 코딩하면 객체 생성 방법이 생성자 규칙과 맞지 않아서 코딩하면 오류가 뜬다.  
+생성자가 선언된 경우,  
+생성자 규칙대로만 객체를 생성할 수 있다.
+
+
+```dart
+void main() {
+  Human jane = new Human(); //객체(Human 클래스의 인스턴스)
+  print('-----jane-----');
+  print(jane.height);
+  print(jane.age);
+  
+  Human james = new Human(age: 2, height: 20);
+  print('-----james-----');
+  print(james.age);
+  print(james.height);
+  
+  Human yammy = new Human(age: 5);
+  print('-----yammy-----');
+  print(yammy.age);
+}
+
+class Human { // 클래스
+  
+  //속성(멤버변수, 필드라고도 함. 객채의 고유 데이터가 저장되는 곳)
+  double height;
+  int age;
+  
+  Human({this.height, this.age=3}) { //생성자(명명된 매개변수)
+  }
+  
+}
+```
+
+```dart
+//console 결과는??
+-----jane-----
+null
+3
+-----james-----
+2
+20
+-----yammy-----
+5
+```
+
+``Human({this.height, this.age=3})``   
+여기서 ``this``는 해당 클래스의 속성을 가르킨다.
+**생성자(명명된 매개변수)** 는,  
+{} 중괄호로 이용해서 매개변수를 묶어주면 옵션이 되어서 객체 생성시, 선택해서 사용해주면된다.  
+
+이 때 주의할점은!  
+{} 중괄호를 사용해서 묶여진 명명된 매개변수를 사용할 떄는!!!  
+함수 호출시.. 그러니까 객체가 생성될 때 반드시 매개변수의 이름을 지정해주어야 한다는 것이다.  
+이름을 주지 않으면 에러가 뜬다.
+
+``Human james = new Human(age: 2, height: 20);``
+
+이런식으로 쓰게 되는데  
+명명 매개변수는 옵션이라고 말했듯,  
+
+``Human jane = new Human();``  
+상단 코드처럼 아예 안주고 호출해도 되고 (이 경우에는 지정된 옵션값으로 출력된다) 
+
+``Human james = new Human(age: 2, height: 20);``  
+``Human yammy = new Human(age: 5);``  
+선택해서 줘도 되고   
+(이름을 정의해서 불러오기 때문에 생성자 매개변수 자리와 똑같이 기입 안하고!  
+ 순서가 바뀌어도 상관없다)
+
+
+## 메소드
+
+이제 인간에게 키랑 나이 기본적으로 가져야하는 속성도 줬겠다..  
+말하는 기능을 가진 메소드를 만들어보자.
+
+>※ 메소드 (점프 투 자바 참고)  
+메소드를 설명하기 전에 믹서기를 생각해보자.  
+우리는 믹서기에 과일을 넣는다.   
+그리고 믹서를 이용해서 과일을 갈아서 과일 쥬스를 만들어 낸다.   
+우리가 믹서기에 넣는 과일은 입력이 되고 과일 쥬스는 그 출력(리턴값)이 된다.   
+여기서 믹서기는 메소드이다. 입력을 가지고 어떤 일을 수행한 다음에 결과물을 내어놓는 것,   
+이것이 메소드가 하는 일이다.
 
 
 
@@ -1118,4 +1308,8 @@ Car myCar = Car(); //Object
 # Reference  
 - [Angela Yu 강의(유료)](https://www.udemy.com/course/flutter-bootcamp-with-dart/)
 - [클래스, 객체, 인스턴스의 차이](https://gmlwjd9405.github.io/2018/09/17/class-object-instance.html)
-
+- [점프 투 자바 - 객체지향 프로그래밍](https://wikidocs.net/218)
+- [클래스](https://gbs1995.tistory.com/10?category=797664)
+- [명명 생성자](https://beomseok95.tistory.com/306)
+- [변수와 함수의 기본](https://sysocoder.com/flutter-%EB%B3%80%EC%88%98%EC%99%80-%ED%95%A8%EC%88%98%EC%9D%98-%EA%B8%B0%EB%B3%B8/)
+- [클래스, 제너릭](https://sysocoder.com/flutter-%ed%81%b4%eb%9e%98%ec%8a%a4class-%ec%a0%9c%eb%84%88%eb%a6%adgenerics/)
