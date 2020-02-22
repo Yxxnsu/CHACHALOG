@@ -1,5 +1,5 @@
 ---
-title: '📖 [Dart] 🔥애증의 Dart🔥'
+title: '📖 [Dart] 애증의 Dart 문법'
 date: 2020-02-20 17:05:00
 category: 'Dart'
 draft: false

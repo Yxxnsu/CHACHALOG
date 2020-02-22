@@ -1,5 +1,5 @@
 ---
-title: '💎 [Flutter] 퀴즈 앱 / Dart 리스트, 조건부, 클래스 (미완)'
+title: '💎 [Flutter] 🔥Quiz App / 리스트,조건문,OOP🔥'
 date: 2020-02-17 01:18:00
 category: 'Flutter'
 draft: false
@@ -1044,7 +1044,7 @@ class _QuizPageState extends State<QuizPage> {
 <br/>
 
 
-# 🔥Dart - CLASS
+# Dart - CLASS
 
 아 정말 내가 상당히 어려워하는 부분....
 
@@ -1336,6 +1336,942 @@ class Human { // 클래스
 
 요 게시물의 함수 내용도 참고하자!!!
 
+<br/>
+<br/>
+
+---
+
+<br/>
+
+# 객체지향 프로그래밍 (OOP)
+
+<img width="400" alt="토나와" src="https://user-images.githubusercontent.com/55340876/75091111-38de0900-55ad-11ea-87dc-588f9407ee16.jpg">
+
+
+객체지향 너무 어려워서 토나온다 🤢  
+진즉에 공부 좀 할걸.. OOP 하.. 발목을 잡는구나..  
+왜 진입장벽이 높다는지 알겠다 너란녀석.. 크븡ㄴ느흫ㄱ흐크흡ㄱ  
+
+_~~피똥싸게~~_  **열심히 해보자!**
+
+
+**객체지향 프로그래밍(Object-Oriented Programming)**  
+코드가 길어질수록 복잡성은 우리에게 적이 된다.  
+복잡할수록 충돌 가능성이 높아지고 문제를 야기시키며 성능이 저하된다.  
+따라서 이런 문제 때문에 객체지향 프로그래밍이라는 개념이 나타난 것이다.  
+- 프로그램을 어떻게 설계해야 하는지에 대한 일종의 개념, 방법
+- 프로그램을 수많은 '객체'라는 기본 단위로 나누고 이 객체들의 상호작용으로 서술하는 방식
+
+<br/>
+
+---
+
+
+
+## 객체지향 프로그래밍 언어의 특성
+
+크게는 **4가지**로 나눌 수 있다.
+
+<div align="center">
+
+<img width="400" alt="oop기둥" src="https://user-images.githubusercontent.com/55340876/75092559-477fec80-55bc-11ea-85b0-bd04abed2bf0.png">
+
+</div>
+
+### - **추상화 (Abstraction)**
+  - 각 클래스가 별도의 역할과 별도의 직무를 갖는다.  
+    (다른 직업을 다른 역할과 다른 클래스로 분리)
+  - **클래스 (class) = 추상 (abstract)**
+      - 공통 특징, 서술
+  - **오브젝트 (object) = 실체 (instance)**
+      - 오브젝트는 클래스의 인스턴스이다. (클래스가 실체로 만들어진 것) 
+      - 구체, 실제 존재, 고유성
+  - **메소드 (method)**
+
+
+```dart
+void main() {
+  Human andreas = Human(startingHeight: 15);
+  print(andreas.height);
+  andreas.talk('Why is the sky so clear today');
+}
+
+class Human{
+  
+  double height = 15;
+  int age = 0;
+
+    Human({double startingHeight}){
+    height = startingHeight;
+  }
+  void talk(String whatToSay){
+    print(whatToSay);
+  } 
+}
+```
+
+---
+
+### - **캡슐화 (Encapsulation)**
+  - 데이터 + 데이터 조작법 의 묶음
+  - 정보 은닉 **(dart에서는 private 타입으로 ``_`` 언더스코어를 변수명 앞에 붙인다)**
+      - 각 객체의 수정이 다른 객체에게 주는 영향을 최소화
+      - 외부 객체가 접근하거나 사용하지 못하므로 유지보수와 소프트웨어 확장 시 오류를 최소화  
+        (다른 사람이 특수 작업을 방해하지 않도록 private 과 같은 액세스 수정자를 설정 하여 각 클래스 또는 데이터의 경계 를 만드는 것)
+  
+---
+
+### - **상속성 (Inheritance)**
+  - 하나의 클래스가 갖고있는 특징(데이터+데이터 조작법)들을 그대로 다른 클래스가 물려 받는 것
+  - IS-A 관계
+  - 재사용
+  - 유연성
+  - 상속 계층을 따라 특성을 공유
+  - 상속 받은 속성이나 메소드 외에 새로운 속성과 메소드 추가 가능  
+    (우리 클래스가 우리가 확장하는 다른 클래스로부터 어떤 속성이나 메소드를 얻을 수 있게 함)
+
+```dart
+void main(){
+  Car car = Car();
+  print(car.numberOfSeat);
+  
+  ElectricCar myTesla = ElectricCar();
+
+  myTesla.drive();
+  myTesla.recharge();
+}
+
+class Car{
+  int numberOfSeat = 5;
+  
+  void drive(){
+    print('wheels turn.');
+  }
+}
+
+class ElectricCar extends Car {
+  int batteryLevel = 100;
+  
+  void recharge(){
+    batteryLevel = 100;
+    print(batteryLevel);
+  }
+}
+```
+
+---
+
+### - **다형성 (Polymorphism)**
+  - 상속성의 계층을 따라 각 클래스에 하나의 이름을 부여함
+  - 각 클래스에 동일 이름의 메소드를 사용할 수 있음  
+    (다양한 형태에 동일한 명령을 사용 : 같은 명령을 각기 다른 오브젝트에 줄 수 있다는 것)
+  - 클래스가 @override를 추가하여 확장하는 부모와 동일한 속성 또는 Method 를 사용자 정의 할 수 있게하고,  
+    Super를 사용하면 해당 메소드를 얻고 더 많은 일을 추가하고 다른 결과를 수신 할 수 있음
+
+```dart
+
+void main(){
+  
+  SelfDrivingCar futureCar = SelfDrivingCar('Jakarta');
+  futureCar.drive();
+}
+
+class Car{
+  int numberOfSeat = 5;
+  
+  void drive(){
+    print('wheels turn.');
+  }
+}
+
+class SelfDrivingCar extends Car {
+  String destination;
+  SelfDrivingCar(String userSetDestination){
+    destination = userSetDestination;
+  }
+  
+
+  @override
+  void drive(){
+
+    super.drive();
+
+    print('setting towards $destination');
+  }
+}
+```
+
+--- 
+
+- 추가적으로 **메세지 전달 (Message passing)**   
+  -  실제 구체적 동작과 관계없이 "객체" 와 객체에 대한 상호작용 관점을 제공  
+     (객체간에 메세지를 주고받아 실행)
+
+<br/>
+
+---
+
+**객체지향 분석/설계**
+1. 문제 영역에서 배우(actor) 를 찾아내고
+2. 각 배우들의 책임과 역할을 정의하고
+3. 배우들간의 관계를 지정하고
+4. 각 배우들에 대한 대본(script)를 쓴다.
+   
+<br/>
+
+- 즉,
+  식별하고 일반화하고(object, class)   
+  대상들 간의 관계(inheritance, embedded) 를 설정하고,   
+  상호작용 하도록(behavior) 한다.
+
+<br/>
+
+
+**캡슐화(추상화 능력), 상속성(분류하는 능력), 다형성(같은 방법으로 다루기),  
+메세지 전달(실존하는 객체들이 상호작용)  
+객체지향은 사람의 추상능력, 인식방법에 가까운 개발 방법론.**
+
+<br/>
+
+<img width="500" alt="명수" src="https://user-images.githubusercontent.com/55340876/75091945-25836b80-55b6-11ea-8c99-0d1fe6c8a118.jpeg">
+
+뭐쩌라고 진짜 뭐쩌고저쩌고 뭔소리여여여머라ㅓㅎ너햐ㅣㅓㅎ니허너넉ㅎ  
+후... 머리에 넣자 머리에 넣자..  
+진주야 이해해야 쓴다..  
+이해해야 써먹는다..  
+
+``실력 = 연봉`` 이다..  
+
+**나는 돌머리가 아니다 할수있다 아이캔뚜잇!**  
+**나는 돌머리가 아니다 할수있다 아이캔뚜잇!**  
+**나는 돌머리가 아니다 할수있다 아이캔뚜잇!**  
+
+
+<br/>
+<br/>
+
+---
+
+<br/>
+
+# 퀴즈 앱 - 5. 추상화
+
+코드가 전체적으로 너무 길어졌다.  
+파일을 나눠서 모듈화를 시켜보자.  
+
+**question.dart**
+```dart
+class Question {
+  String questionText;
+  bool questionAnswer;
+
+  Question(String q, bool a) {
+    //생성자 Constructor 생성
+
+    questionText = q;
+    questionAnswer = a;
+  }
+}
+```
+
+**quiz_brain.dart**
+
+```dart
+import 'question.dart';
+
+class QuizBrain {
+  //퀴즈가 해야하고 할 수 있는 모든 것을 정의
+
+  List<Question> questionBank = [
+    Question('한국은 4계절이다.', true),
+    Question('1 + 1 은 3이다.', false),
+    Question('인간의 피는 초록색이다.', false),
+    Question('악어는 파충류이다.', true),
+    Question('인어공주의 엔딩은 물거품이 되어 사라지는 것이다.', true),
+    Question('메두사의 눈을 쳐다보면 돌로 변한다.', true),
+    Question('하루는 12시간이다.', false),
+    Question('한강은 겨울이 되면 스케이트장으로 바뀐다.', false),
+    Question('강아지와 고양이는 친하다.', false),
+    Question('폐암은 담배를 많이 폈을 때 발병될 가능성이 높다.', true),
+    Question('Dart 는 구글이 개발한 프로그래밍 언어이다.', true),
+    Question('초콜릿은 강아지의 심장과 신경계에 영향을 미친다. 강아지에게 먹이면 죽을 수도 있다.', true),
+    Question('도로교통법 : 스쿨존의 제한속도는 30km 이내로 제한된다.', true),
+  ];
+}
+```
+
+**main.dart**
+
+```dart
+import 'package:flutter/material.dart';
+import 'quiz_brain.dart';
+
+QuizBrain quizBrain = new QuizBrain(); //질문 객체 생성
+
+
+...
+
+
+              child: Text(
+                quizBrain.questionBank[questionNumber].questionText,
+
+
+...
+
+
+                bool correctAnswer =
+                    quizBrain.questionBank[questionNumber].questionAnswer;
+...
+
+
+                bool correctAnswer =
+                    quizBrain.questionBank[questionNumber].questionAnswer;
+
+
+...
+```
+
+퀴즈를 위한 질문 리스트를 별도의 객체로 만들었다.
+
+만약   
+sport_brain, music_brain, picture_brain 등  
+여러 파일의 다른 장르의 퀴즈 리스트들이 있다고 치자.
+
+장르마다 다른 퀴즈를 불러오고 싶을 때에는  
+``QuizBrain quizBrain = new QuizBrain();``  
+요 부분의 객체를 알맞게 변경해주면 된다. (import 잊지말고!)
+
+
+
+<br/>
+<br/>
+
+---
+
+<br/>
+
+# 퀴즈 앱 - 6. 캡슐화
+
+```dart
+...
+
+
+    bool correctAnswer =
+        quizBrain.questionBank[questionNumber].questionAnswer;
+
+
+...
+```
+
+main.dart 의 상단 코드를 한 번 보자.  
+이 코드는 퀴즈 리스트에 답과 일치하면 정답, 아니면 땡이라고 말해준다.
+
+
+```dart
+...
+
+
+  List<Question> questionBank = [
+    Question('한국은 4계절이다.', true),
+
+
+...
+```
+
+이 질문의 실제 답은 true 이다.  
+하지만 내가 강제로 답을 준다면?  
+
+![2020-02-22 22-26-26 2020-02-22 22_27_13](https://user-images.githubusercontent.com/55340876/75093144-9761b200-55c2-11ea-9c39-235a4bc8ff37.gif)
+
+```dart
+...
+
+
+    onPressed: () {
+      quizBrain.questionBank[questionNumber].questionAnswer = false;
+
+      bool correctAnswer =
+          quizBrain.questionBank[questionNumber].questionAnswer;
+
+
+...
+```
+
+보라.  
+한국은 4계절이냐는 질문에 false를 줘도 강제로 답을 맥여서 정답이라고 뜨는 것을!!  
+
+이렇게 main.dart 파일에서 quiz_brain 파일의 속성을 강제로 접근하여 틀린 정보로 수정할 수 있고,    
+이런 경우가 생기면 앱이 예상치 않은 방식으로 동작하게 된다.
+
+이럴 때 필요한 것이 **캡슐화**의 **정보 은닉성**이다.
+
+> 레스토랑으로 말하면  
+> 
+웨이터 클래스가 있고 셰프 클래스가 있다.   
+웨이터가 셰프를 방해하는 것을 원할까?  
+웨이터가 갑자기 요리 중인 셰프한테 가서 "너 요리 좀 제대로 해!" 라고 한다면?  
+어처구니 없는 상황이지 않나?  
+당연히 누구던 자기 업무를 방해받는 것은 원치 않는다.  
+웨이터 클래스는 '요리사 참견하기' 라는 코드까지 섞이며 코드는 더 길어진다.  
+>
+**서로 터치하지 않게끔 구역을 철저히 분리하고 자신의 일만 하게하자!**
+
+모든 클래스는 별도의 모듈로 구성된다.
+
+**quiz_brain.dart**
+```dart
+...
+
+
+  List<Question> _questionBank = [
+
+
+...
+```
+
+<img width="769" alt="스크린샷 2020-02-22 오후 10 49 45" src="https://user-images.githubusercontent.com/55340876/75093502-a6962f00-55c5-11ea-9e01-b3aa80901a07.png">
+
+
+``_questionBank``  
+
+질문 리스트 변수명 앞에 ``_`` 을 추가하면 ``private 타입`` 으로 인식하며 외부에서 접근을 못하게 된다.  
+
+이로써 외부에서는 더이상  ``_questionBank`` 접근도, 수정도 불가하다.
+
+그럼 어떻게 질문 리스트를 메인 파일로 가져오냐고??  
+질문 리스트 담당자에 접근을 못하니 우리는 담당자 말고 위임받은 애를 데리고 오면 된다.  
+
+class 안에 메소드를 만들어서 불러오자!
+**(같은 클래스 안에 있는 것은 private 타입이라도 불러올 수 있다!)**
+
+**quiz_brain.dart**
+
+```dart
+...
+
+
+    Question('도로교통법 : 스쿨존의 제한속도는 30km 이내로 제한된다.', true),
+  ];
+
+  String getQuestionText(int questionNumber) { //질문 메소드
+    return _questionBank[questionNumber].questionText;
+    //_questionBank 의 questionNumber(인덱스를 의미)의 질문을 말한다.
+  }
+
+    bool getCorrectAnswer(int questionNumber) { //답변 메소드
+    return _questionBank[questionNumber].questionAnswer;
+  }
+}
+```
+
+**main.dart**
+
+```dart
+...
+
+          child: Text(
+          //quizBrain.questionBank[questionNumber].questionText,
+          quizBrain.getQuestionText(questionNumber),
+        
+...
+
+          onPressed: () {
+            bool correctAnswer = quizBrain.getCorrectAnswer(questionNumber);
+
+...
+
+          onPressed: () {
+            bool correctAnswer = quizBrain.getCorrectAnswer(questionNumber);
+
+...
+```
+questionNumber 는 처음에 0으로 세팅되어 있으니까  
+퀴즈 뇌로 가서 해당하는 첫번째 질문을 받게된다. 
+
+답변도 같은 방식으로 만들어준다!
+
+캡슐화를 통해 이제 외부의 방해를 받지 않는다.
+
+자 이제 마지막 질문만 가면 터지는 에러를 수정해보자.   
+(다음 질문이 없으니 에러가 나는 상황)
+
+**quiz_brain.dart**
+
+```dart
+...
+
+class QuizBrain {
+  //퀴즈가 해야하고 할 수 있는 모든 것을 정의
+
+  int _questionNumber = 0; //main.dart 에서 잘라옴
+
+...
+
+  void nextQuestion() {
+    if (_questionNumber < _questionBank.length - 1) {
+      //_questionNumber가 _questionBank의 길이를 -1한 12가 되는 순간 조건이 false가 되니까 ++하지 않음
+      _questionNumber++;
+    }
+    print(_questionNumber);
+    print(_questionBank.length);
+  }
+
+  String getQuestionText() {
+    //메소드
+    return _questionBank[_questionNumber].questionText;
+    //_questionBank 의 questionNumber(인덱스를 의미)의 질문을 말한다.
+  }
+
+  bool getCorrectAnswer() {
+    return _questionBank[_questionNumber].questionAnswer;
+  }
+}
+```
+
+**main.dart**
+
+```dart
+...
+
+      child: Text(
+        quizBrain.getQuestionText(),
+
+...
+
+      onPressed: () {
+        bool correctAnswer = quizBrain.getCorrectAnswer();
+
+...
+
+        setState(() {
+          quizBrain.nextQuestion();
+        });
+
+...
+
+      onPressed: () {
+        bool correctAnswer = quizBrain.getCorrectAnswer();
+
+...
+
+        setState(() {
+          quizBrain.nextQuestion();
+        });
+
+...
+```
+
+
+
+
+
+
+
+<br/>
+<br/>
+
+---
+
+<br/>
+
+# 퀴즈 앱 - 7. 상속성
+
+우리는 많고 다른 코드로 추상화를 할 때   
+기능들이 서로 중복되지 않도록 클래스와 별도의 모듈을 사용하므로   
+객체를 만들 때 **상속**이 정말 중요하다.
+
+```dart
+void main() {
+  
+  Car myNormalCar = new Car();
+  print(myNormalCar.numberOfSeat);
+  myNormalCar.drive();
+}
+
+class Car {
+  int numberOfSeat = 5;
+  
+  void drive() {
+    print('바퀴가 굴러간다.');
+  }
+}
+```
+
+```dart
+//console 결과는??
+5
+바퀴가 굴러간다.
+```
+
+Car 클래스를 만들고,  
+기본값으로 카시트는 5개가 주어진다.  
+그리고 모든 차에 주행 방법이 있듯이,  
+기능으로 drive 메소드를 호출해서 단순히 바퀴만 돌려보자.  
+
+설계를 했으니 나만의 차 객체를 생성해보자.  
+``Car myNormalCar = Car();``  
+따로 설정된 카시트가 없으니 기본값 5가 나올 것이고,  
+.drive() 를 호출하면 바퀴가 돌 것이다.  
+
+우리는 이미 앞전에 배웠기에 클래스 객체가 이런식으로 작동하는 방식이 익숙하다.  
+그러나 다른 유형의 자동차를 만들고 싶다면?  
+전기 자동차?    
+가솔린 자동차?  
+태양열 자동차?  
+**속성은 같지만 기능이 다른 자동차를 만들어보자.**
+
+```dart
+class Car {
+  int numberOfSeat = 5;
+  
+  void drive() {
+    print('바퀴가 굴러간다.');
+  }
+}
+```
+
+새 클래스를 생성하면서 기존에 Car 클래스에 쓴 속성과 기능들을 어느 세월에 다시 쓰냐..  
+당연히 바퀴 네개, 시트 다섯새, 문짝 네개 등등..  
+일반 자동차랑 같은 점들을 또 써줘야하나..  
+시간낭비다!  
+
+나는 게으른 개발자니까 머리를 굴리겠다.   
+자, Car 클래스의 것들을 상속받아쓰면 되겠지!  
+
+```dart
+class ElectricCar extends Car {
+  
+}
+```
+
+``ElectricCar`` 클래스는 extends 구문을 통해 ``Car`` 클래스의 모든 것을 갖게 된다.  
+이로써 Car 클래스가 부모가 되고,  
+그 부모의 재산을 자식인 ElectricCar 클래스가 상속받는 것이다.
+
+```dart
+void main() {
+  
+//   Car myNormalCar = new Car();
+//   print(myNormalCar.numberOfSeat);
+//   myNormalCar.drive();
+  
+  ElectricCar myTesla = new ElectricCar();
+  myTesla.drive();
+}
+
+class Car { //부모 클래스
+  int numberOfSeat = 5;
+  
+  void drive() {
+    print('바퀴가 굴러간다.');
+  }
+}
+
+class ElectricCar extends Car { //상속받은 클래스
+  
+}
+```
+코드를 추가해서 콘솔을 찍으면?  
+
+```dart
+//console 결과는??
+바퀴가 굴러간다.
+```
+
+**WOW!!!**  
+
+ElectricCar 클래스는 기존 Car 클래스에는 당연히 없는!!  
+**전기자동차만의 속성과 기능들을 추가해줘서 사용할 수도 있다.**  
+가령,  
+배터리는 100% 로 시작하고,  
+고장나면 100% 로 재충전할 수 있게 재충전 기능을 제공해주자.
+
+```dart
+...
+
+class ElectricCar extends Car {
+  int batteryLevel = 100;
+  
+  void recharge() {
+    batteryLevel = 100;
+  }
+}
+```
+
+요로코롬 부모 클래스로부터 상속을 받고나서   
+부모와 다른 원하는 모든 것(부모에겐 없는 속성, 기능들)을 추가해주면 된다.
+
+
+<br/>
+<br/>
+
+---
+
+<br/>
+
+# 퀴즈 앱 - 8. 다형성
+
+한 챕터마다 끝날 것 같으면서도 끝나지 않는 안젤라유 쓰앵님의 강의...  
+
+![1539617118_8424_zzal](https://user-images.githubusercontent.com/55340876/75097105-19b19c80-55ea-11ea-8333-e11c210fd262.png)
+
+bmi계산기랑.. clima랑.. 비트코인.. 채팅.. 상태관리..  
+할게 겁나 궤많은데 벌써 눙무리..
+내 볼에 흐르는거 뭐햐..  
+내가 학창시절에 이렇게까지 공부를 한 적이 있던가  
+지난 날으 나년 반성훼.. 쏘th뜌삣! 😞
+
+후.. 드디어 OOP 마지막 기둥 **다형성**을 까보자!  
+
+프로그램을 추상화하고 별도의 역할을 위한 별도의 모듈을 만들었다.  
+그리고 부모 클래스로부터 많은 행동을 상속 받았다.  
+이 때 기본적으로 부모 클래스의 사본을 얻는다. 
+
+이런 생각이 들 수 있다.
+
+>내가 Car라는 부모 클래스로부터 상속받아서 공중부양자동차를 만들었는데  
+아.. 상속받은 기능이랑 속성 몇개가 거슬려!   
+쫌 바꿔야 될 것 같은데.. 
+시대가 시대이니만큼 공중부양인데 어?!  
+바퀴 필요없잖아!  
+아니 하늘을 나는데 바퀴 굴러가는 기능은 왜있는겨?  
+상속받은 부분 몇개만 쫌 바꾸면 깐지나겠는데?  
+올드한건 갖다버리자꼬!!
+
+```dart
+void main() {
+  
+//   Car myNormalCar = new Car();
+//   print(myNormalCar.numberOfSeat);
+//   myNormalCar.drive();
+  
+//   ElectricCar myTesla = new ElectricCar();
+//   myTesla.drive();
+  
+  LevitatingCar myMagLev = new LevitatingCar();
+  myMagLev.drive();
+  
+}
+
+class Car {
+  int numberOfSeat = 5;
+  
+  void drive() {
+    print('바퀴가 굴러간다.');
+  }
+}
+
+class ElectricCar extends Car {
+  int batteryLevel = 100;
+  
+  void recharge() {
+    batteryLevel = 100;
+  }
+}
+
+class LevitatingCar extends Car {
+  
+  @override
+  void drive() {
+    print('공중에 뜬다');
+  }
+}
+```
+
+```dart
+//console 결과는??
+공중에 뜬다
+```
+
+<br/>
+
+- ``@override`` : drive()를 재정의할 수 있도록 이전 버전과 똑같이 보이는 자체 버전의 drive()를 만듦
+
+<br/>
+
+
+워후  
+부모 클래스로부터 상속받은 메소드를 내 입맛대로 다시 재정의 해서 쓰다니!  
+쌈박하다.  
+
+자율주행자동차도 하나 만들어보자!
+
+```dart
+void main() {
+  
+  SelfDrivingCar myWaymo = new SelfDrivingCar('제주도');
+  
+  myWaymo.drive();
+  
+}
+
+class Car {
+  int numberOfSeat = 5;
+  
+  void drive() {
+    print('바퀴가 굴러간다.');
+  }
+}
+
+class ElectricCar extends Car {
+  int batteryLevel = 100;
+  
+  void recharge() {
+    batteryLevel = 100;
+  }
+}
+
+class LevitatingCar extends Car {
+  
+  @override //재정의 키워드
+  void drive() {
+    print('공중에 뜬다');
+  }
+}
+
+class SelfDrivingCar extends Car { //커스텀 생성자 추가
+  
+  String destination;
+  
+  SelfDrivingCar(String userSetDestination) {
+    destination = userSetDestination;
+  }
+  
+  @override
+  void drive() {
+    super.drive();
+    
+    print('$destination로 알아서 운전해라.');
+  }
+}
+```
+
+
+```dart
+//console 결과는??
+바퀴가 굴러간다.
+제주도로 알아서 운전해라.
+```
+
+``@override`` 를 통해 ``drive()`` 메소드를 재정의하면서  
+``super.drive();`` 를 이용하여 
+부모 메소드의 ``바퀴가 굴러간다.`` 를 더해 내가 향상시킨 기능도 함께 출력했다.  
+
+이처럼 부모로부터 물려받을 수 있음과 동시에 그걸 향상시킬 수도 있다.  
+메소드를 재정의 하여 조금 변경할 수 있는 것이다.
+
+
+<br/>
+<br/>
+
+---
+
+<br/>
+
+# 퀴즈 앱 - 9. scoreKeeper, alert 추가
+
+**main.dart**
+```dart
+...
+
+class _QuizPageState extends State<QuizPage> {
+  List<Icon> scoreKeeper = [];
+
+  void checkAnswer(bool userPickedAnswer) {
+    bool correctAnswer = quizBrain.getCorrectAnswer();
+
+    setState(() {
+      if (userPickedAnswer == correctAnswer) {
+        scoreKeeper.add(Icon(
+          Icons.check,
+          color: Colors.green,
+        ));
+      } else {
+        scoreKeeper.add(Icon(
+          Icons.close,
+          color: Colors.red,
+        ));
+      }
+
+      quizBrain.nextQuestion();
+    });
+  }
+
+...
+```
+
+이제 경고창을 띄워보자!
+
+1. **[rflutter_alert 1.0.3](https://pub.dev/packages/rflutter_alert#-readme-tab-)** 에서 디펜더시 복사
+2. pubspec.yaml 디펜더시 부분에 붙여넣기 (들여쓰기 주의!)
+3. main.dart에 import 추가
+   ```dart
+   ...
+
+   import 'package:rflutter_alert/rflutter_alert.dart';
+
+   ...
+   ```
+4. quiz_brain.dart에 마지막 질문을 확인하는 메소드 추가
+  (퀴즈가 끝날때와 시작해야할 때 print문으로 true를 반환하는지 확인필!)
+  ```dart
+  ...
+
+      bool isFinished() {
+      if (_questionNumber >= _questionBank.length - 1) {
+        //_questionNumber가 _questionBank의 길이를 -1한 12보다 크거나같으면 print문 실행
+        print('Now returning true');
+        return true;
+      } else {
+        return false;
+      }
+     }
+  }
+  ```
+5. quiz_brain.dart에 _questionNumber를 다시 0으로 설정하는 reset () 메소드 추가
+   ```dart
+   ...
+
+        void reset() {
+        _questionNumber = 0;
+      }
+    }
+   ```
+
+6. main.dart 도 수정 
+      ```dart
+      ...
+
+          setState(() {
+            if (quizBrain.isFinished() == true) {
+              //퀴즈 끝에 도달했는지 확인
+              Alert(
+                //rFlutter_alert를 사용하여 경고 표시
+                //기본 코드 형식은 사이트를 참고하자
+                context: context,
+                title: "Finished!",
+                desc: "퀴즈가 끝났습니다!",
+              ).show();
+
+              quizBrain.reset(); //questionNumber를 재설정하고
+
+              scoreKeeper = []; //점수를 초기화함
+            } else {
+              //끝에 도달하지 못한 경우 ELSE는 아래 답변 확인 단계를 수행한다 👇
+              if (userPickedAnswer == correctAnswer) {
+
+      ...
+      ```
+
+<div align="center">
+
+<img width="350" alt="퀴즈앱완성본" src="https://user-images.githubusercontent.com/55340876/75098412-3bfee680-55f9-11ea-83be-89e7d18aa086.gif">
+
+
+**드디어 완성!!!!! 후하후하후하**
+
+</div>
+
 
 <br/>
 
@@ -1351,3 +2287,4 @@ class Human { // 클래스
 - [명명 생성자](https://beomseok95.tistory.com/306)
 - [변수와 함수의 기본](https://sysocoder.com/flutter-%EB%B3%80%EC%88%98%EC%99%80-%ED%95%A8%EC%88%98%EC%9D%98-%EA%B8%B0%EB%B3%B8/)
 - [클래스, 제너릭](https://sysocoder.com/flutter-%ed%81%b4%eb%9e%98%ec%8a%a4class-%ec%a0%9c%eb%84%88%eb%a6%adgenerics/)
+- [객체지향](https://www.slideshare.net/plusjune/ss-46109239)
