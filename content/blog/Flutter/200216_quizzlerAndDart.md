@@ -1546,6 +1546,73 @@ class SelfDrivingCar extends Car {
 **나는 돌머리가 아니다 할수있다 아이캔뚜잇!**  
 **나는 돌머리가 아니다 할수있다 아이캔뚜잇!**  
 
+## 🤯겁나게 헷갈린 부분 재정리
+
+```dart
+void main() {
+  
+  Human jin = new Human(height: 180);
+  
+  print('나는 아직 성장기라 키가 ${jin.height}cm 야!');
+  jin.eat();
+  
+  print('-------------------------------');
+  
+  Human joo = new Human();
+  
+  print('나는 키가 ${joo.height}cm 에서 멈췄어..');
+  joo.eat();
+  
+  print('-------------------------------');
+  
+  Human2 won = new Human2();
+  
+  print('나도 성장기 멈춰서 ${won.height}cm 이야 ㅠㅠ 나이는 ${won.age}살 이야.');
+  won.eat();
+  
+}
+
+class Human {
+  double height;
+  
+  Human({this.height = 160});
+  
+  void eat() {
+    print('마라탕 먹을 인간 여기여기 붙어라!');
+  }
+  
+}
+
+class Human2 extends Human {
+  int age;  
+  
+  Human2({this.age=20}) : super();
+  
+  @override  
+  void eat() {
+//     super.eat();
+    print('설렁탕 먹을 인간 여기여기 붙어라!');
+  }
+}
+```
+
+```dart
+//console 결과는??
+나는 아직 성장기라 키가 180cm 야!
+마라탕 먹을 인간 여기여기 붙어라!
+-------------------------------
+나는 키가 160cm 에서 멈췄어..
+마라탕 먹을 인간 여기여기 붙어라!
+-------------------------------
+나도 성장기 멈춰서 160cm 이야 ㅠㅠ 나이는 20살 이야.
+설렁탕 먹을 인간 여기여기 붙어라!
+```
+
+<img width="1269" alt="스크린샷 2020-02-23 오후 5 02 22" src="https://user-images.githubusercontent.com/55340876/75106296-46070080-565e-11ea-8b67-94250fe4c83f.png">
+
+**서브 클래스는 슈퍼 클래스에서 생성자를 상속받지 않는다!!!!**  
+**extends를 사용하여 자식 클래스를 만들고 super를 사용하여 부모 클래스(상위)를 참조만!!! 한다.**
+
 
 <br/>
 <br/>
@@ -2288,3 +2355,4 @@ class _QuizPageState extends State<QuizPage> {
 - [변수와 함수의 기본](https://sysocoder.com/flutter-%EB%B3%80%EC%88%98%EC%99%80-%ED%95%A8%EC%88%98%EC%9D%98-%EA%B8%B0%EB%B3%B8/)
 - [클래스, 제너릭](https://sysocoder.com/flutter-%ed%81%b4%eb%9e%98%ec%8a%a4class-%ec%a0%9c%eb%84%88%eb%a6%adgenerics/)
 - [객체지향](https://www.slideshare.net/plusjune/ss-46109239)
+- [](https://steemit.com/dart/@wonsama/flutter-dart-3-a-tour-of-the-dart-language)
