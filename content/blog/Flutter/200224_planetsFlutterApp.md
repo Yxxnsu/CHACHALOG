@@ -1,5 +1,5 @@
 ---
-title: '💎 [Flutter] Planets App'
+title: '💎 [Flutter] Planets App (미완)'
 date: 2020-02-25 01:34:00
 category: 'Flutter'
 draft: false
@@ -888,6 +888,150 @@ Hero 위젯은 화면간 쉬운 애니메이션 효과를 주기 위해 쓴다.
 
 
 # 행성 상세페이지
+
+예제는 이렇다.
+
+<img width="350" alt="" src="https://user-images.githubusercontent.com/55340876/75171762-7f7b6100-576f-11ea-9e23-6c7ebbe302b9.png">
+
+
+- 배경 이미지 
+- 배경 이미지와 배경색 사이의 그라데이션
+- 스크롤 가능한 컨텐츠 자체
+- 상단의 뒤로가기 버튼
+
+<br/>
+
+일단 텍스트 스타일좀 다시 수정하자. 
+
+**lib/ui/common/text_style.dart**
+
+```dart
+import 'package:flutter/material.dart';
+
+class Style {
+  static final baseTextStyle = TextStyle(
+    fontFamily: 'Poppins',
+  );
+
+  static final regularTextStyle = baseTextStyle.copyWith(
+    color: Color(0xffb6b2df),
+    fontSize: 9.0,
+    fontWeight: FontWeight.w400,
+  );
+
+  static final subHeaderTextStyle = regularTextStyle.copyWith(
+    fontSize: 12.0,
+  );
+
+  static final headerTextStyle = baseTextStyle.copyWith(
+    color: Colors.white,
+    fontSize: 18.0,
+    fontWeight: FontWeight.w600,
+  );
+}
+```
+
+
+**lib/ui/planet_row.dart** 
+
+```dart
+...
+
+      Text(planet.gravity, style: Style.regularTextStyle),
+
+...
+
+          Text(
+            planet.name,
+            style: Style.headerTextStyle,
+          ),
+
+...
+
+          Text(
+            planet.location,
+            style: Style.subHeaderTextStyle,
+          ),
+
+...
+```
+
+
+**lib/ui/detail/datail_page.dart**
+
+```dart
+...
+
+    Text(planet.name, style: Style.headerTextStyle,),
+
+...
+```
+
+이제 배경이미지를 넣어보자.
+
+일단 목업데이터에 네트워크 백그라운드 이미지 전체적으로 추가해주고, 
+
+
+**lib/ui/detail/datail_page.dart**
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:planets_flutter_app/model/planets.dart';
+
+class DetailPage extends StatelessWidget {
+  final Planet planet;
+
+  DetailPage(this.planet);
+
+  @override
+  Widget build(BuildContext context) {
+    print(planet.picture);
+    return Scaffold(
+      body: Container(
+        constraints: BoxConstraints.expand(),
+        color: Color(0xFF736AB7),
+        child: Stack(
+          children: <Widget>[
+            Container(
+              child: Image.network(
+                planet.picture,
+                fit: BoxFit.cover,
+                height: 300.0,
+              ),
+              constraints: BoxConstraints.expand(height: 300.0),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 190.0),
+              height: 110.0,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: <Color>[Color(0x00736AB7), Color(0xFF736AB7)],
+                  stops: [0.0, 0.9],
+                  begin: FractionalOffset(0.0, 0.0),
+                  end: FractionalOffset(0.0, 1.0),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+그라데이션까지 더하면
+
+
+<img width="371" alt="스크린샷 2020-02-25 오전 2 19 05" src="https://user-images.githubusercontent.com/55340876/75175182-37f7d380-5775-11ea-8b73-c8bd79821210.png">
+
+쫘라란!
+
+맨처음 앱바에서 만든 그라데이션이랑 비슷하다.  
+
+이제 내용을 추가하자.
+
+
 
 
 
