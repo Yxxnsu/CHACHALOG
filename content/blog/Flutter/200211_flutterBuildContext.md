@@ -1,5 +1,5 @@
 ---
-title: '💎 [Flutter] BuildContext'
+title: '💎 [Flutter] BuildContext / 스낵바'
 date: 2020-02-11 16:55:00
 category: 'Flutter'
 draft: false 
