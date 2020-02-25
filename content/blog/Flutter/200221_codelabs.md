@@ -1,5 +1,5 @@
 ---
-title: '💎 [Flutter] 코드랩 (미완)'
+title: '💎 [Flutter] 코드랩'
 date: 2020-02-21 03:20:00
 category: 'Flutter'
 draft: false

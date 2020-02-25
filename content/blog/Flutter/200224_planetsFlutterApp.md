@@ -1,5 +1,5 @@
 ---
-title: '💎 [Flutter] Planets App (미완)'
+title: '💎 [Flutter] Planets App'
 date: 2020-02-25 01:34:00
 category: 'Flutter'
 draft: false
