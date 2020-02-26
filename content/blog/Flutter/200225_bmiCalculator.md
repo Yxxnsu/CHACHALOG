@@ -1312,6 +1312,370 @@ class _InputPageState extends State<InputPage> {
 
 # Dart - 1급 객체
 
+Dart에서 함수는 일급 클래스 객체로, 함수를 다른 함수의 파라미터로 전달할 수 있다.  
+
+```dart
+void main() {
+  
+  int result = add(3, 5);
+  print(result);
+
+}
+
+int add(int n1, int n2) {
+  return n1 + n2;
+}
+
+int multiply(int n1, int n2) {
+  return n1 * n2;
+}
+```
+
+```dart
+console 결과는??
+8
+```
+
+두개의 정수를 인자로 받고,  
+더하기와 곱셈을 해주는 함수를 만들었다.  
+호출 할때는 저런식으로 add, multiply 따로따로 해줘야 값이 나오는데  
+만약 계산기처럼 버튼을 누르면 값이 나오는 것처럼 만들고 싶다면?  
+
+```dart
+void main() {
+  
+  int result = calculator(5, 8, add);
+  print(result);
+
+}
+
+int calculator(int n1, int n2, Function calculation) {
+  return calculation(n1, n2);
+}
+
+int add(int n1, int n2) {
+  return n1 + n2;
+}
+
+int multiply(int n1, int n2) {
+  return n1 * n2;
+}
+```
+
+```dart
+console 결과는??
+13
+```
+
+``int result = calculator(5, 8, add);`` 이 부분을,  
+``int result = calculator(5, 8, multiply);`` 요로코롬  
+
+**multiply** 로 바꿔주기만 하면 결과는 ``40``이 나온다.
+
+함수는 다른 정수 2개인 인자값과 마찬가지로 똑같이 전달된다.  
+
+함수로 할 수 있는 다른 것은  
+함수를 변수의 값으로 할당할 수도 있다는 것이다.  
+
+```dart
+void main() {
+  
+  int result = calculator(5, 8, multiply);
+  print(result);
+
+}
+
+Function calculator = (int n1, int n2, Function calculation) { //변수에 할당
+  return calculation(n1, n2);
+}; //세미콜론 필수
+
+int add(int n1, int n2) {
+  return n1 + n2;
+}
+
+int multiply(int n1, int n2) {
+  return n1 * n2;
+}
+```
+
+이런식으로 해도 값은 동일하게 **40** 이 찍힌다.  
+``final Function calculator = (int n1, int n2, Function calculation) {``  
+원한다면 앞에 final을 붙여줘도 된다.  
+이 경우에는 더이상 할당 값을 변경할 수 없게 되고  
+
+<img width="1167" alt="스크린샷 2020-02-27 오전 2 02 53" src="https://user-images.githubusercontent.com/55340876/75368534-44ab3180-5905-11ea-92a5-055ef1e4e6e5.png">
+
+변경을 하려하면 당근 에러가 뜬다.  
+
+```dart
+void main() {
+  
+  Car myCar = Car(drive: slowDrive); //slowDrive를 데꼬올때 () 괄호가 없는것을 주목해라.
+  
+  print(myCar.drive);
+  
+  myCar.drive();
+  
+  myCar.drive = fastDrive; //myCar 속성의 값을 변경할거라 fastDrive 뒤에 () 괄호는 없다.
+  
+  myCar.drive(); //메소드명() 를 같이 호출해서 기능을 트리거 한다.
+}
+
+class Car {
+  Function drive;
+  
+  Car({this.drive});
+  
+}
+
+void slowDrive() {
+  print('느리게 운전');
+}
+
+void fastDrive() {
+  print('빠르게 운전');
+}
+```
+
+```dart
+console 결과는??
+Closure 'slowDrive'
+느리게 운전
+빠르게 운전
+```
+
+배운 내용을 코드에 적용해보자!  
+
+추가했던 2개의 GestureDetector 위젯에 커서를 두고  
+옵션+엔터(mac 기준) 로 Remove this widget 을 해서 지워주자.
+
+reusable_card.dart
+```dart
+...
+
+class ReusableCard extends StatelessWidget {
+  ReusableCard({@required this.colour, this.cardChild, this.onPress}); //추가
+
+  final Color colour;
+  final Widget cardChild;
+  final Function onPress; //함수 타입으로 추가
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector( //컨테이너 위젯 감싸기
+      onTap: onPress, //추가
+      child: Container(
+
+...
+```
+
+익명 함수를 추가하고 익명 함수 안에 setState를 주고  
+그 내부에서 Gender.male 을 selectedGender 로 할당해준다.  
+
+input_page.dart
+
+```dart
+...
+
+        Expanded(
+          child: ReusableCard(
+            onPress: () { //뿅
+              setState(() {
+                selectedGender = Gender.male;
+              });
+            },
+            colour: selectedGender == Gender.male
+                ? activeCardColour
+                : inactiveCardColour,
+            cardChild: IconContent(
+              icon: FontAwesomeIcons.mars,
+              label: 'MALE',
+            ),
+          ),
+        ),
+        Expanded(
+          child: ReusableCard(
+            onPress: () { //뿅
+              setState(() {
+                selectedGender = Gender.female;
+              });
+            },
+            colour: selectedGender == Gender.female
+                ? activeCardColour
+                : inactiveCardColour,
+
+...
+```
+
+앱 실행 결과는 동일하다!  
+
+# Slider 위젯
+
+일단 모든 상수들을 한곳에 모아주자.
+
+contants.dart
+
+```dart
+import 'package:flutter/material.dart';
+
+const KBottomContainerHeight = 80.0;
+const KActiveCardColour = Color(0xFF1D1E33);
+const KInactiveCardColour = Color(0xFF111328);
+const KBottomContainerColour = Color(0xFFEB1555);
+
+const KLabelTextStyle = TextStyle(
+  fontSize: 18.0,
+  color: Color(
+    0xFF8D8E98,
+  ),
+);
+```
+그리고 모든 상수명을 명명 규칙을 사용해서 동일하게 rename 해준다. 
+(오른마우스 클릭 refactor -> rename)  
+이 과정에서 상수를 사용하는 모든 곳에 이름이 바뀐다.  
+앞에 k 를 붙임으로 모든 상수를 한번에 쉽게 검색할 수 있다.
+
+이 때 당연히 잘라온 파일들에서는 얘네를 사용할 수 있게
+
+``import 'constants.dart';`` import 구문을 잊지말자!  
+
+input_page.dart
+
+```dart
+...
+
+      title: Text('BMI CALCULATOR'),
+    ),
+    body: Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch, //가로 길이 확장
+
+  ...
+
+        Expanded(
+          child: ReusableCard(
+            colour: KActiveCardColour,
+            cardChild: Column(
+              children: <Widget>[
+                Text(
+                  'HEIGHT',
+                  style: KLabelTextStyle, //상수 맥인거 가져옴
+                )
+
+...
+```
+
+<img width="371" alt="스크린샷 2020-02-27 오전 2 45 12" src="https://user-images.githubusercontent.com/55340876/75372046-2fd19c80-590b-11ea-8367-30433cd43fee.png">
+
+세번째 카드 위젯도 얼른 구성해보자!! 
+우리가 만들 카드들의 동일한 부분들은 const 를 통해서 상수 선언을 해주고,  
+constants 라는 파일에 하나로 묶어줘서 갖다 쓴다고 했다.  
+
+<img width="371" alt="스크린샷 2020-02-27 오전 2 54 25" src="https://user-images.githubusercontent.com/55340876/75372844-783d8a00-590c-11ea-9059-5d49e3e58a7f.png">
+
+(예제 이미지를 보면 숫자 텍스트 부분이 다 동일한 스타일을 유지하는걸 볼 수 있음)
+
+여기서도 숫자가 들어가는 텍스트들은 모든 카드 위젯 부분에 동일한 스타일을 요구한다.  
+상수로 선언해서 그것들을 재사용 쩔게 갖다써주자! 
+
+constants.dart
+```dart
+...
+
+const KNumberTextStyle = TextStyle(
+  fontSize: 50.0,
+  fontWeight: FontWeight.w900,
+);
+```
+
+input_page.dart
+```dart
+...
+
+  Gender selectedGender;
+  int height = 180; //변수 선언
+
+...
+
+    Text(
+      'HEIGHT',
+      style: KLabelTextStyle,
+    ),
+    Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.baseline,
+      textBaseline: TextBaseline.alphabetic,
+      children: <Widget>[
+        Text(
+          height.toString(),
+        //선언해준 height 변수는 값으로 int 180을 가지기에 텍스트 위젯에서는 문자열로 변환해줘야함.
+          style: KNumberTextStyle,
+        ),
+        Text(
+          'cm',
+          style: KLabelTextStyle,
+        ),
+
+...
+```
+
+
+<img width="371" alt="스크린샷 2020-02-27 오전 3 06 07" src="https://user-images.githubusercontent.com/55340876/75373689-1a11a680-590e-11ea-9aba-212c435b6c89.png">
+
+
+
+``crossAxisAlignment: CrossAxisAlignment.baseline,``
+
+baseline을 쓰려면 null 값은 에러가 뜨니, 기준선인 baseline 을 필수로 지정해줘야 한다.  
+저 경우``textBaseline: TextBaseline.alphabetic,`` 부분이 없다면 에러가 난다.
+
+```dart
+...
+
+            'cm',
+            style: KLabelTextStyle,
+          ),
+        ],
+      ),
+      Slider(
+        value: height.toDouble(), //형변환
+        min: 120.0,
+        max: 220.0,
+        activeColor: Color(0xFFEB1555),
+        inactiveColor: Color(0xFF8D8E98),
+        onChanged: (double newValue) {
+          setState(() {
+            height = newValue
+                .round(); //정수로 반올림하여 가장 가까운 정수로 바꿔줌 (더블 타입이었으니까)
+          });
+        },
+      )
+
+...
+```
+
+슬라이더 위젯은 기본적으로 double 타입을 갖고있다.  
+height 는 현재 상단에서 int 타입 180으로 선언되어있다.  
+value 값에 실수 타입으로 형변환을 해주고  
+최소값, 최대값, 색상, 필수값인 onChanged 지정을 해주면!   
+
+![2020-02-27 03-31-29 2020-02-27 03_32_04](https://user-images.githubusercontent.com/55340876/75375603-c2753a00-5911-11ea-8328-be1398d74b3c.gif)
+
+
+슬라이더가 새 값을 콜백에 전달하고  
+따라서 토글을 움직이면 입력을 통해 새로운 값을 콜백에 전달한다.  
+``(double newValue)``  
+그리고 setState 내부에서 상태를 업데이트 해준다.  
+``height = newValue.round();``
+
+슬라이더 구현 끗!
+
+
+
+
+
+
+
+
 
 
 
