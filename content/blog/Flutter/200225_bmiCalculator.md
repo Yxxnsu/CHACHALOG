@@ -362,24 +362,24 @@ _실제로 별로 안쓴다니까 일단 여기까지만 알아두자_
 <br/>
 
 지금의 경우에는 필요가 없으니 일단 저부분은 삭제해주고  
-재사용 가능한 카드에서 사용하는 속성 중에서 하나에 대한 값을 생성하려면 생성자가 필요하다.  
+ReusableCard에서 사용하는 속성 중에서 하나에 대한 값을 생성하려면 생성자가 필요하다.  
 음..   
 카드 레이아웃 부분을 클릭할때마다 컨테이너 색상이라는 속성이 바뀐다.    
 요놈을 고치면 된다!  
 
 <br/>
 
-새로운 재사용 가능한 카드 위젯을 만들 때,  
-전달할 수 있는 재사용 가능한 카드의 속성으로  
+새로운 ReusableCard 위젯을 만들 때,  
+전달할 수 있는 ReusableCard 의 속성으로  
 ``Color colour;`` 라고 색상 유형의 속성을 만들어주고  
-``ReusableCard({this.colour});`` 재사용 가능한 카드의 생성자를 만든다.  
+``ReusableCard({this.colour});`` 요로코롬 생성자를 만든다.  
 (속성의 이름을 참조하게끔 이름을 지정하려는 모든 속성을 {} 중괄호로 묶어준다)
 
 
 <img width="651" alt="스크린샷 2020-02-26 오전 1 10 41" src="https://user-images.githubusercontent.com/55340876/75265851-d4cd7600-5834-11ea-8895-7fb46327ab0b.png">
 
 ``@required`` 는 꼭! 필수로 명시를 해줘야한다는 키워드.   
-여기서는 재사용 가능한 코드의 매개 변수 색상이 필요하다고 맥여줬는데,  
+여기서는 ReusableCard의 매개 변수로 색상이 반드시 필요하다고 맥여줬는데,  
 상단 캡쳐를 보면 확인할 수 있듯이 필요한 부분을 노란색 하이라이트로 알려준다.
 
 ```dart
@@ -421,10 +421,896 @@ class ReusableCard extends StatelessWidget {
 재사용성 쩌는 놈을 만들어준겨!!
 
 
+![2020-02-26 11-36-00 2020-02-26 11_36_42](https://user-images.githubusercontent.com/55340876/75306403-47b60b80-588c-11ea-87bd-e5022bb0482b.gif)  
+
+구불구불한 에러같은 현상은  
+
+```dart
+...
+
+class ReusableCard extends StatelessWidget {
+  ReusableCard({@required this.colour});
+
+  final Color colour;
+
+  @override
+
+...
+```
+요로케 final 을 앞에 써주면 프로퍼티가 불변으로 변해서 꾸부리가 사라진다!  
+
+하단 핑끄핑끄 바텀도 만들어보자.
+
+```dart
+import 'package:flutter/material.dart';
+
+const bottomContainerHeight = 80.0; //상수선언
+const activeCardColour = Color(0xFF1D1E33); //상수선언
+const bottomContainerColour = Color(0xFFEB1555); //상수선언
+
+class InputPage extends StatefulWidget {
+  @override
+  _InputPageState createState() => _InputPageState();
+}
+
+class _InputPageState extends State<InputPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('BMI CALCULATOR'),
+      ),
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: ReusableCard(
+                    colour: activeCardColour,
+                  ),
+                ),
+                Expanded(
+                  child: ReusableCard(
+                    colour: activeCardColour,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: ReusableCard(
+              colour: activeCardColour,
+            ),
+          ),
+          Expanded(
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: ReusableCard(
+                    colour: activeCardColour,
+                  ),
+                ),
+                Expanded(
+                  child: ReusableCard(
+                    colour: activeCardColour,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            color: bottomContainerColour,
+            margin: EdgeInsets.only(top: 10.0),
+            width: double.infinity, //어느 디바이스에서 구동되던 가로 전체 차지
+            height: bottomContainerHeight,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+...
+```
+
+상단에 중복되는 것들을 상수로 선언해주고 각 색상 위치에 놓아주면?!
+
+<img width="350" alt="스크린샷 2020-02-26 오후 3 29 51" src="https://user-images.githubusercontent.com/55340876/75318102-d9357580-58ac-11ea-87fd-e8e56fc5424b.png">
+
+빼앰!
+
+# 사용자 정의 위젯
+
+```dart
+...
+
+class ReusableCard extends StatelessWidget {
+  ReusableCard({@required this.colour, this.cardChild});
+
+  final Color colour;
+  final Widget cardChild;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: cardChild,
+
+...
+```
+
+``cardChild`` 를 추가해주고,  
+기능을 넣기 전에 먼저, 스타일링을 위해  
+[font_ awesome_flutter 8.7.0](https://pub.dev/packages/font_awesome_flutter) 패키지를 pubspec.yaml 에 추가해준다.  
+
+```dart
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+```
+
+import도 잊지말고!  
+이제 첫번째 ReusableCard 위젯에 스타일링을 줘보자.
+
+```dart
+...
+
+      child: ReusableCard(
+        colour: activeCardColour,
+        cardChild: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              FontAwesomeIcons.mars,
+              size: 80.0,
+            ),
+            SizedBox(
+              height: 15.0,
+            ),
+            Text(
+              'MALE',
+              style: TextStyle(
+                fontSize: 18.0,
+                color: Color(
+                  0xFF8D8E98,
+                ),
+              ),
+            ),
+
+...
+```
+
+시뮬레이터를 재실행하면 
+
+<img width="376" alt="스크린샷 2020-02-26 오후 3 54 39" src="https://user-images.githubusercontent.com/55340876/75319586-50203d80-58b0-11ea-953d-bac8abfc97a5.png">
+
+요로코롬 나타난다.  
+이제 오른쪽도 동일한 아이콘 컨텐츠 위젯으로 만들어줘야하니,  
+상단에서 배웠듯 위젯을 추출해서 재사용 하도록 만들자.
+
+추출할 때 나오는 기본 생성자를 제거해주고  
+재사용할 아이콘과 텍스트 부분을 final 키워드를 이용해 속성으로 넣어준다.  
+``final 데이터타입 속성명;``  
+요론식으로 2가지 속성을 정의해주고,  
+요 속성들은 생성자를 통해 초기화를 시켜준다.  
+
+```dart
+...
+
+class IconContent extends StatelessWidget { //추출한 위젯
+  IconContent({this.icon, this.label}); //생성자 초기화
+
+  final IconData icon; //속성 정의
+  final String label; //속성 정의
+  
+...
+```
+
+이 후엔  
+메인 빌드 메소드에서 정의한 속성들(아이콘, 텍스트)이 어디로 갈지 지정해준다.  
+
+```dart
+...
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Icon(
+          icon, //요놈
+          size: 80.0,
+        ),
+        SizedBox(
+          height: 15.0,
+        ),
+        Text(
+          label, //요놈
+          style: TextStyle(
+            fontSize: 18.0,
+            color: Color(
+              0xFF8D8E98,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+...
+```
+
+여기서 끝이냐고?  
+
+<img width="376" alt="스크린샷 2020-02-26 오후 4 12 04" src="https://user-images.githubusercontent.com/55340876/75320758-bf972c80-58b2-11ea-9df7-d7107ff1abdf.png">
+
+현재는 사용하는 곳에서 넘겨줄 인자값이 없으니 에러가 뜬다.  
+
+```dart
+...
+
+      Expanded(
+        child: ReusableCard(
+          colour: activeCardColour,
+          cardChild: IconContent( //인자값을 줘야지?!
+            icon: FontAwesomeIcons.mars,
+            label: 'MALE',
+          ),
+        ),
+      ),
+      Expanded(
+        child: ReusableCard(
+          colour: activeCardColour,
+          cardChild: IconContent( //인자값을 줘야지?!
+            icon: FontAwesomeIcons.venus,
+            label: 'FEMALE',
+          ),
+
+...
+```
+
+
+<img width="376" alt="스크린샷 2020-02-26 오후 4 15 50" src="https://user-images.githubusercontent.com/55340876/75321022-451adc80-58b3-11ea-857e-9523c22c00df.png">
+
+baaaaaam!!
+
+
+추출된 위젯 메소드덕에 코드가 엄청 길어졌다.  
+기능별로 코드를 각 파일에 분리해주자
+
+
+reusable_card.dart
+
+```dart
+import 'package:flutter/material.dart';
+
+class ReusableCard extends StatelessWidget {
+  ReusableCard({@required this.colour, this.cardChild});
+
+  final Color colour;
+  final Widget cardChild;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: cardChild,
+      margin: EdgeInsets.all(15.0), //사방 여백
+      decoration: BoxDecoration(
+        color: colour, //컨테이너 색상
+        borderRadius: BorderRadius.circular(10.0), //컨테이너 테두리
+      ),
+    );
+  }
+}
+```
+
+icon_content.dart
+
+```dart
+import 'package:flutter/material.dart';
+
+class IconContent extends StatelessWidget {
+  IconContent({this.icon, this.label});
+
+  final IconData icon;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Icon(
+          icon,
+          size: 80.0,
+        ),
+        SizedBox(
+          height: 15.0,
+        ),
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 18.0,
+            color: Color(
+              0xFF8D8E98,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+```
+
+최상단에는 항상 ``import 'package:flutter/material.dart';``  
+머티리얼 패키지를 부르는걸 잊지말자.  
+
+icon_content.dart 에 코드를 보면  
+하드코딩한 것이 많다.  
+아이콘 크기, sizedBox 텍스트 스타일 등..  
+이제는 이런 부품들을 꺼내서 상단의 상수로 만드는 것이 합리적이다.  
+
+텍스트스타일 부분을 상수로 끄내자.  
+
+```dart
+...
+
+const labelTextStyle = TextStyle( //상수로~
+  fontSize: 18.0,
+  color: Color(
+    0xFF8D8E98,
+  ),
+);
+
+...
+
+        Text(label, style: labelTextStyle), //요놈
+
+...
+```
+
+마지막으로 input_page.dart 에서  
+분리한 코드 파일들을 import 해주면 된다.
+
+input_page.dart
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'icon_content.dart';
+import 'reusable_card.dart';
+
+...
+```
+
+이제 모든 것을 별도의 파일로 리팩토링하는 것을 습관화하고,   
+이걸 통해 각 작업을 훨씬 쉽게 수행 할 수 있다.  
+
+내가 만든 위젯 (사용자 정의 위젯) 으로 프로젝트 전체에서 재사용할 수 있는 것이다!
+
+# GestureDetector 위젯
+
+이제 아이콘 카드를 클릭하면 색상이 변하는 것을 해보자.
+
+상단에 있는 첫번째 ReusableCard 위젯에 커서를 두고   
+요놈을 감싸는 FlatButton 위젯을 만들어준다.  
+
+
+```dart
+...
+
+    Expanded(
+      child: FlatButton( //ReusableCard를 감싸는 새로운 버튼위젯
+        onPressed: () {}, //뀨
+        child: ReusableCard(
+
+...
+```
+
+가장 기본적인 ``onPressed: () {},`` 를 주면  
+
+<img width="376" alt="스크린샷 2020-02-26 오후 4 42 44" src="https://user-images.githubusercontent.com/55340876/75322877-05ee8a80-58b7-11ea-9ec2-8a8c3a8ad0b4.png">
+
+
+모양이 이런식으로 맴대로 바뀐다.  
+플랫 버튼은 머티리얼 플랫 버튼의 스타일을 구현하려하는 속성들이 있다.  
+다양한 색상, 다양한 테마, 모양들이 있는데   
+나는 지금 내 카드의 모양을 유지하고 싶다.  
+그렇다면 뭘 써야할까?
+
+플랫 버튼 대신  
+``GestureDetector 위젯`` 을 사용한다!  
+말 그대로 제스처를 감지하는 위젯.  
+이 위젯은 자식 위젯에 어떤 스타일이나 모양, 애니메이션을 강요하려 시도하지 않는다.  
+사용자가 위젯과 상호작용할 때 이를 감지하는 베리쏘퓨어한 방법이다.  
+
+따라서 FlatButton 위젯 말고,  
+GestureDetector 위젯이 ReusableCard 위젯의 부모가 되면  
+
+```dart
+...
+
+      child: GestureDetector( //부모
+        onTap: () {}, //플랫버튼의 onPressed 와 동일한 역할
+        child: ReusableCard(
+
+...
+```
+
+<img width="376" alt="스크린샷 2020-02-26 오후 4 59 18" src="https://user-images.githubusercontent.com/55340876/75323990-5666e780-58b9-11ea-81da-12dabc502363.png">
+
+스타일은 그대로다!  
+이때, GestureDetector 위젯은 onPressed 속성을 주지 못하니  
+동일한 역할을 하는 onTap과 익명 콜백을 추가로 맥여준다.  
+``print('남자 카드를 눌렀습니다');`` 를 추가해 콘솔에 찍히는지 확인해준다.
+
+이젠 클릭 했을 때 배경색이 변하는 효과를 주자.
+
+일단 카드의 기존 배경색보다 어두운 색상을 상수로 선언해주고 
+
+```dart
+...
+
+const inactiveCardColour = Color(0xFF111328); //상수선언
+const bottomContainerColour = Color(0xFFEB1555);
+
+...
+```
+
+State 위젯으로 이동해 속성을 변경해보자.  
+
+이 경우에는 색상이 변경될 일이 있으니(변경될 수 있는 변수), final을 선언하지 않아도 된다.  
+
+```dart
+...
+
+class _InputPageState extends State<InputPage> {
+  Color maleCardColor = inactiveCardColour; //초기 컬러값
+  Color femaleCardColor = inactiveCardColour; //초기 컬러값
+
+...
+```
+
+이것들은 남여 카드의 초기 컬러값이 된다.  
+
+<img width="376" alt="스크린샷 2020-02-26 오후 6 22 52" src="https://user-images.githubusercontent.com/55340876/75330817-02620000-58c5-11ea-9c27-4a9fd867aaed.png">
+
+이제 눌렀을 때 경우를 if문으로 구현해준다.
+
+```dart
+...
+
+  Color femaleCardColor = inactiveCardColour;
+
+  //1 = male, 2 = female
+  void updateColour(int gender) {
+    //남자 카드를 눌렀을 때,
+    if (gender == 1) {
+      if (maleCardColor == inactiveCardColour) {
+        maleCardColor = activeCardColour;
+      } else {
+        maleCardColor = inactiveCardColour;
+      }
+    }
+  }
+
+...
+```
+
+어떤 성별을 클릭했는지 알려주는 입력을 받고 ``(int gender)``  
+남자 카드를 눌렀을때 그 컬러가 기초 컬러인 비활성화 컬러면 활성화 컬러로 바꾸고,  
+그게 아니면 다시 기초 컬러값으로 바꾸라.  
+
+그리고 onTap 에서 상태 업데이트를 위해 setState 안에 넣어준다. 
+
+```dart
+...
+
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            updateColour(1);
+          });
+        },
+
+...
+```
+
+<img width="376" alt="" src="https://user-images.githubusercontent.com/55340876/75332268-72718580-58c7-11ea-8dd7-586d768dc087.gif">
+
+초기 세팅은 어두운 배경색이고 터치를 감지하면 색상이 업데이트 된다.  
+남자 카드를 클릭했을때 활성화 컬러, 다시 클릭하면 비활성화 컬러로 바뀌는걸 볼 수 있다.  
+
+동일 방법으로 여자 카드도 업데이트 해주자.  
+
+```dart
+...
+
+  //1 = male, 2 = female
+  void updateColour(int gender) {
+    //남자 카드를 눌렀을 때,
+    if (gender == 1) {
+      if (maleCardColor == inactiveCardColour) {
+        maleCardColor = activeCardColour;
+      } else {
+        maleCardColor = inactiveCardColour;
+      }
+    }
+    //여자 카드를 눌렀을 때,
+    if (gender == 2) {
+      if (femaleCardColor == inactiveCardColour) {
+        femaleCardColor = activeCardColour;
+      } else {
+        femaleCardColor = inactiveCardColour;
+      }
+    }
+  }
+
+...
+
+        child: GestureDetector(
+          onTap: () {
+            setState(() {
+              updateColour(2);
+            });
+          },
+          child: ReusableCard(
+            colour: femaleCardColor,
+
+...
+```
+
+여기서 문제점은 남자를 클릭하면 여자가 비활성화,  
+여자를 클릭하면 남자가 비활성화 되야하는데 지금은 그런 제어가 없는 상황이다.  
+
+이건 아주 쉽다!  
+남자 카드를 클릭했을 때  
+활성화 색을 킴과 동시에 여자 카드를 비활성화 시키는 조건도 걸어주면 된다.  
+여자 카드를 클릭한 경우엔 그 반대겠지?  
+
+```dart
+...
+
+  //1 = male, 2 = female
+  void updateColour(int gender) {
+    //남자 카드를 눌렀을 때,
+    if (gender == 1) {
+      if (maleCardColor == inactiveCardColour) {
+        maleCardColor = activeCardColour;
+        femaleCardColor = inactiveCardColour;
+      } else {
+        maleCardColor = inactiveCardColour;
+        femaleCardColor = activeCardColour;
+      }
+    }
+    //여자 카드를 눌렀을 때,
+    if (gender == 2) {
+      if (femaleCardColor == inactiveCardColour) {
+        femaleCardColor = activeCardColour;
+        maleCardColor = inactiveCardColour;
+      } else {
+        femaleCardColor = inactiveCardColour;
+        maleCardColor = activeCardColour;
+      }
+    }
+  }
+...
+```
+
+<img width="376" alt="" src="https://user-images.githubusercontent.com/55340876/75333248-2293be00-58c9-11ea-8470-d3692d8464b6.gif"> 
+
+훠우!  
+그치만 코드가 너무 가독성이 떨어진다.  
+남자는 1 여자는 2.. 직관적이지 못하다. 
+
+# Dart - Enums 
+
+```dart
+enum EnumName {typeA, typeB, typeC}
+
+EnumName.typeA
+```
+
+```dart
+void main() {
+
+  //new BMW
+  Cart myCar = Car(carStyle: CarType.BMW);
+
+}
+
+class Car {
+  //1 = hatchback, 2 = BMW...
+  CarType carStyle;
+  
+  Car({this.carStyle});
+}
+
+enum CarType {
+  cooper,
+  BMW,
+  SUV,
+  hatchback,
+  coupe,
+  
+}
+```
+
+프로젝트에 대입해보자.  
+(클래스 내부에는 만들 수 없음)
+
+```dart
+...
+
+const bottomContainerColour = Color(0xFFEB1555);
+
+enum Gender { //enum
+  male,
+  female,
+}
+
+...
+
+  //1 = male, 2 = female
+  void updateColour(Gender selectedGender) {
+    //남자 카드를 눌렀을 때,
+    if (selectedGender == Gender.male) {
+
+...
+
+    //여자 카드를 눌렀을 때,
+    if (selectedGender == Gender.female) {
+
+...
+
+              setState(() {
+                updateColour(Gender.male);
+              });
+            },
+
+...
+
+              setState(() {
+                updateColour(Gender.female);
+              });
+            },
+
+...
+```
+
+
+enum 은 속성에 대해 2개 이상의 옵션이 있을때 유용하다.  
+updateColour 메소드를 사용해 성별이 남자인지 여자인지 확인한다.
+
+# Dart - 3항 연산자
+
+```dart
+if (Condition is ture) { DoThisIfTrue } 
+        else { DoThisIfFalse }
+```
+
+```dart
+void main() {
+  
+  bool JinJooIsAwesome = true;
+  
+  if (JinJooIsAwesome == true) {
+    print('맞아!');
+  } else {
+    print('아닌데?!');
+  }
+}
+```
+
+```
+//console 결과는??
+맞아!
+```
+
+if 문은 괄호가 많고 키워드가 많다.  
+
+```dart
+Condition ? DoThisIfTrue : DoThisIfFalse
+```
+
+
+
+```dart
+void main() {
+  
+  bool JinJooIsAwesome = true;
+
+  JinJooIsAwesome == true ? print('맞아!') : print('아닌데?!');
+
+}
+```
+
+```
+//console 결과는??
+맞아!
+```
+
+3항 연산자는 그것을 한줄로 단순화 해준다.
+
+```dart
+void main() {
+  
+  int myAge = 29;
+  
+  bool canBuyAlcohol = myAge > 21 ? true : false;
+  print(canBuyAlcohol);
+
+}
+```
+
+```
+//console 결과는??
+true
+```
+
+다시 코드를 수정하자!  
+
+여지껏 작성했던 if 문 부분과 남여 Color 2개를 다 주석처리나 삭제를 해주고,  
+
+```dart
+...
+
+class _InputPageState extends State<InputPage> {
+  Gender selectedGender; //변수선언
+
+...
+
+        setState(() {
+          selectedGender = Gender.male; //뭘 클릭했는지 변수 선언
+        });
+      },
+      child: ReusableCard(
+        colour: selectedGender == Gender.male
+            ? activeCardColour
+            : inactiveCardColour,
+
+  ...
+
+        setState(() {
+          selectedGender = Gender.female; //뭘 클릭했는지 변수 선언
+        });
+      },
+      child: ReusableCard(
+        colour: selectedGender == Gender.female
+            ? activeCardColour
+            : inactiveCardColour,
+
+...
+```
+
+상단에 내가 선택할 성별을 변수로 하나 선언해주고  
+setState 내부에 내가 어떤 성별 카드를 클릭했는지를 가르키는 변수를 선언한다.  
+colour 에는 selectedGender 가 Gender.성별과 같은지 확인하고  
+true 면 ReusableCard 는 활성화 컬러로 바뀌어야하며,  
+false 라면 비활성화 컬러여야한다. 
+
+앱을 처음 시작하면 당연히 선택 된 것이 아무것도 없기에  
+``Gender selectedGender;`` 는 null이 되고  
+조건은 자연스레 false 가 되어 비활성화 컬러에서부터 시작한다.  
+그리고 우리가 성별 카드 중 하나를 선택하면,  
+3항 연산자에 따라서 컬러가 활성화 되는 것이다.
+반대 카드를 선택하면 당연히 해당 카드는 비활성화 된다.
+
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'icon_content.dart';
+import 'reusable_card.dart';
+
+const bottomContainerHeight = 80.0;
+const activeCardColour = Color(0xFF1D1E33);
+const inactiveCardColour = Color(0xFF111328); 
+const bottomContainerColour = Color(0xFFEB1555);
+
+enum Gender {
+  male,
+  female,
+}
+
+class InputPage extends StatefulWidget {
+  @override
+  _InputPageState createState() => _InputPageState();
+}
+
+class _InputPageState extends State<InputPage> {
+  Gender selectedGender; //변수선언
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('BMI CALCULATOR'),
+      ),
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedGender = Gender.male; 
+                      });
+                    },
+                    child: ReusableCard(
+                      colour: selectedGender == Gender.male
+                          ? activeCardColour
+                          : inactiveCardColour, //3항 연산자
+                      cardChild: IconContent(
+                        icon: FontAwesomeIcons.mars,
+                        label: 'MALE',
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedGender = Gender.female; 
+                      });
+                    },
+                    child: ReusableCard(
+                      colour: selectedGender == Gender.female
+                          ? activeCardColour
+                          : inactiveCardColour, //3항 연산자
+                      cardChild: IconContent(
+                        icon: FontAwesomeIcons.venus,
+                        label: 'FEMALE',
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: ReusableCard(
+              colour: activeCardColour,
+            ),
+          ),
+          Expanded(
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: ReusableCard(
+                    colour: activeCardColour,
+                  ),
+                ),
+                Expanded(
+                  child: ReusableCard(
+                    colour: activeCardColour,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            color: bottomContainerColour,
+            margin: EdgeInsets.only(top: 10.0),
+            width: double.infinity,
+            height: bottomContainerHeight,
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+코드가 보기좋아졌다!
 
 
 
 
+
+# Dart - 1급 객체
 
 
 
