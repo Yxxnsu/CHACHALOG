@@ -1101,7 +1101,7 @@ void main() {
 }
 ```
 
-```
+```dart
 //console 결과는??
 맞아!
 ```
@@ -1124,7 +1124,7 @@ void main() {
 }
 ```
 
-```
+```dart
 //console 결과는??
 맞아!
 ```
@@ -1142,7 +1142,7 @@ void main() {
 }
 ```
 
-```
+```dart
 //console 결과는??
 true
 ```
@@ -1332,7 +1332,7 @@ int multiply(int n1, int n2) {
 ```
 
 ```dart
-console 결과는??
+//console 결과는??
 8
 ```
 
@@ -1363,7 +1363,7 @@ int multiply(int n1, int n2) {
 ```
 
 ```dart
-console 결과는??
+//console 결과는??
 13
 ```
 
@@ -1438,7 +1438,7 @@ void fastDrive() {
 ```
 
 ```dart
-console 결과는??
+//console 결과는??
 Closure 'slowDrive'
 느리게 운전
 빠르게 운전

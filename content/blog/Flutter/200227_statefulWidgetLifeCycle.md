@@ -12,13 +12,13 @@ showToc: true
 
 # LifeCycle 메소드
 
-- ``StatefulWidget.createState()``
+### StatefulWidget.createState()
    - 상태를 생성
    - 이 메서드를 제외하고 나머지는 모두 State 클래스 내부에 존재한다.
   
 <br/>
 
-- ``mounted 변수가 true가 됨``
+### mounted 변수가 true가 됨
    - 화면에 위젯이 부착된 상태
    - createState가 state클래스를 생성하면 buildContext는 state에 할당 됨   
     (BuildContext는 위젯이 배치된 위젯 트리의 위치를 단순화 한 것)
@@ -28,7 +28,7 @@ showToc: true
 
 <br/>
 
-- ``initState()``
+### initState()
    - 위젯이 생성될 때 가장 처음 호출
    - 상태를 초기화함
    - 단 한번만 호출
@@ -36,13 +36,13 @@ showToc: true
   
 <br/>
 
-- ``didChangeDependencies()``
+### didChangeDependencies()
    - 상태 객체의 의존성이 변경되면 호출
    - initState() 다음에 호출
   
 <br/>
 
-- ``build()``
+### build()
    - (필수!!!!)
    - 위젯을 화면에 표시하는 메소드
    - 화면에 표시할 위젯을 반환해야함   
@@ -50,13 +50,13 @@ showToc: true
 
 <br/>
 
-- ``didUpdateWidget() / (Widget oldWidget)``
+### didUpdateWidget() 
    - 위젯의 설정이 변경될 때 호출  
       (부모 위젯이 변경되어 이 위젯을 재 구성해야 하는 경우)  
 
 <br/>
 
-- ``setState()``
+### setState()
    - 위젯의 상태를 갱신
    - 이 메소드를 실행하면 위젯을 처음부터 다시 만들지만 initState() 메소드는 호출되지 않음
    - '데이터가 변경되었음’을 프레임워크에 알리는데 사용되며 build context의 위젯을 다시 빌드하게 함
@@ -64,21 +64,27 @@ showToc: true
 
 <br/>
 
-- ``deactivate()``
+### deactivate()
    - 상태 객체가 위젯 트리에서 제거됨  
       (경우에 따라 다시 추가될 수도 있음)
   
 <br/>
 
-- ``dispose()``
+### dispose()
    - 상태 객체가 위젯 트리에서 영구 제거됨  
       (이 메소드가 호출되면 상태 객체는 재사용 불가)
 
 <br/>
 
-- ``mounted 변수가 false로 설정됨``
+### mounted 변수가 false로 설정됨
    - 최종적으로 위젯이 화면에서 탈착됨  
       (이 상태에서 state 객체는 결코 다시 mount되지 않으며, setState()가 호출되면 에러발생)
+
+<br/>
+<br/>
+
+
+### 예제코드 
 
 ```dart
 import 'package:flutter/material.dart';
@@ -168,7 +174,7 @@ class _MyStatefulWidgetState extends State<_MyStatefulWidget> {
 ```
 
 ```dart
-console 결과는??
+//console 결과는??
 flutter: initState(): 기본값을 설정합니다.
 flutter: didChangeDependencies() 호출됨
 flutter: build() 호출됨
@@ -185,18 +191,23 @@ flutter: build() 호출됨
 
 ![2020-02-27 19-38-02 2020-02-27 19_42_33](https://user-images.githubusercontent.com/55340876/75437283-550cec00-5999-11ea-93ef-c6dde7f5dd28.gif)
 
-
+<br/>
+<br/>
 <br/>
 
 ![1_HU-fbS_mE_zBGbyZiJCuvg](https://user-images.githubusercontent.com/55340876/75436664-4ffb6d00-5998-11ea-88e5-85d62d12ffb0.png)
 
 
 <br/>
+<br/>
+<br/>
 
 ![1_uyRJ8g2st03YvpEgsrf2Ow](https://user-images.githubusercontent.com/55340876/75436663-4ffb6d00-5998-11ea-9bb7-4ae90d53220c.png)
 
 
 
+<br/>
+<br/>
 <br/>
 
 <img width="969" alt="eQ688" src="https://user-images.githubusercontent.com/55340876/75436665-50940380-5998-11ea-9729-49755d1ba8d8.png">
@@ -205,6 +216,8 @@ flutter: build() 호출됨
 
 
 
+<br/>
+<br/>
 <br/>
 
 
