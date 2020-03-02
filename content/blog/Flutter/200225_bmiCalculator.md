@@ -1667,15 +1667,282 @@ value 값에 실수 타입으로 형변환을 해주고
 그리고 setState 내부에서 상태를 업데이트 해준다.  
 ``height = newValue.round();``
 
-슬라이더 구현 끗!
+2% 부족한 스타일을 정의해보자.
+
+```dart
+...
+
+    SliderTheme(
+      data: SliderTheme.of(context).copyWith(
+        //기본앱의 테마 정보 그대로 가져오기
+        inactiveTrackColor: Color(0xFF8D8E98),
+        activeTrackColor: Colors.white,
+        thumbColor: Color(0xFFEB1555), //동그라미 색상
+        overlayColor: Color(0x29EB1555), //오버레이 색상 (16%불투명)
+        thumbShape: RoundSliderThumbShape(
+            enabledThumbRadius: 15.0), //슬라이더 동그라미 크기
+        overlayShape: RoundSliderOverlayShape(
+            overlayRadius: 30.0), //오버레이 크기
+      ),
+      child: Slider(
+        value: height.toDouble(), //형변환
+        min: 120.0,
+        max: 220.0,
+        onChanged: (double newValue) {
+          setState(() {
+            height = newValue
+                .round(); //정수로 반올림하여 가장 가까운 정수로 바꿔줌 (더블 타입이었으니까)
+          });
+        },
+      ),
+
+...
+```
+
+SliderTheme 위젯으로 Slider를 감싸주고,  
+슬라이더에게 주었던 컬러 2가지를 트랙컬러로 가져오고 나머지 스타일을 다시 커스텀해준다.  
+
+<img width="350" alt="" src="https://user-images.githubusercontent.com/55340876/75644202-d5c33500-5c84-11ea-9088-34c4b1377719.gif">
+
+# 체중, 나이 카드
+
+```dart
+...
+
+class _InputPageState extends State<InputPage> {
+  Gender selectedGender;
+  int height = 180;
+  int weight = 60; //체중 변수 선언
+
+...
+
+        child: ReusableCard(
+          colour: KActiveCardColour,
+          cardChild: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'WEIGHT',
+                style: KLabelTextStyle,
+              ),
+              Text(
+                weight.toString(),
+                style: KNumberTextStyle,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  FloatingActionButton(
+                    backgroundColor: Color(0xFF4C4F5E),
+                    child: Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10.0,
+                  ),
+                  FloatingActionButton(
+                    backgroundColor: Color(0xFF4C4F5E),
+                    child: Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
+                  ),
+
+...
+```
+
+``FloatingActionButton`` 부분은  
+저런식으로 코드를 해도 되지만 버튼 위젯을 직접 만들어보자.
+
+맨 하단에 stl 하나를 만들어주고, 
+
+```dart
+...
+
+class RoundIconButton extends StatelessWidget {
+  final IconData icon; //속성 지정
+
+  RoundIconButton({this.icon}); //생성자로 초기화
+
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      child: Icon(icon), // - 버튼과 +버튼 2개가 있으니 이건 속성을 따로 뺴줘야함
+      onPressed: () {},
+      elevation: 6.0, //그림자
+      constraints: BoxConstraints.tightFor(
+        //버튼크기
+        width: 56.0,
+        height: 56.0,
+      ),
+      shape: CircleBorder(), //버튼 모양
+      fillColor: Color(0xFF4C4F5E), //버튼 색상
+    );
+  }
+}
+```
+
+이런식으로 스타일을 내가 직접 정의해준뒤  
+상단에 FAB 위젯을 지우고 변경해준다.
+
+```dart
+...
+
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          RoundIconButton(
+            icon: FontAwesomeIcons.minus,
+            //하단에서 아이콘 속성으로 뺐으니 아이콘부분만 바꿔주면됨
+          ),
+          SizedBox(
+            width: 10.0,
+          ),
+          RoundIconButton(
+            icon: FontAwesomeIcons.plus,
+            //하단에서 아이콘 속성으로 뺐으니 아이콘부분만 바꿔주면됨
+          ),
+        ],
+
+...
+```
+
+<img width="362" alt="스크린샷 2020-03-02 오후 6 45 04" src="https://user-images.githubusercontent.com/55340876/75664629-1d15e980-5cb6-11ea-93cb-3d52bb0d2dd4.png">
+
+icon 속성 부분은 - 버튼과 + 버튼 2번 사용하니 속성을 따로 빼서  
+직접 쓸 때 정의해주면 된다!
+
+만약 ``shape:`` 부분을 수정하여 버튼 모양을 다르게 해주고싶다면?  
+
+```dart
+//      shape: CircleBorder(), //버튼 모양
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+      fillColor: Color(0xFF4C4F5E), //버튼 색상
+```
+
+<img width="362" alt="스크린샷 2020-03-02 오후 6 45 50" src="https://user-images.githubusercontent.com/55340876/75664636-1f784380-5cb6-11ea-85e6-fabe22c4dca7.png">
+
+요로코롬 커스터마이징이 가능하다!
+
+이제 버튼을 클릭했을때 숫자가 내려가고 올라가는 것을 구현하자.
 
 
+```dart
+...
+
+class RoundIconButton extends StatelessWidget {
+  final IconData icon; 
+  final Function onPressed; //속성 지정
+
+  RoundIconButton({@required this.icon, @required this.onPressed}); //둘다 필수 항목으로!!
+
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      child: Icon(icon), 
+      onPressed: onPressed, //선언
+
+...
+```
+
+내가 만든 위젯이므로 onPressed 속성이 없으니 저렇게 만들어준다.   
+속성을 지정하고~  
+생성자로 초기화하면서 icon, onPressed 는 필수 인자로 정해준다.  
+그리고 onPressed 속성에 정의를 다시 해주고! (이 경우 이름을 그냥 똑같이 해줬다)
+
+```dart
+...
+
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          RoundIconButton(
+            icon: FontAwesomeIcons.minus,
+            onPressed: () { //값 넣어주기
+              setState(() {
+                weight--;
+              });
+            },
+          ),
+          SizedBox(
+            width: 10.0,
+          ),
+          RoundIconButton(
+            icon: FontAwesomeIcons.plus,
+            onPressed: () { //값 넣어주기
+              setState(() {
+                weight++;
+              });
+            },
+          ),
+        ],
+
+...
+```
+
+인자값으로 아까 정의한 onPressed 속성을 넣어주고,  
+클릭시마다 바뀌어야 하니까 setState 안에 값을 정의해주면?  
 
 
+<img width="350" alt="" src="https://user-images.githubusercontent.com/55340876/75665687-e7720000-5cb7-11ea-8e29-3781b657167a.gif">
+
+좌자자자자ㅏㄴ!!  
+옆에 나이 카드도 같은 방식으로 해주면 된다!
+
+```dart
+...
+
+  int weight = 60;
+  int age = 20; //기본값
+
+...
+
+      child: ReusableCard(
+        colour: KActiveCardColour,
+        cardChild: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'AGE',
+              style: KLabelTextStyle,
+            ),
+            Text(
+              age.toString(),
+              style: KNumberTextStyle,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                RoundIconButton(
+                  icon: FontAwesomeIcons.minus,
+                  onPressed: () {
+                    setState(() {
+                      age--;
+                    });
+                  },
+                ),
+                SizedBox(
+                  width: 10.0,
+                ),
+                RoundIconButton(
+                  icon: FontAwesomeIcons.plus,
+                  onPressed: () {
+                    setState(() {
+                      age++;
+                    });
+                  },
+
+...
+```
 
 
+<img width="362" alt="스크린샷 2020-03-02 오후 7 06 34" src="https://user-images.githubusercontent.com/55340876/75666329-f2796000-5cb8-11ea-92f5-ddd7df469f79.png">
 
+얄루!
 
+# 다중화면 (경로와 탐색)
 
 
 
