@@ -110,7 +110,7 @@ showToc: true
    - 어떤 변화(모양, 상태)을 유발시키는 value값을 가지지 않음
  
 
-![5](https://user-images.githubusercontent.com/55340876/74588818-f2cff500-5042-11ea-9023-a296bc1565c2.gif)
+<img width=360 alt="" src="https://user-images.githubusercontent.com/55340876/74588818-f2cff500-5042-11ea-9023-a296bc1565c2.gif">
 
 
 
