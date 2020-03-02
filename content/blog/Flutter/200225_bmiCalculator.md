@@ -1942,7 +1942,626 @@ class RoundIconButton extends StatelessWidget {
 
 얄루!
 
-# 다중화면 (경로와 탐색)
+# Navigation (경로와 탐색)
+
+context 는 특정 위젯이 어디에 있는지 알아내는 방법으로,  
+어디에 있고 어디로 가야하는지 파악할 때 도움이 된다.
+
+
+페이지들은 **stack** 구조로 쌓이는데  
+**push()** 는 쌓고, **pop()** 은 제거한다.  
+
+다음페이지로 가길 원하면,  
+onpressed: () {} 내부에
+``Navigator.push(context, route)``    
+
+이전페이지를 원하면,  
+``Navigator.pop(context);``  
+
+나의 현재 위치와 가야할 경로(위치) 라고 생각하면 편하다.  
+
+```dart
+Navigator.push(context), MaterialPageRoute(builder: (context) => [이동페이지]);
+//다음 페이지
+
+Navigator.pop(context);
+//이전 페이지
+```
+
+복잡한 여러 경로로 가야할 때는?  
+
+```dart
+initialRoute: '/',
+routes: {
+  '/': (context) => FirstScreen(),
+  '/second': (context) => SecondScreen(),
+}
+```
+이런식으로 정의를 해주는데 자세히 파보자면  
+
+
+main.dart
+
+```dart
+import 'package:flutter/material.dart';
+import 'screen1.dart';
+import 'screen0.dart';
+import 'screen2.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+//      home: Screen0(),
+      //초기 경로인 initialRoute 와 중복이니 충돌난다. 이경우 home 속성은 지워주자.
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Screen0(),
+        '/first': (context) => Screen1(),
+        '/second': (context) => Screen2(),
+      },
+    );
+  }
+}
+```
+
+Screen0.dart
+
+```dart
+import 'package:flutter/material.dart';
+
+class Screen0 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.purple,
+        title: Text('Screen 0'),
+      ),
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            RaisedButton(
+              color: Colors.red,
+              child: Text('Go To Screen 1'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/first');
+                //Navigate to Screen 1
+              },
+            ),
+            RaisedButton(
+              color: Colors.blue,
+              child: Text('Go To Screen 2'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/second');
+                //Navigate to Screen 2
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+
+
+
+Screen1.dart
+
+
+```dart
+import 'package:flutter/material.dart';
+import 'screen2.dart';
+
+class Screen1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        title: Text('Screen 1'),
+      ),
+      body: Center(
+        child: RaisedButton(
+          color: Colors.red,
+          child: Text('Go Forwards To Screen 2'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Screen2(),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+```
+
+
+
+
+Screen2.dart
+
+```dart
+import 'package:flutter/material.dart';
+
+class Screen2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: Text('Screen 2'),
+      ),
+      body: Center(
+        child: RaisedButton(
+          color: Colors.blue,
+          child: Text('Go Back To Screen 1'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
+}
+
+```
+
+
+
+<img width="340" alt="" src="https://user-images.githubusercontent.com/55340876/75685579-1dc27600-5cde-11ea-82d1-c8d30648f5ca.gif">
+
+<br/>
+
+---
+---
+
+<br/>
+<br/>
+
+프로젝트에 대입해보자.  
+첫 페이지에서 성별, 키, 몸무게, 나이를 설정하면 값은 두번째 페이지에서 출력이 된다.  
+
+results_page.dart 페이지를 하나 생성해주고,
+
+```dart
+import 'package:flutter/material.dart';
+
+class ResultsPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('BMI CALCULATOR'),
+      ),
+      body: Text('HELLO'),
+    );
+  }
+}
+```
+
+input_page.dart
+
+```dart
+...
+
+import 'results_page.dart';
+
+...
+
+      GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ResultsPage(),
+            ),
+          );
+        },
+        child: Container(
+          child: Text('CALCULATOR'),
+          color: KBottomContainerColour,
+          margin: EdgeInsets.only(top: 10.0),
+          width: double.infinity,
+          height: KBottomContainerHeight,
+        ),
+      ),
+
+...
+```
+
+
+pop() 을 따로 줄 필요없이 페이지가 2개 뿐이라  
+기존에 있는 앱바에 뒤로가기 기능을 써먹고  
+push() 만 주었다.
+
+<img width="340" alt="" src="https://user-images.githubusercontent.com/55340876/75694208-7ea47b00-5ceb-11ea-9ad0-f6f155a6c09b.gif">
+
+나머지 스타일도 주자.
+
+constants.dart
+
+```dart
+...
+
+const KLargeButtonTextStyle = TextStyle(
+  fontSize: 25.0,
+  fontWeight: FontWeight.bold,
+);
+```
+상수로 재활욜 해줄 스타일 정의 해주고,
+
+input_page.dart
+
+```dart
+...
+
+    child: Container(
+      child: Center( //가운데로 뿅!
+        child: Text(
+          'CALCULATOR',
+          style: KLargeButtonTextStyle, //호잇
+        ),
+      ),
+      color: KBottomContainerColour,
+      margin: EdgeInsets.only(top: 10.0),
+      padding: EdgeInsets.only(bottom: 20.0), //호잇 (바닥과의 간격이 넘모 좁아서!)
+
+...
+```
+
+<img width="373" alt="스크린샷 2020-03-03 오전 1 15 28" src="https://user-images.githubusercontent.com/55340876/75694812-7a2c9200-5cec-11ea-8be5-3aad139bf550.png">
+
+
+요로코롬 하면 첫 페이지는 끝이다!
+
+
+
+# Map
+
+```dart
+Map<KeyType, ValueType> mapName {
+  Key: Value
+}
+
+//
+mapName[Key]
+```
+
+친구들의 이름과 전화번호가 있는  
+전화번호부 라고 생각해보자.
+
+```dart
+
+Map<String, int> phoneBook = {
+  '진주': 1234567,
+  '희라': 4325556,
+  '성주': 1345566,
+  '상혁': 8547885,
+};
+
+main() {
+  
+  print(phoneBook['성주']);
+
+  phoneBook['효섭'] = 87539947;
+  print(phoneBook['효섭']);
+
+  print(phoneBook);
+
+  print(phoneBook.keys);
+  print(phoneBook.values);
+    
+}
+```
+
+```dart
+//console 결과는??
+1345566
+87539947
+{진주: 1234567, 희라: 4325556, 성주: 1345566, 상혁: 8547885, 효섭: 87539947}
+(진주, 희라, 성주, 상혁, 효섭)
+(1234567, 4325556, 1345566, 8547885, 87539947)
+```
+
+여기서 ``'성주':`` 가 ``Key`` 고,   
+``1345566`` 가 ``Value`` 가 된다.  
+존재하지 않는 Key 를 꺼내려하면 ``null`` 이 출력된다.
+
+# 결과 페이지
+
+일단 기능별로 쪼개서 디렉토리 파일 안에 분류해주자.  
+리액트 컴포넌트 쪼개느라 머리 쪼개질뻔했던 때가 생각나네...
+
+<img width="221" alt="스크린샷 2020-03-03 오전 1 54 51" src="https://user-images.githubusercontent.com/55340876/75698375-faa1c180-5cf1-11ea-8740-a973a7aebd1b.png">
+
+input_page.dart
+```dart
+...
+
+      BottomButton( //위젯추출
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ResultsPage(),
+            ),
+          );
+        },
+        buttonTitle: 'CALCULATOR',
+      ),
+    ],
+
+...
+```
+
+하단 바컴 컨테이너 부분 위젯은 추출해서 분리했다.  
+(2페이지 푸터에도 쓸거기 때문에!!)
+
+bottom_button.dart
+```dart
+import 'package:flutter/material.dart';
+import '../constants.dart';
+
+class BottomButton extends StatelessWidget {
+  //위젯 추출해주고
+  final Function onTap;
+  //onTap과 buttonTitle 속성은 두페이지의 푸터마다 다르게 값을 줘야하니까 따로 정의한다
+  final String buttonTitle;
+
+  BottomButton({@required this.onTap, @required this.buttonTitle});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        child: Center(
+          child: Text(
+            buttonTitle,
+            style: KLargeButtonTextStyle,
+          ),
+        ),
+        color: KBottomContainerColour,
+        margin: EdgeInsets.only(top: 10.0),
+        padding: EdgeInsets.only(bottom: 20.0),
+        width: double.infinity,
+        height: KBottomContainerHeight,
+      ),
+    );
+  }
+}
+```
+
+constantes.dart
+
+```dart
+...
+
+const KLargeButtonTextStyle = TextStyle(
+  fontSize: 25.0,
+  fontWeight: FontWeight.bold,
+);
+
+const KTitleTextStyle = TextStyle(
+  fontSize: 50.0,
+  fontWeight: FontWeight.bold,
+);
+
+const KResultTextStyle = TextStyle(
+  color: Color(0xFF24D876),
+  fontSize: 22.0,
+  fontWeight: FontWeight.bold,
+);
+
+const KBMITextStyle = TextStyle(
+  fontSize: 100.0,
+  fontWeight: FontWeight.bold,
+);
+
+const KBodyTextStyle = TextStyle(
+  fontSize: 22.0,
+);
+```
+
+results_page.dart
+
+```dart
+import 'package:flutter/material.dart';
+import '../constants.dart';
+import '../components/reusable_card.dart';
+import '../components/bottom_button.dart';
+
+class ResultsPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('BMI CALCULATOR'),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch, //화면을 가로질러 늘어남
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.all(15.0),
+              alignment: Alignment.bottomLeft,
+              child: Text(
+                'Your Result',
+                style: KTitleTextStyle,
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 5, //플랙스를 주지 않는 모든 Expanded 위젯은 처음에 1의 비율을 유지한다.
+            child: ReusableCard(
+              colour: KActiveCardColour,
+              cardChild: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Normal',
+                    style: KResultTextStyle,
+                  ),
+                  Text(
+                    '18.3',
+                    style: KBMITextStyle,
+                  ),
+                  Text(
+                    'Your BMI result is quite low, you should eat more!',
+                    textAlign: TextAlign.center, //텍스트 내에서의 가운데 정렬
+                    style: KBodyTextStyle,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          BottomButton(
+            buttonTitle: 'RE-CALCULATE',
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+
+<img width="345" alt="스크린샷 2020-03-03 오전 2 00 59" src="https://user-images.githubusercontent.com/55340876/75698890-d7c3dd00-5cf2-11ea-86f2-06b5c84fcbb7.png">
+
+
+# 계산 기능 추가
+
+calculator_brain.dart 파일 추가
+```dart
+import 'dart:math';
+
+class CalculatorBrain {
+  final int height;
+  final int weight;
+
+  CalculatorBrain({this.height, this.weight});
+
+  double _bmi;
+
+  String calculateBMI() {
+    //BMI 계산 공식. BMI 결과를 문자열 타입으로 반환한다
+    _bmi = weight / pow(height / 100, 2); //pow(x, 제곱)
+    return _bmi.toStringAsFixed(1);
+    //위에 공식으로는 겁나 긴 실수가 나오니까 10수로 반환시킨다. (괄호 안에 1을 씀으로 소수점 이하 한자리만 반환해줌)
+  }
+  //상단 할당 변수명이 그냥 double bmi 였다면 {} 중괄호 안에 해당 로컬에서만 값을 볼수 있어서
+  //getResult bmi로 접근을 못한다. 그렇기 때문에 프라이빗 변수로 선언을 해주고 모든 명을 똑같이 바꿔주면 접근 가능하다.
+
+  String getResult() {
+    //결과가 될 문자열을 반환하는 메소드
+    if (_bmi >= 25) {
+      return '과체중';
+    } else if (_bmi > 18.5) {
+      return '정상';
+    } else {
+      return '저체중';
+    }
+  }
+
+  String getInterpretation() {
+    //BMI 해석 메소드
+    if (_bmi >= 25) {
+      return '당신은 정상 체중보다 높습니다.\n운동을 좀 더 해주세요.';
+    } else if (_bmi > 18.5) {
+      return '당신은 정상 체중입니다.\n잘하고 있어요!';
+    } else {
+      return '당신은 정상 체중보다 낮습니다.\n음식을 좀 더 섭취 해주세요.';
+    }
+  }
+}
+```
+
+사용자가 모든 조건을 설정하고 푸터에 결과보기를 클릭 했을 때 값페이지가 호출되야 한다.
+
+input_page.dart
+
+```dart
+...
+
+    BottomButton(
+      onTap: () {
+        CalculatorBrain calc = CalculatorBrain(
+          //객체생성
+          height: height,
+          weight: weight,
+        );
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ResultsPage(
+              bmiResult: calc.calculateBMI(),
+              resultText: calc.getResult(),
+              interpretation: calc.getInterpretation(),
+            ),
+
+...
+```
+
+results_page.dart
+
+```dart
+...
+
+class ResultsPage extends StatelessWidget {
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
+  ResultsPage(
+      {@required this.bmiResult,
+      @required this.resultText,
+      @required this.interpretation});
+
+...
+
+      child: ReusableCard(
+        colour: KActiveCardColour,
+        cardChild: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              resultText, //소문자 영어였으면 .toUpperCase() 붙여서 바꾸면됨
+              style: KResultTextStyle,
+            ),
+            Text(
+              bmiResult,
+              style: KBMITextStyle,
+            ),
+            Text(
+              interpretation,
+              textAlign: TextAlign.center, //텍스트 내에서의 가운데 정렬
+              style: KBodyTextStyle,
+            ),
+
+...
+```
+
+<img width="360" alt="" src="https://user-images.githubusercontent.com/55340876/75704261-5ec98300-5cfc-11ea-9092-de3d5b8e4e31.gif">
+
+끄읕!!
+
+
 
 
 
