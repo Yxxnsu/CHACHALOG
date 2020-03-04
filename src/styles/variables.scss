@@ -1,6 +1,6 @@
 // app
 $theme-gradient: linear-gradient(72deg, #000000, #434343);
-$top-header-text-color: #fff;
+$top-header-text-color: rgb(255, 255, 255);
 
 /**
  * @light theme
@@ -24,8 +24,8 @@ $navigator-background-color: #fceff7;
 $blockquote-text-color: #999;
 
 // code
-$inline-dimmed-color: #FFFBFE;
-$inline-text-color: #0d61a5;
+$inline-dimmed-color: rgba(0, 0, 0, 0.783);
+$inline-text-color: #ffffff;
 
 
 // category
