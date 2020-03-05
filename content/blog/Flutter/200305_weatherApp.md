@@ -12,7 +12,25 @@ showToc: true
 
 - [geolocator 5.3.0](https://pub.dev/packages/geolocator) 라이브러리 설치
 
-- 반환이 없는 void 메서드를 하나 만듦
+main.dart
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:clima/screens/loading_screen.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.dark(),
+      home: LoadingScreen(),
+    );
+  }
+}
+```
+<br/>
 
 loading_screen.dart
 
@@ -47,6 +65,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 }
 ```
+- 반환이 없는 void 메서드를 하나 만듦
 
 
 <br/>
@@ -591,6 +610,27 @@ flutter: 701
 
 길어진 코드들을 다시 파일별로 분할하고 훑어보자.  
 
+
+main.dart
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:clima/screens/loading_screen.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.dark(),
+      home: LoadingScreen(),
+    );
+  }
+}
+```
+
+
 networking.dart
 
 ```dart
@@ -600,7 +640,7 @@ import 'dart:convert';
 class NetworkHelper {
   final String url;
 
-  NetworkHelper(this.url);
+  NetworkHelper(this.url); 
 
   Future getDate() async {
     http.Response response = await http.get(url); //url을 갖고오고
@@ -616,6 +656,16 @@ class NetworkHelper {
   }
 }
 ```
+``NetworkHelper(this.url);`` 클래스를 초기화하고 해당 url을  
+``await http.get(url);`` 을 요청한다.  
+그런 다음 응답이 유효한지 확인한다.  
+200 ok 면 응답의 본문을 취하고 ``jsonDecode`` 를 사용하여 해당 데이터를 해독하고 리턴한다.  
+
+이 기능은 날씨 뿐만 아니라 다른 네트워크를 필요로 할 때 재사용해줘도 된다.
+
+
+
+
 
 loading_screen.dart
 
@@ -651,6 +701,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
         'https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKey');
 
     var weatherData = await networkHelper.getDate();
+
+    Navigator.push(
+      context, MaterialPageRoute(builder: (context) => LocationScreen()));
   }
 
   @override
@@ -659,6 +712,579 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 }
 ```
+
+``getLocationData()`` 메서드에서 사용자 현재 위치를 얻은 후,  
+해당 위치의 날씨 데이터를 가져오는 ``networkHelper`` 객체를 생성후 인자로 내가 얻을 데이터 url을 넣어주고  
+받아온 데이터인 ``getDate()`` 을 ``weatherData`` 변수에 할당한다.  
+
+이제부터 할 일은 사용자가 확인할 수 있도록 이 데이터를 화면에 표시해주는 것이다.  
+
+```dart
+    Navigator.push(
+      context, MaterialPageRoute(builder: (context) => LocationScreen()));
+```
+
+**일단 날씨 데이터가 얻어지면 다음 화면으로 넘어가게끔 라우트를 넣어줬다.**
+
+<img width="300" alt="" src="https://user-images.githubusercontent.com/55340876/75957365-3ceb1e80-5efd-11ea-971d-ba281570d25c.gif">
+
+
+
+# 로딩표시
+
+constants.dart
+
+```dart
+import 'package:flutter/material.dart';
+
+const kTempTextStyle = TextStyle(
+  fontFamily: 'Spartan MB',
+  fontSize: 100.0,
+);
+
+const kMessageTextStyle = TextStyle(
+  fontFamily: 'Spartan MB',
+  fontSize: 60.0,
+);
+
+const kButtonTextStyle = TextStyle(
+  fontSize: 30.0,
+  fontFamily: 'Spartan MB',
+);
+
+const kConditionTextStyle = TextStyle(
+  fontFamily: 'Spartan MB',
+  fontSize: 80.0, //100.0으로 하면 아이콘 안보여서 80.0줌
+);
+```
+
+
+location_screen.dart
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:clima/utilities/constants.dart';
+
+class LocationScreen extends StatefulWidget {
+  @override
+  _LocationScreenState createState() => _LocationScreenState();
+}
+
+class _LocationScreenState extends State<LocationScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/location_background.jpg'),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+                Colors.white.withOpacity(0.8), BlendMode.dstATop),
+          ),
+        ),
+        constraints: BoxConstraints.expand(),
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  FlatButton(
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.near_me,
+                      size: 50.0,
+                    ),
+                  ),
+                  FlatButton(
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.location_city,
+                      size: 50.0,
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 15.0),
+                child: Row(
+                  children: <Widget>[
+                    Text(
+                      '32°',
+                      style: kTempTextStyle,
+                    ),
+                    Text(
+                      '☀️',
+                      style: kConditionTextStyle,
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 15.0),
+                child: Text(
+                  "It's 🍦 time in San Francisco!",
+                  textAlign: TextAlign.right,
+                  style: kMessageTextStyle,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+//String cityName = decodedData['name'];
+//double temperature = decodedData['main']['temp'];
+//int condition = decodedData['weather'][0]['id'];
+```
+
+city_screen.dart
+```dart
+import 'package:flutter/material.dart';
+import 'package:clima/utilities/constants.dart';
+
+class CityScreen extends StatefulWidget {
+  @override
+  _CityScreenState createState() => _CityScreenState();
+}
+
+class _CityScreenState extends State<CityScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/city_background.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        constraints: BoxConstraints.expand(),
+        child: SafeArea(
+          child: Column(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.topLeft,
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                    size: 50.0,
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(20.0),
+                child: null,
+              ),
+              FlatButton(
+                onPressed: () {},
+                child: Text(
+                  'Get Weather',
+                  style: kButtonTextStyle,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+
+
+
+
+데이터가 받아져서 화면이 자동으로 넘어갈때까지 텀이 있다.  
+로딩 표시기를 추가해주자! 
+
+
+[flutter_spinkit 4.1.2](https://pub.dev/packages/flutter_spinkit) 라이브러리를 설치한다.  
+다양한 애니메이션 로딩 표시기를 나타내주는 라이브러리다.  
+이제 라이브러리 설치하고 갖다쓸때는 상단에 임포트 구문 추가하는건 워낙 기본이니까! 따로 언급ㄴㄴ한다!  
+
+화면이 재실행되고 데이터가 받아지기 전 시점에서 실행되야 하니까 빌드 메서드 내부에 넣어준다.
+
+loading_screen.dart
+
+```dart
+...
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: SpinKitDoubleBounce(
+          color: Colors.white,
+          size: 100.0,
+        ),
+      ),
+    );
+  }
+}
+```
+
+다시 앱을 재실행하면?!
+
+<img width="300" alt="" src="https://user-images.githubusercontent.com/55340876/75959447-9ead8780-5f01-11ea-9949-e7850db9d16f.gif">
+
+요로코롬 로딩 화면 표시된후 데이터가 받아지면 화면이 넘어간다!  
+씐난다! 재미난다!! 🤭  
+컬러나 사이즈까지 정의되니 아주 고냥 끝내주는고만!!  
+
+# 데이터 전달하기
+
+이제 하드코딩된 내용 말고 실제 데이터를 전달해서 화면으로 넘겨주자.
+
+location_screen.dart
+
+```dart
+...
+
+class LocationScreen extends StatefulWidget {
+  final locationWeather;
+
+  LocationScreen({this.locationWeather});
+
+  @override
+  _LocationScreenState createState() => _LocationScreenState();
+}
+
+class _LocationScreenState extends State<LocationScreen> {
+  @override
+  void initState() { 
+    super.initState();
+
+    print(widget.locationWeather); 
+  }
+
+...
+```
+
+``locationWeather`` 속성을 주고 생성자를 통해 초기화를 해준다.  
+그리고 ``State`` 클래스 오버라이드 밑에 ``initState()`` 를 추가해서 출력을 해주자.  
+여기서 ``widget.`` 은 StatefulWidget 위젯을 상속받은 LocationScreen 클래스를 가르킨다.   
+
+loading_screen.dart
+
+```dart
+...
+
+    var weatherData = await networkHelper.getDate();
+
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => LocationScreen(locationWeather: weatherData,)));
+
+...
+```
+
+``LocationScreen(locationWeather: weatherData,)`` 값을 주면 해당 위치 데이터를 갖고올 수 있다.  
+
+```dart
+//console 결과는??
+flutter: {coord: {lon: -122.41, lat: 37.79}, weather: [{id: 801, main: Clouds, description: few clouds, icon: 02n}], base: stations, main: {temp: 284.3, feels_like: 281.58, temp_min: 282.04, temp_max: 286.48, pressure: 1020, humidity: 87}, visibility: 16093, wind: {speed: 3.6, deg: 360}, clouds: {all: 20}, dt: 1583396793, sys: {type: 1, id: 5154, country: US, sunrise: 1583418887, sunset: 1583460449}, timezone: -28800, id: 5391959, name: San Francisco, cod: 200}
+```
+
+날씨에 접근을 했다!  
+
+location_screen.dart
+
+```dart
+...
+
+class _LocationScreenState extends State<LocationScreen> {
+  String cityName;
+  double temperature;
+  int condition;
+
+  @override
+  void initState() {
+    super.initState();
+
+    updateUI(widget.locationWeather);
+  }
+
+  void updateUI(dynamic weatherData) {
+    cityName = weatherData['name'];
+    temperature = weatherData['main']['temp'];
+    condition = weatherData['weather'][0]['id'];
+  }
+
+...
+```
+
+순서는 이렇다.  
+``LocationScreen`` 이 초기화되면 위치를 넘겨주는데,  
+``widget.locationWeather`` 를 통해 ``updateUI`` 를 호출하여  
+해당 날씨 데이터를 다시 전달한다.  
+
+loading_screen.dart
+```dart
+        $apiKey&units=metric');
+```
+
+```dart
+    temperature = weatherData['main']['temp'];
+    condition = weatherData['weather'][0]['id'];
+
+    print(temperature); //ho!
+  }
+```
+
+url 부분 뒤에 붙여서 온도를 섭씨로 바꿔주고 출력하면? 
+``flutter: 10.12`` 제대로 변환되서 나온다.  
+즉, 이제 텍스트 위젯에 대입해서 사용할 수 있다! 
+
+<img width="371" alt="스크린샷 2020-03-05 오후 7 48 40" src="https://user-images.githubusercontent.com/55340876/75974547-52bb0c80-5f1a-11ea-9d34-76c13a56a4b2.png">
+
+소수점 자리라 이모티콘이 밀려나니 정수로 변환을 해주자.  
+
+
+```dart
+...
+
+int temperature;
+
+...
+
+    double temp = weatherData['main']['temp'];
+    temperature = temp.toInt(); 
+
+...
+
+          Text(
+          '$temperature°',
+
+...
+```
+속성을 ``int temperature;`` int 타입으로 바꾸고  
+``.toInt()`` 를 이용하여 소수를 정수로 변환하면 
+
+<img width="371" alt="스크린샷 2020-03-05 오후 7 52 56" src="https://user-images.githubusercontent.com/55340876/75974897-ea205f80-5f1a-11ea-8af1-ed46de2ba3a1.png">
+
+뙇!! 
+
+휴.. 근데 코드가 넘모 기니까 변수들을 제거하고 간결하게 하자.  
+
+loading_screen.dart
+```dart
+...
+
+class _LoadingScreenState extends State<LoadingScreen> {
+  @override
+  void initState() {
+    super.initState();
+    getLocationData();
+  }
+
+  void getLocationData() async {
+    Location location = Location();
+    await location.getCurrentLocation();
+
+    NetworkHelper networkHelper = NetworkHelper(
+        'https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=$apiKey&units=metric');
+
+...
+```
+
+아고 힘들다..  
+
+![unnamed](https://user-images.githubusercontent.com/55340876/75946061-5aa98b00-5edf-11ea-9b52-8cf6c95caf08.gif)
+
+진촤 리얼루다가 상태관리랑 HTTP JSON 넘모 어렵다  
+와.... 디자인 하는건 문제가 아닌데 진짜 와왘와오아왘!!  
+
+리액트 할 때도 너무 이해 안갔는데 마찬가지고만... 큽  
+무조건 연습연습연습이 살길이다!! 🥺  
+
+# 하드코딩된거에 날씨 업데이트
+
+weather.dart
+
+```dart
+class WeatherModel {
+  String getWeatherIcon(int condition) {
+    if (condition < 300) {
+      return '🌩';
+    } else if (condition < 400) {
+      return '🌧';
+    } else if (condition < 600) {
+      return '☔️';
+    } else if (condition < 700) {
+      return '☃️';
+    } else if (condition < 800) {
+      return '🌫';
+    } else if (condition == 800) {
+      return '☀️';
+    } else if (condition <= 804) {
+      return '☁️';
+    } else {
+      return '🤷‍';
+    }
+  }
+
+  String getMessage(int temp) {
+    if (temp > 25) {
+      return 'It\'s 🍦 time';
+    } else if (temp > 20) {
+      return 'Time for shorts and 👕';
+    } else if (temp < 10) {
+      return 'You\'ll need 🧣 and 🧤';
+    } else {
+      return 'Bring a 🧥 just in case';
+    }
+  }
+}
+```
+
+조건부 코드를 검사하여 해당 컨디션과 온도에 맞는 이모티콘을 반환해준다.  
+
+location_screen.dart
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:clima/utilities/constants.dart';
+import 'package:clima/services/weather.dart';
+
+class LocationScreen extends StatefulWidget {
+  final locationWeather;
+
+  LocationScreen({this.locationWeather});
+
+  @override
+  _LocationScreenState createState() => _LocationScreenState();
+}
+
+class _LocationScreenState extends State<LocationScreen> {
+  WeatherModel weather = WeatherModel();
+
+  String cityName;
+  int temperature;
+  String weatherIcon;
+  String weatherMessage;
+
+  @override
+  void initState() {
+    super.initState();
+
+    updateUI(widget.locationWeather);
+  }
+
+  void updateUI(dynamic weatherData) {
+    setState(() {
+      cityName = weatherData['name'];
+      double temp = weatherData['main']['temp'];
+      temperature = temp.toInt();
+      var condition = weatherData['weather'][0]['id'];
+      weatherIcon = weather.getWeatherIcon(condition);
+      weatherMessage = weather.getMessage(temperature);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/location_background.jpg'),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+                Colors.white.withOpacity(0.8), BlendMode.dstATop),
+          ),
+        ),
+        constraints: BoxConstraints.expand(),
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  FlatButton(
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.near_me,
+                      size: 50.0,
+                    ),
+                  ),
+                  FlatButton(
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.location_city,
+                      size: 50.0,
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 15.0),
+                child: Row(
+                  children: <Widget>[
+                    Text(
+                      '$temperature°',
+                      style: kTempTextStyle,
+                    ),
+                    Text(
+                      weatherIcon,
+                      style: kConditionTextStyle,
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 15.0),
+                child: Text(
+                  '$weatherMessage in $cityName',
+                  textAlign: TextAlign.right,
+                  style: kMessageTextStyle,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
