@@ -499,6 +499,180 @@ JSON 더미 데이터를 보고 값을 가져오기 때문에 우리는 ``name``
 디코딩이 완료될 때까지 어떤 유형의 값인지 알 수가 없기 때문에 ``var`` 로 변수를 선언해준다.
 
 
+# OWM API에서 실제 날씨 데이터 갖고오기
+
+그동안 한건 OpenWeatherMap 사이트에서 제공한 샘플 더미 데이터를 사용한 것이고,  
+실제 데이터로 놀아보자!  
+
+먼저 API 등록을 해야한다.  
+계정에 로그인을 하고오~  
+API Key 를 복사해서 프로젝트 임포트 하단에 const 상수 변수로 선언해준다!  
+
+이제 아까 더미 url끝에 ``appid`` 뒷 부분을 상수로 선언한 내가 받은 ``API Key`` 로 대체하고,  
+``samples`` 부분도 ``api`` 로 바꿔준다.   
+``'https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=$apiKey');``  
+
+
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:clima/services/location.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+const apiKey = '8bc3bc4cafdd5ae280772f298bf883f7';
+
+class LoadingScreen extends StatefulWidget {
+  @override
+  _LoadingScreenState createState() => _LoadingScreenState();
+}
+
+class _LoadingScreenState extends State<LoadingScreen> {
+  double latitude;
+  double longitude;
+
+  @override
+  void initState() {
+    super.initState();
+
+    getLocation();
+  }
+
+  void getLocation() async {
+    Location location = Location();
+
+    await location.getCurrentLocation();
+
+    latitude = (location.latitude);
+    longitude = (location.longitude);
+
+    getData();
+  }
+
+  void getData() async {
+    http.Response response = await http.get(
+        'https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKey');
+
+    if (response.statusCode == 200) {
+      String data = response.body;
+
+      var decodedData = jsonDecode(data);
+
+      String cityName = decodedData['name'];
+      double temperature = decodedData['main']['temp'];
+      int condition = decodedData['weather'][0]['id'];
+
+      print(cityName);
+      print(temperature);
+      print(condition);
+    } else {
+      print(response.statusCode);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    getData();
+    return Scaffold();
+  }
+}
+```
+
+```dart
+//console 결과는??
+flutter: San Francisco
+flutter: 287.72
+flutter: 701
+```
+
+샌프란시스코에 있으며  
+온도는 287K  
+컨디션은 701 이 제대로 나온다! 
+
+길어진 코드들을 다시 파일별로 분할하고 훑어보자.  
+
+networking.dart
+
+```dart
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+class NetworkHelper {
+  final String url;
+
+  NetworkHelper(this.url);
+
+  Future getDate() async {
+    http.Response response = await http.get(url); //url을 갖고오고
+
+    if (response.statusCode == 200) {
+      //if문을 통해 statusCode 확인
+      String data = response.body;
+
+      return jsonDecode(data); //jsonDecode를 사용하여 다시 파싱함
+    } else {
+      print(response.statusCode);
+    }
+  }
+}
+```
+
+loading_screen.dart
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:clima/services/location.dart';
+import 'package:clima/services/networking.dart';
+
+const apiKey = '8bc3bc4cafdd5ae280772f298bf883f7';
+
+class LoadingScreen extends StatefulWidget {
+  @override
+  _LoadingScreenState createState() => _LoadingScreenState();
+}
+
+class _LoadingScreenState extends State<LoadingScreen> {
+  double latitude;
+  double longitude;
+
+  @override
+  void initState() {
+    super.initState();
+    getLocationData();
+  }
+
+  void getLocationData() async {
+    Location location = Location();
+    await location.getCurrentLocation();
+    latitude = (location.latitude); //위도
+    longitude = (location.longitude); //경도
+
+    NetworkHelper networkHelper = NetworkHelper(//네트워킹을 통해 데이터 갖고옴
+        'https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKey');
+
+    var weatherData = await networkHelper.getDate();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();
+  }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
