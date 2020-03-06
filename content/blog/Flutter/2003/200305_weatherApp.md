@@ -1260,7 +1260,10 @@ class _LocationScreenState extends State<LocationScreen> {
 }
 ```
 
-#
+<img width="320" alt="스크린샷 2020-03-06 오후 5 18 20" src="https://user-images.githubusercontent.com/55340876/76065252-9bcc9880-5fce-11ea-9d01-b323f9cc2bf9.png">
+
+# 위치 리팩토링
+
 
 
 
