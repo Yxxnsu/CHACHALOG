@@ -51,12 +51,41 @@ lang: 'en'
 
 
 </div>
-<br/>
+
+
 
 
 ## PROJECT EXPERIENCE
 
+<br/>
+
+**Flutter UI 작업**
+
+<br/>
+
+<div align="center" display="inline-block">
+
+
+
+<img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/76164416-0d087900-6192-11ea-86f8-b22703233e86.gif">
+<img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/75623414-08215380-5bed-11ea-9792-02b77a64d2c1.gif">
+
+</div>
+
+<div align="center" display="inline-block">
+
+<img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/74751109-23689680-52b0-11ea-946f-c30530d56507.gif">
+<img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/75704261-5ec98300-5cfc-11ea-9092-de3d5b8e4e31.gif">
+
+</div>
+
 <div align="left">
+
+<br/>
+
+---
+
+<br/>
 
 **"CASETIFY" 웹사이트 클론  
 20.01.06 ~ 20.01.17**  
