@@ -150,6 +150,15 @@ lang: 'en'
 **[WeCode](https://wecode.co.kr/) 5기 수료
 19.11.25 ~ 20.02.21**
 
+- 팀 프로젝트를 통해 ReactJS, Sass, Styled-Components, Redux 학습 및 응용
+- 기본적인 HTML, CSS, JS 개념 학습 및 토이 프로젝트를 통한 응용
+- Git & Github / HTTP / SQL / 백엔드 API 기본 개념과 기능 학습
+- 디버깅 스킬에 대한 이해와 효관적인 응용 방법 학습
+- DOM 조작, NPM / WebPack / YARN 설정 등 상급 프론트엔드 기술 학습 및 응용
+- AWS 기반으로 시스템 인프라스트럭쳐 디자인과 구현 및 시스템 배포
+- 최적의 패턴을 적용하여 시스템 구조 디자인 및 구현
+- Agile 방식의 팀 프로젝트 진행을 통해 팀원으로서의 개발 역량 강화
+
 </div>
 <br/>
 <br/>
