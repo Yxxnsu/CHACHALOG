@@ -72,12 +72,12 @@ lang: 'en'
 
 </div>
 
-<div align="center" display="inline-block">
+<!-- <div align="center" display="inline-block">
 
 <img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/74751109-23689680-52b0-11ea-946f-c30530d56507.gif">
 <img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/75704261-5ec98300-5cfc-11ea-9092-de3d5b8e4e31.gif">
 
-</div>
+</div> -->
 
 <div align="left">
 
