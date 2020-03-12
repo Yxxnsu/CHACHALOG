@@ -57,7 +57,7 @@ lang: 'en'
 
 ## PROJECT EXPERIENCE
 
-<br/>
+<!-- <br/>
 
 **Flutter UI 작업**
 
@@ -70,7 +70,7 @@ lang: 'en'
 <img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/76164416-0d087900-6192-11ea-86f8-b22703233e86.gif">
 <img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/75623414-08215380-5bed-11ea-9792-02b77a64d2c1.gif">
 
-</div>
+</div> -->
 
 <!-- <div align="center" display="inline-block">
 
@@ -81,11 +81,11 @@ lang: 'en'
 
 <div align="left">
 
-<br/>
+<!-- <br/>
 
 ---
 
-<br/>
+<br/> -->
 
 **"CASETIFY" 웹사이트 클론  
 20.01.06 ~ 20.01.17**  
