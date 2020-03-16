@@ -43,9 +43,10 @@ lang: 'en'
 - JavaScript
 - Sass
 - Styled-Components
-- ReactJS
+- React
 - React-Redux
 - Git
+- Firebase
 - Dart
 - Flutter
 
