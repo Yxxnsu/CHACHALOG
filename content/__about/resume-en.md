@@ -46,7 +46,6 @@ lang: 'en'
 - React
 - React-Redux
 - Git
-- Firebase
 - Dart
 - Flutter
 
@@ -58,35 +57,40 @@ lang: 'en'
 
 ## PROJECT EXPERIENCE
 
-<!-- <br/>
 
-**Flutter UI 작업**
 
-<br/>
+**Flutter UI 클론**
+
+
 
 <div align="center" display="inline-block">
 
-
-
+<img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/76851754-2940a000-688d-11ea-90ff-5fc82a20f24a.gif">
 <img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/76164416-0d087900-6192-11ea-86f8-b22703233e86.gif">
-<img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/75623414-08215380-5bed-11ea-9792-02b77a64d2c1.gif">
 
-</div> -->
 
-<!-- <div align="center" display="inline-block">
+
+</div>
+
+<div align="center" display="inline-block">
+<img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/76873947-cdd4d900-68b1-11ea-8f76-6261bbfb6e5b.gif">
+<img width="283" alt="" src="https://user-images.githubusercontent.com/55340876/75623414-08215380-5bed-11ea-9792-02b77a64d2c1.gif">
+
+<!-- </div> 
+
+<div align="center" display="inline-block">
 
 <img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/74751109-23689680-52b0-11ea-946f-c30530d56507.gif">
-<img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/75704261-5ec98300-5cfc-11ea-9092-de3d5b8e4e31.gif">
+<img width="282" alt="" src="https://user-images.githubusercontent.com/55340876/75704261-5ec98300-5cfc-11ea-9092-de3d5b8e4e31.gif">
 
 </div> -->
 
-<div align="left">
 
-<!-- <br/>
+<br/>
 
 ---
 
-<br/> -->
+<br/> 
 
 **"CASETIFY" 웹사이트 클론  
 20.01.06 ~ 20.01.17**  
@@ -148,8 +152,7 @@ lang: 'en'
 
 <div align="left">
 
-**[WeCode](https://wecode.co.kr/) 5기 수료
-19.11.25 ~ 20.02.21**
+**[WeCode](https://wecode.co.kr/) 5기 수료**
 
 - 팀 프로젝트를 통해 ReactJS, Sass, Styled-Components, Redux 학습 및 응용
 - 기본적인 HTML, CSS, JS 개념 학습 및 토이 프로젝트를 통한 응용
