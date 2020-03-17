@@ -1,8 +1,8 @@
 ---
-title: '💎 [Flutter] Firebase Firestore 💌'
+title: '💎 [Flutter] Firebase Firestore (추가예정)'
 date: 2020-03-17 00:43:00
 category: 'Flutter'
-draft: true 
+draft: false 
 showToc: true
 ---
 

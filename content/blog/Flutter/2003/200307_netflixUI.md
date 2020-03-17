@@ -1,5 +1,5 @@
 ---
-title: '💎 [Flutter] NETFLIX UI 💙'
+title: '💎 [Flutter] NETFLIX UI'
 date: 2020-03-07 04:09:00
 category: 'Flutter'
 draft: false 

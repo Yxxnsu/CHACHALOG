@@ -1,5 +1,5 @@
 ---
-title: '💎 [Flutter] Firebase Auth / 페북 로긴 💌'
+title: '💎 [Flutter] Firebase Auth / 페북 로긴'
 date: 2020-03-16 22:50:00
 category: 'Flutter'
 draft: false 
