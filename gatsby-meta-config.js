@@ -2,7 +2,7 @@ module.exports = {
   title: `JINJOO_BLOG`,
   description: `Blog posted about ...`,
   author: `[JinJoo]`,
-  introduction: `Front-end Developer 👩🏻‍💻  대박 프로그램은 1%의 영감과 99%의 노가다로 이루어진다 😎`,
+  introduction: `👩🏻‍💻 대박 프로그램은 1%의 영감과 99%의 노가다로 이루어진다 😎`,
   siteUrl: `https://jinjoo.netlify.com`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account
@@ -16,10 +16,12 @@ module.exports = {
 `dart`,
 `flutter`,
 `프론트엔드`,
+'frontend',
 `개발`,
 `dev`,
 `javascript`,
 `react`,
+`플러터`,
 ],
   comment: {
     disqusShortName: '', // Your disqus-short-name. check disqus.com.
