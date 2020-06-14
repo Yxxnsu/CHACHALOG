@@ -9,19 +9,20 @@ module.exports = {
     github: `chajinjoo`, // Your GitHub account
     medium: ``, // Your Medium account
     facebook: ``, // Your Facebook account
-    // instagram: `yolo__joo`,
+    // instagram: `chacha__dev`,
   },
   icon: `content/assets/jlogo.png`, // Add your favicon
   keywords: [`blog`,
-`dart`,
-`flutter`,
+`web`,
+`devlog`,
 `프론트엔드`,
 'frontend',
 `개발`,
 `dev`,
 `javascript`,
-`react`,
-`플러터`,
+`vuejs`,
+`flutter`,
+'플러터'
 ],
   comment: {
     disqusShortName: '', // Your disqus-short-name. check disqus.com.

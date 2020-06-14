@@ -4,9 +4,8 @@ date: 2020-02-05 03:06:00
 lang: 'en'
 ---
 
-# JIN-JOO.CHA
+# ✨ JIN-JOO.CHA
 
-## PROFILE 
 
 <div align="center">
 
@@ -22,44 +21,85 @@ lang: 'en'
   
 
 
-## LET'S WORK TOGETHER!
+## 🤝 LET'S WORK TOGETHER!
 
 <div align="left">
 
 #### Email: chajanee@gmail.com
 #### Github: https://github.com/chajinjoo
-#### Blog: https://jinjoo.netlify.com
+#### Blog: https://jinjoo.netlify.app
+<!-- #### Velog: https://velog.io/@chajanee -->
 
 </div>
 <br/>
 
 
-## PROFESSIONAL SKILLS
+## 👩🏻‍💻 PROFESSIONAL SKILLS
 
-<div align="left">
+<!-- <div align="left"> -->
+       
+- HTML   
+- CSS   
+- Sass   
+- Styled-Components   
+- JavaScript   
+- Git   
+- React.js   
+- Dart   
+- Flutter   
+- Vue.js  
 
-- HTML
-- CSS
-- JavaScript
-- Sass
-- Styled-Components
-- React
-- React-Redux
-- Git
-- Dart
-- Flutter
 
 
+<!-- </div> -->
+
+
+
+
+## 🔥 PROJECT EXPERIENCE
+
+<!-- **"포메이커스" B2B 랜딩페이지 클론   
+2020.05 ~ (진행중)**  
+
+#### 사용된 기술
+- Front-End: Sass, Vue.js
+- Back-End: Firebase
+
+<br/>
+
+---
+
+<br/> 
+
+**"포메이커스" B2C 랜딩페이지 제작  
+2020.04**  
+
+#### 사용된 기술
+- Front-End: Sass, Vue.js
+
+<br/>
+
+#### 👇🏻 포메이커스 B2C 랜딩페이지 PROJECT (Click!) 👇🏻
+[![포메이커스 B2C 랜딩페이지](https://user-images.githubusercontent.com/55340876/84401366-26f8a280-ac3e-11ea-9e68-f55f288d10b3.gif)](https://fomes-playground.web.app/)
 </div>
+<br/>
 
 
 
 
-## PROJECT EXPERIENCE
+<br/>
 
+---
 
+<br/>  -->
 
-**Flutter UI 클론**
+**Flutter UI 클론   
+2020.02 ~ 2020.03**  
+
+#### 사용된 기술
+- Front-End: Flutter  
+
+<br/>
 
 
 
@@ -93,7 +133,7 @@ lang: 'en'
 <br/> 
 
 **"CASETIFY" 웹사이트 클론  
-20.01.06 ~ 20.01.17**  
+2020.01.06 ~ 2020.01.17**  
 
 프론트엔드 3명과 백엔드 2명이 팀을 이뤄 개발했습니다.
 
@@ -121,7 +161,7 @@ lang: 'en'
 <br/>
 
 **"오늘의 집" 웹사이트 클론     
-19.12.23 ~ 20.01.03**  
+2019.12.23 ~ 2020.01.03**  
 
 프론트엔드 3명과 백엔드 1명이 팀을 이뤄 개발했습니다.
 
@@ -148,7 +188,7 @@ lang: 'en'
 <br/>
 
 
-## EDUCATION
+## 👩🏻‍🎓 EDUCATION
 
 <div align="left">
 

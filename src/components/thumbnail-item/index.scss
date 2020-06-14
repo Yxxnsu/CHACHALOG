@@ -9,7 +9,21 @@
   transition: text-shadow 0.3s, opacity 0.4s;
   opacity: 0;
 
+  h3 {
+    font-family: 'NanumSquare';
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+
+  // div {
+  //   font-size: 14px;
+  //   color: rgba(0, 0, 0, 0.7);
+  //   margin-bottom: 12px;
+  // }
+
   p {
+    font-family: 'NanumSquare';
     font-size: 90%;
     line-height: 1.4;
   }
@@ -17,5 +31,5 @@
 
 .thumbnail.visible {
   opacity: 1;
-  
+
 }
