@@ -1,5 +1,5 @@
 ---
-title: '🔫 [etc] 인증(Authentication) & 인가(Authorization)'
+title: '🚥 [etc] 인증(Authentication) & 인가(Authorization)'
 date: 2020-03-04 18:22:00
 category: 'etc'
 draft: false
