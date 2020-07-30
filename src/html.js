@@ -12,7 +12,7 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1, maximum-scale=2"
           />
-          <meta name="google-site-verification" content="W_s8YCWH4mtlsZ1UMnLCnMeAxiO2LlDEZfDdT49IFek" />
+          <meta name="google-site-verification" content="CTR_pAD7_-LmpfOMcBI5ZAlWmstHFbIl09ZasbcOTU0" />
           {this.props.headComponents}
         </head>
         <body {...this.props.bodyAttributes}>
