@@ -76,7 +76,7 @@ class ViewController: UIViewController {
 
 </br>
 
-<img width="300" alt="스크린샷 2020-05-05 오후 7 56 16" src="https://user-images.githubusercontent.com/55340876/89801605-6161bb80-db6b-11ea-8212-ccd715f361c2.gif">
+<img width="300" alt="" src="https://user-images.githubusercontent.com/55340876/89801605-6161bb80-db6b-11ea-8212-ccd715f361c2.gif">
 
 ---
 ---
