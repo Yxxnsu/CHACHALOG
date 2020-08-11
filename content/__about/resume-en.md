@@ -28,16 +28,13 @@ lang: 'en'
 #### Email: chajanee@gmail.com
 #### Github: https://github.com/chajinjoo
 #### Blog: https://chajinjoo.netlify.app
-<!-- #### Velog: https://velog.io/@chajanee -->
 
 </div>
-<br/>
 
 
-## 👩🏻‍💻 PROFESSIONAL SKILLS
 
-<!-- <div align="left"> -->
-       
+## 👩🏻‍💻 LANGUAGES & SKILLS
+    
 - HTML   
 - CSS   
 - Sass   
@@ -50,19 +47,13 @@ lang: 'en'
 - Flutter   
 
 
-
-<!-- </div> -->
-
-
-
-
 ## 🔥 PROJECT EXPERIENCE
 
-**"포메이커스" B2B 랜딩페이지 클론   
-2020.05 ~ 2020.06**  
+### "포메이커스" B2B 랜딩페이지 클론   
+**2020.05 ~ 2020.06**
 
-[포메이커스 프론트엔드 개발 인턴]  
-1인 개발
+**[포메이커스 프론트엔드 개발 인턴]  
+1인 개발**
 
 #### 사용된 기술
 - Front-End: Sass, Vue.js
@@ -78,24 +69,25 @@ lang: 'en'
 - 플랜 상세 페이지 구현
   - json 으로 정의한 플랜 데이터를 axios 를 통해 화면에 매핑
 
-<br/>
+</br>
 
 #### 👇🏻 포메이커스 B2B 랜딩페이지 PROJECT 👇🏻
 ![2020-07-03 12-58-43 2020-07-03 12_59_38](https://user-images.githubusercontent.com/55340876/86430385-144d2700-bd2d-11ea-8690-674f0fee0327.gif)
 
 
-
-<br/>
+</br>
 
 ---
+---
 
-<br/> 
 
-**"포메이커스" B2C 단일 랜딩페이지 제작  
-2020.04**  
+</br>
 
-[포메이커스 프론트엔드 개발 인턴]  
-1인 개발
+### "포메이커스" B2C 단일 랜딩페이지 제작  
+**2020.04**  
+
+**[포메이커스 프론트엔드 개발 인턴]  
+1인 개발**
 
 #### 사용된 기술
 - Front-End: Sass, Vue.js  
@@ -103,31 +95,29 @@ lang: 'en'
 #### 맡은 역할과 구현한 기능
 - 전체적인 퍼블리싱 및 반응형 적용
 
-<br/>
+</br>
 
 #### 👇🏻 포메이커스 B2C 랜딩페이지 PROJECT (Click!) 👇🏻
 [![포메이커스 B2C 랜딩페이지](https://user-images.githubusercontent.com/55340876/84401366-26f8a280-ac3e-11ea-9e68-f55f288d10b3.gif)](https://fomes-playground.web.app/)
 </div>
-<br/>
 
-
-
-
-<br/>
+</br>
 
 ---
+---
 
-<br/> 
 
-**Flutter UI 클론   
-2020.02 ~ 2020.03**  
+</br>
 
-1인 개발
+### Flutter UI 클론   
+**2020.02 ~ 2020.03**  
+
+**1인 개발**
 
 #### 사용된 기술
 - Front-End: Flutter  
 
-<br/>
+</br>
 
 
 #### 👇🏻 Flutter PROJECT 👇🏻
@@ -136,35 +126,26 @@ lang: 'en'
 <img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/76851754-2940a000-688d-11ea-90ff-5fc82a20f24a.gif">
 <img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/76164416-0d087900-6192-11ea-86f8-b22703233e86.gif">
 
-
-
 </div>
 
 <div align="center" display="inline-block">
 <img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/76873947-cdd4d900-68b1-11ea-8f76-6261bbfb6e5b.gif">
 <img width="283" alt="" src="https://user-images.githubusercontent.com/55340876/75623414-08215380-5bed-11ea-9792-02b77a64d2c1.gif">
 
-<!-- </div> 
 
-<div align="center" display="inline-block">
-
-<img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/74751109-23689680-52b0-11ea-946f-c30530d56507.gif">
-<img width="282" alt="" src="https://user-images.githubusercontent.com/55340876/75704261-5ec98300-5cfc-11ea-9092-de3d5b8e4e31.gif">
-
-</div> -->
-
-
-<br/>
+</br>
 
 ---
+---
 
-<br/> 
 
-**"CASETIFY" 웹사이트 클론  
-2020.01.06 ~ 2020.01.17**  
+</br>
 
-[WeCode 5기]  
-프론트엔드 3명과 백엔드 2명이 팀을 이뤄 개발했습니다.
+### "CASETIFY" 웹사이트 클론  
+**2020.01.06 ~ 2020.01.17**  
+
+**[WeCode 5기]  
+프론트엔드 3명과 백엔드 2명이 팀을 이뤄 개발했습니다.**
 
 #### 사용된 기술
 - Front-End: React, Hooks, Redux, Styled-Components,  
@@ -180,22 +161,24 @@ lang: 'en'
   - Redux 를 이용한 전역 상태관리를 통해 제품 상세 페이지에서 담은 데이터를 장바구니 페이지로 가져옴
   - 장바구니에 담은 제품 정보, 수량, 가격 등을 가져와 토탈을 매기고 백엔드에 전달
   
-<br/>
+</br>
 
 #### 👇🏻 CASETIFY PROJECT DEMO (Click!) 👇🏻
 [![CASETIFY PROJECT DEMO](https://user-images.githubusercontent.com/55340876/74590068-66c3ca80-504e-11ea-9f59-b69b10e5050f.png)](https://www.youtube.com/watch?v=aCONu7EJwqc&feature=youtu.be)
 
-<br/>
+</br>
 
 ---
+---
 
-<br/>
 
-**"오늘의 집" 웹사이트 클론     
-2019.12.23 ~ 2020.01.03**  
+</br>
 
-[WeCode 5기]  
-프론트엔드 3명과 백엔드 1명이 팀을 이뤄 개발했습니다.
+### "오늘의 집" 웹사이트 클론     
+**2019.12.23 ~ 2020.01.03**  
+
+**[WeCode 5기]  
+프론트엔드 3명과 백엔드 1명이 팀을 이뤄 개발했습니다.**
 
 #### 사용된 기술
 - Front-End: Sass, React
@@ -213,12 +196,12 @@ lang: 'en'
 - 마이 페이지 구현
   - 백엔드 API에 해당 유저가 좋아요한 컨텐츠들을 화면에 매핑
 
-<br/>
+</br>
 
 #### 👇🏻 오늘의 집 PROJECT DEMO (Click!) 👇🏻
 [![오늘의 집 PROJECT DEMO](https://user-images.githubusercontent.com/55340876/74590070-6f1c0580-504e-11ea-8886-40e4e3c33715.png)](https://www.youtube.com/watch?v=_wOrX7pm26Q)
 </div>
-<br/>
+</br>
 
 
 ## 👩🏻‍🎓 EDUCATION
@@ -237,5 +220,5 @@ lang: 'en'
 - Agile 방식의 팀 프로젝트 진행을 통해 팀원으로서의 개발 역량 강화
 
 </div>
-<br/>
-<br/>
+</br>
+</br>
