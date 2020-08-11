@@ -2,7 +2,7 @@ module.exports = {
     title: `JINJOO_BLOG`,
     description: `Blog posted about ...`,
     author: `[JinJoo]`,
-    introduction: `👩🏻‍💻 대박 프로그램은 1%의 영감과 99%의 노가다로 이루어진다 😎`,
+    introduction: `✨ 선택과 집중을 잘하자! 흥미를 잃지 말자! ✨`,
     siteUrl: `https://chajinjoo.netlify.com`, // Your blog site url
     social: {
         twitter: ``, // Your Twitter account

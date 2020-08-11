@@ -124,3 +124,12 @@ print 를 통해 테스트를 해주자.
 
 저것도 하드코딩이라 일단..  
 주사위가 6까지라서 6 이상이 되는 순간 에러가 뜬다.  
+
+
+</br>
+
+---
+---
+
+# Reference  
+- [iOS 13 & Swift 5 - The Complete iOS App Development Bootcamp (유료 강의)](https://www.udemy.com/course/ios-13-app-development-bootcamp/)
