@@ -23,13 +23,13 @@ lang: 'en'
 
 ## 🤝 LET'S WORK TOGETHER!
 
-<div align="left">
+<!-- <div align="left"> -->
 
 #### Email: chajanee@gmail.com
 #### Github: https://github.com/chajinjoo
 #### Blog: https://chajinjoo.netlify.app
 
-</div>
+<!-- </div> -->
 
 
 
@@ -99,7 +99,7 @@ lang: 'en'
 
 #### 👇🏻 포메이커스 B2C 랜딩페이지 PROJECT (Click!) 👇🏻
 [![포메이커스 B2C 랜딩페이지](https://user-images.githubusercontent.com/55340876/89962404-8a737080-dc7f-11ea-93ec-4759d276bd47.gif)](https://fomes-playground.web.app/)
-</div>
+
 
 </br>
 
@@ -121,14 +121,14 @@ lang: 'en'
 
 
 #### 👇🏻 Flutter PROJECT 👇🏻
-<div align="center" display="inline-block">
+<!-- <div align="center" display="inline-block"> -->
 
 <img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/89962372-7596dd00-dc7f-11ea-8a8d-a8db578fb256.gif">
 <img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/89962388-834c6280-dc7f-11ea-98e0-dd38725ff685.gif">
 
-</div>
+<!-- </div> -->
 
-<div align="center" display="inline-block">
+<!-- <div align="center" display="inline-block"> -->
 <img width="280" alt="" src="https://user-images.githubusercontent.com/55340876/89962391-85aebc80-dc7f-11ea-9bc5-e1e5e95d3482.gif">
 <img width="283" alt="" src="https://user-images.githubusercontent.com/55340876/89962394-86475300-dc7f-11ea-8346-3dd81f93c8d3.gif">
 
@@ -200,13 +200,13 @@ lang: 'en'
 
 #### 👇🏻 오늘의 집 PROJECT DEMO (Click!) 👇🏻
 [![오늘의 집 PROJECT DEMO](https://user-images.githubusercontent.com/55340876/89962399-89424380-dc7f-11ea-8192-5e4e5271e781.png)](https://www.youtube.com/watch?v=_wOrX7pm26Q)
-</div>
+<!-- </div> -->
 </br>
 
 
 ## 👩🏻‍🎓 EDUCATION
 
-<div align="left">
+<!-- <div align="left"> -->
 
 **[WeCode](https://wecode.co.kr/) 5기 수료**
 
@@ -219,6 +219,6 @@ lang: 'en'
 - 최적의 패턴을 적용하여 시스템 구조 디자인 및 구현
 - Agile 방식의 팀 프로젝트 진행을 통해 팀원으로서의 개발 역량 강화
 
-</div>
+<!-- </div> -->
 </br>
 </br>
