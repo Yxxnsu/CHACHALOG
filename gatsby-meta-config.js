@@ -2,7 +2,7 @@ module.exports = {
     title: `JINJOO_BLOG`,
     description: `Blog posted about ...`,
     author: `[JinJoo]`,
-    introduction: `✨ 선택과 집중을 잘하자! 흥미를 잃지 말자! ✨`,
+    introduction: `스스로 나아가지 않으면 아무 일도 시작되지 않는다.`,
     siteUrl: `https://chajinjoo.netlify.com`, // Your blog site url
     social: {
         twitter: ``, // Your Twitter account
