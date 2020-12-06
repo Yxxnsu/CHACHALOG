@@ -27,7 +27,8 @@ lang: 'en'
 
 #### Email: chajanee@gmail.com
 #### Github: https://github.com/chajinjoo
-#### Blog: https://chajinjoo.netlify.app
+#### Blog: https://chajinjoo.tistory.com
+
 
 <!-- </div> -->
 
@@ -43,8 +44,10 @@ lang: 'en'
 - Git   
 - React.js   
 - Vue.js  
+- Python   
 - Dart   
-- Flutter   
+- Flutter
+
 
 
 ## 🔥 PROJECT EXPERIENCE
