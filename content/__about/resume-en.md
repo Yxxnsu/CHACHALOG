@@ -33,8 +33,6 @@ lang: 'en'
 - Git  
 - HTML    
 - CSS  
-- Sass  
-- Styled-Components  
 - JavaScript  
 - React.js    
 - Vue.js    
