@@ -21,7 +21,7 @@ lang: 'en'
 
 #### Email: chajanee@gmail.com
 #### Github: https://github.com/chajinjoo
-#### Blog: https://chajinjoo.tistory.com
+#### Blog: https://velog.io/@chajinjoo
 
 
 <!-- </div> -->
@@ -31,11 +31,15 @@ lang: 'en'
 ## 👩🏻‍💻 LANGUAGES & SKILLS
 
 - Git  
-- HTML   
-- CSS, Sass, Styled-Components
-- JavaScript, React.js, Vue.js  
-- Dart, Flutter
-- Swift
+- HTML    
+- CSS  
+- Sass  
+- Styled-Components  
+- JavaScript  
+- React.js    
+- Vue.js    
+- Dart  
+- Flutter
 
 
 
