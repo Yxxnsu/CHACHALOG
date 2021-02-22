@@ -21,7 +21,7 @@ lang: 'en'
 
 #### Email: chajanee@gmail.com
 #### Github: https://github.com/chajinjoo
-#### Blog: https://velog.io/@chajinjoo
+#### Blog: https://chajinjoo.tistory.com
 
 
 <!-- </div> -->
