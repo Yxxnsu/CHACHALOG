@@ -78,7 +78,7 @@ const bioQuery = graphql`
           github
           medium
           facebook
-        
+          
         }
       }
     }

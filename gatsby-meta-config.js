@@ -1,28 +1,28 @@
 module.exports = {
     title: `JINJOO_BLOG`,
-    description: `Blog posted about ...`,
-    author: `[JinJoo]`,
-    introduction: `스스로 나아가지 않으면 아무 일도 시작되지 않는다.`,
+    description: `Jinjoo's Dev Blog`,
+    author: `[JINJOO]`,
+    introduction: `😎 까먹지 않도록 기록하는 개발 블로그`,
     siteUrl: `https://chajinjoo.netlify.com`, // Your blog site url
     social: {
         twitter: ``, // Your Twitter account
         github: `chajinjoo`, // Your GitHub account
         medium: ``, // Your Medium account
         facebook: ``, // Your Facebook account
-        // instagram: `chacha__dev`,
+        instagram: `_chajanee_`,
     },
     icon: `content/assets/jlogo.png`, // Add your favicon
     keywords: [`blog`,
         `web`,
         `devlog`,
-        `프론트엔드`,
-        'frontend',
+        `ios`,
+        'swift',
         `개발`,
         `dev`,
-        `javascript`,
-        `vuejs`,
+        `mobile`,
+        `software`,
         `flutter`,
-        '플러터'
+        'dart'
     ],
     comment: {
         disqusShortName: '', // Your disqus-short-name. check disqus.com.
@@ -37,5 +37,5 @@ module.exports = {
     share: {
         facebookAppId: '', // Add facebookAppId for using facebook share feature v3.2
     },
-    ga: '', // Add your google analytics tranking ID
+    ga: 'UA-191468064-1', // Add your google analytics tranking ID
 }

@@ -1,10 +1,8 @@
 import { throttle } from 'lodash'
 import React, { useEffect, useRef, useState } from 'react'
-
 import { useOnClickOutside } from './useOnClickOutside'
 import { Title, TocDiv, TocIcon, TocLink, TocToggle } from './styles'
 import './index.scss'
-
 const accumulateOffsetTop = (el, totalOffset = 0) => {
     while (el) {
         totalOffset += el.offsetTop - el.scrollTop + el.clientTop
@@ -12,7 +10,6 @@ const accumulateOffsetTop = (el, totalOffset = 0) => {
     }
     return totalOffset
 }
-
 export const Toc = ({ headingSelector, getTitle, getDepth, ...rest }) => {
     const { throttleTime = 200, tocTitle = `Contents` } = rest
     const [headings, setHeadings] = useState({
@@ -20,7 +17,6 @@ export const Toc = ({ headingSelector, getTitle, getDepth, ...rest }) => {
         nodes: [],
         minDepth: 0,
     })
-
     const [open, setOpen] = useState(false)
     const [active, setActive] = useState()
     const ref = useRef()
@@ -31,7 +27,6 @@ export const Toc = ({ headingSelector, getTitle, getDepth, ...rest }) => {
         // the need for useMemo and useCallback, resp.
         // Otherwise, these would change on every render and since this effect calls
         // setHeadings which triggers a rerender, it would cause an infinite loop.
-
         const selector =
             headingSelector ||
             Array.from({ length: 6 }, (_, i) => `.post-container h` + (i + 1))
@@ -43,7 +38,6 @@ export const Toc = ({ headingSelector, getTitle, getDepth, ...rest }) => {
         const minDepth = Math.min(...titles.map(h => h.depth))
         setHeadings({ titles, nodes, minDepth })
     }, [headingSelector, getTitle, getDepth])
-
     // Add scroll event listener to update currently active heading.
     useEffect(() => {
         // Throttling the scrollHandler saves computation and hence battery life.
@@ -57,11 +51,9 @@ export const Toc = ({ headingSelector, getTitle, getDepth, ...rest }) => {
             )
             setActive(activeIndex === -1 ? titles.length - 1 : activeIndex - 1)
         }, throttleTime)
-
         window.addEventListener(`scroll`, scrollHandler)
         return () => window.removeEventListener(`scroll`, scrollHandler)
     }, [headings])
-
     return (
         <>
             <TocToggle
@@ -74,7 +66,7 @@ export const Toc = ({ headingSelector, getTitle, getDepth, ...rest }) => {
                 <Title>
                     <TocIcon />
                     {tocTitle}
-                    <TocToggle onClick={() => setOpen(false)} />
+                    <TocToggle className="toc_toggle" onClick={() => setOpen(false)} />
                 </Title>
                 <nav>
                     {headings.titles.map(({ title, depth }, index) => (
