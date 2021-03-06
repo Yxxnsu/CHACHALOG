@@ -140,7 +140,7 @@ await 키워드에 엑세스를 하기위해 ``async`` 키워드를 추가한다
 
 
 
-**[[Dart] future & async-await](https://jinjoo.netlify.com/dart/200203_futureAsync/) 참고**  
+**[[Dart] future & async-await](https://chajinjoo.netlify.app/dart/200203_futureAsync/) 참고**  
 
 
 # 날씨 데이터 갖고오기

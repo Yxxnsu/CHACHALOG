@@ -43,7 +43,7 @@ showToc: true
  
 ---
 
-# [Flutter Widget Tree 복습하기](https://jinjoo.netlify.com/Flutter/200207_flutterAndWidget/)
+# [Flutter Widget Tree 복습하기](https://chajinjoo.netlify.app/Flutter/2002/200207_flutterAndWidget/)
 
 ---
 # 앱페이지 기본 코드 1

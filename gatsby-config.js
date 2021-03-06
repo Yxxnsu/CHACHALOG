@@ -93,8 +93,8 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-robots-txt',
             options: {
-                host: 'https://chajinjoo.netlify.com',
-                sitemap: 'https://chajinjoo.netlify.com/sitemap.xml',
+                host: 'https://chajinjoo.netlify.app',
+                sitemap: 'https://chajinjoo.netlify.app/sitemap.xml',
                 policy: [{ userAgent: '*', allow: '/' }],
             },
         },

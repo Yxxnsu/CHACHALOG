@@ -1,8 +1,6 @@
 import React from 'react'
 import './index.scss'
 
-export const PostTitle = ({ title, date }) => (
-    <h1>
-        {title} <h4>{date}</h4>
-    </h1>
+export const PostTitle = ({ title }) => (
+    <h1 className="post-title-header">{title}</h1>
 )

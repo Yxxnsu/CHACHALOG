@@ -1332,7 +1332,7 @@ class Human { // 클래스
 요로코롬 클래스 필드에 접근할때처럼 ``.`` 방식을 이용해서 접근한다.
 객체는 ``.`` 을 통해 그것을 수행하거나 속성을 얻는다.
 
-## [(참고)실로폰 앱 / Dart 함수](https://jinjoo.netlify.com/Flutter/200215_xylophoneAppDartFunction/)
+## [(참고)실로폰 앱 / Dart 함수](https://chajinjoo.netlify.app/Flutter/2002/200215_xylophoneAppDartFunction/)
 
 요 게시물의 함수 내용도 참고하자!!!
 
