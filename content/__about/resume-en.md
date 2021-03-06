@@ -6,7 +6,6 @@ lang: 'en'
 
 # ✨ JIN-JOO.CHA
 
-<div align="left">
 <img width="130" style="border-radius: 50%;" alt="" src="https://user-images.githubusercontent.com/55340876/110198357-4226d480-7e95-11eb-8ccd-92841b51e830.png">
 <!-- </div> -->
 </br>
@@ -14,9 +13,6 @@ lang: 'en'
 보기 좋고 쓰기 좋은 UI/UX 에 관심이 많고, </br> 
 삶을 변화시킬 수 있는 개발을 추구합니다.
 </strong>
-</div>
-
-</div>
 
 ## 🤝 LET'S WORK TOGETHER!
 
