@@ -6,19 +6,14 @@ lang: 'en'
 
 # ✨ JIN-JOO.CHA
 
-<div style="display: flex;">
-
-<div style="margin-right: 1em;">
+<div align="left">
 <img width="130" style="border-radius: 50%;" alt="" src="https://user-images.githubusercontent.com/55340876/110198357-4226d480-7e95-11eb-8ccd-92841b51e830.png">
-</div>
-
-<div style="height: 130px; display:table;">
-<div style="display: table-cell; vertical-align: middle;">
+<!-- </div> -->
+</br>
 <strong>
 보기 좋고 쓰기 좋은 UI/UX 에 관심이 많고, </br> 
 삶을 변화시킬 수 있는 개발을 추구합니다.
 </strong>
-</div>
 </div>
 
 </div>
@@ -243,7 +238,7 @@ CASETIFY PROJECT DEMO (Click!)
 
 <!-- <div align="left"> -->
 
-**[WeCode](https://wecode.co.kr/) 5기 수료**
+**[WeCode](https://wecode.co.kr/) 5기 수료 (프론트엔드 웹 과정)**
 
 - 팀 프로젝트를 통해 ReactJS, Sass, Styled-Components, Redux 학습 및 응용
 - 기본적인 HTML, CSS, JS 개념 학습 및 토이 프로젝트를 통한 응용
