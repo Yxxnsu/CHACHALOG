@@ -91,7 +91,7 @@ for문을 통해 1~10까지 반복을 하고, 반복상수를 출력함.
 2는 일단 출력하고 이놈은 1보다 크니까 if문에서는 true잖아?  
 그니께 break 발동!!
 
-### 예시2)
+### 예시3)
 
 ![4](https://user-images.githubusercontent.com/55340876/110215161-aeccbe00-7eeb-11eb-91c1-c8ab29b8d9ae.png)
 
