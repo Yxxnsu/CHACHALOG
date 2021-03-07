@@ -106,7 +106,7 @@ func add(a: Int, b: Int) -> Int {
     return a + b
 }
 
-var c: (Int, Int) -> Int = add(a:b:)
+var c: (Int, Int) -> Int = add(a: b:)
 c(1, 2) // 3
 ```
 
