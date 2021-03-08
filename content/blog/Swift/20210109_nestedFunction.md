@@ -1,6 +1,6 @@
 ---
 title: '🕊 [Swift] 내장 함수'
-date: 2021-01-09 23:40:00
+date: 2021-01-09 23:30:00
 category: 'Swift'
 draft: false
 showToc: true

@@ -1,6 +1,6 @@
 ---
 title: '🕊 [Swift] @discardableResult'
-date: 2021-01-09 24:00:00
+date: 2021-01-09 23:43:00
 category: 'Swift'
 draft: false
 showToc: true
@@ -22,7 +22,7 @@ func saySomething() -> String {
    return "Hello"
 }
 
-class VieController: UIViewController {
+class ViewController: UIViewController {
 
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -84,7 +84,7 @@ func saySomething() -> String {
    return "Hello"
 }
 
-class VieController: UIViewController {
+class ViewController: UIViewController {
 
    override func viewDidLoad() {
       super.viewDidLoad()

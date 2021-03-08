@@ -1,6 +1,6 @@
 ---
 title: '🕊 [Swift] Nonreturning Function(Never)'
-date: 2021-01-09 23:55:00
+date: 2021-01-09 23:41:00
 category: 'Swift'
 draft: false
 showToc: true
