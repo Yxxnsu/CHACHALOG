@@ -16,7 +16,7 @@ print(l) // hello, swift
 ![1](https://user-images.githubusercontent.com/55340876/110339629-b61ad580-806b-11eb-8986-b478bba42f67.png)
 
 상단 코드에서 `lowercased` 메서드를 활용,  
-해당 문자열을 소문자로 바꾼 새로운 값을 리턴해서 `'` 상수에 저장함.  
+해당 문자열을 소문자로 바꾼 새로운 값을 리턴해서 `l` 상수에 저장함.  
 `l` 상수는 String형으로 되어있음.
 
 `prefix()` 메서드를 이용해서 첫번째 문자열을 추출해보자.
