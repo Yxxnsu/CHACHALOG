@@ -1,6 +1,6 @@
 ---
 title: '🕊 [Swift] 서브 스트링(Substring)'
-date: 2021-01-10 07:00:00
+date: 2021-01-10 06:30:00
 category: 'Swift'
 draft: false
 showToc: true
