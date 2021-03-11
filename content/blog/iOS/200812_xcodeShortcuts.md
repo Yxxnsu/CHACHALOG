@@ -10,6 +10,18 @@ showToc: true
 
 외워라 잉간아.
 
-<img width="800" alt="스크린샷 2020-08-12 오전 1 22 05" src="https://user-images.githubusercontent.com/55340876/89922611-3e520d00-dc3a-11ea-8064-f3d387c452b9.png">
+[Keyboard Shortcuts for Xcode](https://mouseless.app/xcode-keyboard-shortcuts/)
+ 
 
-<img width="800" alt="스크린샷 2020-08-12 오전 1 22 24" src="https://user-images.githubusercontent.com/55340876/89922640-47db7500-dc3a-11ea-8da7-ed21d259e3a8.png">
+라이브러리 : Shift+Command+L
+
+미니맵 : Shift + Control + Command + M
+
+ViewController.swift : Control + Option + Command & Option + 클릭
+
+복제 : Command + D
+
+![4](https://user-images.githubusercontent.com/55340876/110794171-cecbfb00-82b8-11eb-8c25-1a784eb2e0bf.png)
+![3](https://user-images.githubusercontent.com/55340876/110794176-d095be80-82b8-11eb-99d1-c8ed9483fe24.png)
+![2](https://user-images.githubusercontent.com/55340876/110794181-d1c6eb80-82b8-11eb-8d59-d496f28e6786.png)
+![1](https://user-images.githubusercontent.com/55340876/110794184-d2f81880-82b8-11eb-9ae4-f425af775770.png)
