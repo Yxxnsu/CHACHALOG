@@ -1,5 +1,5 @@
 ---
-title: '🌈 [Swift] 주사위 앱'
+title: '🌈 [iOS] 주사위 앱'
 date: 2020-08-11 20:22:00
 category: 'iOS'
 draft: false 

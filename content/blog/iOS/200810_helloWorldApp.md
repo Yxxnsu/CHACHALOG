@@ -1,5 +1,5 @@
 ---
-title: '🌈 [Swift] Hello World 앱'
+title: '🌈 [iOS] Hello World 앱'
 date: 2020-08-10 23:24:00
 category: 'iOS'
 draft: false 

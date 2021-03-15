@@ -1,5 +1,5 @@
 ---
-title: '🌈 [Swift] Image View 앱'
+title: '🌈 [iOS] Image View 앱'
 date: 2020-08-11 02:27:00
 category: 'iOS'
 draft: false 
