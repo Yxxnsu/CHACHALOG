@@ -1,5 +1,5 @@
 ---
-title: '🌈 [iOS] 집중력 게임'
+title: '🌈 [iOS] 집중력 게임 1'
 date: 2021-03-16 01:23:00
 category: 'iOS'
 draft: false 
@@ -44,7 +44,7 @@ Connection -> **Action** : 버튼을 눌렀을 때 메소드를 호출함
 
 Object -> **View Controller** : 이건 뭐 당연한 것
 
-Name -> **toushCard** : 제대로 된 변수명으로 지어주삼
+Name -> **touchCard** : 제대로 된 변수명으로 지어주삼
 
 Type -> **UIButton** : 초기값은 **Any** 로 되어있음 ㅡㅡ 코드의 동작을 위해 **UIButton** 으로 바꿔주삼
 
@@ -116,10 +116,6 @@ class ViewController: UIViewController {
 ```
 
 
-
-매개변수는 2개임  
-- `withEmoji` 카드에 표시할 이모티콘
-- `emoji` 이모티콘을 넣을 버튼
 
 </br>
 
@@ -543,8 +539,6 @@ nil 은 값이 없다는 말인데 강제로 언래핑 해버려서 에러가 �
 
 <img width="300" alt="스크린샷 2021-03-16 오전 2 12 23" src="https://user-images.githubusercontent.com/55340876/111194899-014e5e80-85ff-11eb-9c4d-4d4db4f7b972.gif">
 
-사실 여기서 끝이나면 안되는데 강의는 끝임. ㅋ  
-나중에 추가적으로 기능을 더 넣어봅세!
 
 
 </br>
