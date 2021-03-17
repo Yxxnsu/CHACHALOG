@@ -8,7 +8,7 @@ showToc: true
 
 # 위치 데이터 갖고오기
 
-**[[etc] API / RESTful API](http://localhost:8000/etc/200304_api/) 참고**
+**[[etc] API / RESTful API](https://chajinjoo.netlify.app/etc/200304_api/) 참고**
 
 - [geolocator 5.3.0](https://pub.dev/packages/geolocator) 라이브러리 설치
 
@@ -227,7 +227,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
 ``print(response);`` 요 부분에서 ``print(response.body);``, ``print(response.statusCode);`` 등을 찍어주면  
 내 요청에 대한 응답들이 콘솔에 찍힌다. 
 
-**[[etc] HTTP 기초](http://localhost:8000/etc/200304_http/) 참고**
+**[[etc] HTTP 기초](https://chajinjoo.netlify.app/etc/200304_http/) 참고**
 
 <img width="963" alt="스크린샷 2020-03-04 오후 8 10 20" src="https://user-images.githubusercontent.com/55340876/75873940-2dfc6180-5e54-11ea-9e44-c9f8899a07e3.png">
 

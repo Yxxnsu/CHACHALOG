@@ -1,5 +1,5 @@
 ---
-title: '🌈 [iOS] programatically'
+title: '🌈 [iOS] programatically - 1'
 date: 2021-03-17 01:00:00
 category: 'iOS'
 draft: false 

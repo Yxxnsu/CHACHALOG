@@ -1514,7 +1514,7 @@ class Unit extends Describable {
 
 예전 게시물을 참고하자.  
 
-## [[Dart] future & async-await](http://localhost:8000/dart/200203_futureAsync/)
+## [[Dart] future & async-await](https://chajinjoo.netlify.app/dart/200203_futureAsync/)
 
 
 
