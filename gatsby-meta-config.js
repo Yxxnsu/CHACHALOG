@@ -16,14 +16,13 @@ module.exports = {
         `blog`,
         `web`,
         `devlog`,
-        `ios`,
-        'swift',
         `개발`,
         `dev`,
         `mobile`,
         `software`,
         `flutter`,
-        'dart',
+        `dart`,
+        `app`,
     ],
     comment: {
         disqusShortName: '', // Your disqus-short-name. check disqus.com.

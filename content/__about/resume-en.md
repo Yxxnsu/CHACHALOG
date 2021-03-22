@@ -1,13 +1,13 @@
 ---
 title: 'about'
-date: 2021-01-24 17:59:00
+date: 2021-03-22 23:27:00
 lang: 'en'
 ---
 
 # ✨ JIN-JOO.CHA
 
 <center>
-<img width="180" style="border-radius: 50%;" alt="" src="https://user-images.githubusercontent.com/55340876/110235638-a076b480-7f74-11eb-89c5-6659a32f79c6.jpg">
+<img width="180" style="border-radius: 50%;" alt="" src="https://user-images.githubusercontent.com/55340876/112004648-56412600-8b65-11eb-9ab7-926e9dadccc4.png">
 </center>
 
 <center>
@@ -39,7 +39,7 @@ lang: 'en'
 - Vue.js
 - Dart
 - Flutter
-- Swift
+
 
 ## 🔥 PROJECT EXPERIENCE
 
